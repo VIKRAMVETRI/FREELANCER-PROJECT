@@ -1,0 +1,36 @@
+{
+  "name": "Freelance Nexus Dev",
+  "image": "mcr.microsoft.com/devcontainers/java:17-bookworm",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "moby": false
+    },
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "17",
+      "installMaven": "true",
+      "mavenVersion": "3.9.6"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    }
+  },
+  
+  "forwardPorts": [5432, 5672, 15672],
+  
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  
+  "remoteUser": "vscode",
+  
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "ms-azuretools.vscode-docker",
+        "vscjava.vscode-maven",
+        "sonarsource.sonarlint-vscode"
+      ]
+    }
+  }
+}

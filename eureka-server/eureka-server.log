@@ -1,0 +1,874 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.freelancenexus:eureka-server >------------------
+[INFO] Building Eureka Server 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.2.0:run (default-cli) > test-compile @ eureka-server >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ eureka-server ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ eureka-server ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ eureka-server ---
+[INFO] skip non existing resourceDirectory /workspaces/FREELANCER-PROJECT/eureka-server/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ eureka-server ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:3.2.0:run (default-cli) < test-compile @ eureka-server <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.2.0:run (default-cli) @ eureka-server ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-11-10 14:14:16 - Starting EurekaServerApplication using Java 17.0.8 with PID 4628 (/workspaces/FREELANCER-PROJECT/eureka-server/target/classes started by codespace in /workspaces/FREELANCER-PROJECT/eureka-server)
+2025-11-10 14:14:16 - No active profile set, falling back to 1 default profile: "default"
+2025-11-10 14:14:17 - BeanFactory id=c189fe75-fbc0-3ab5-bf90-9c951bd5092a
+2025-11-10 14:14:17 - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$LoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$LoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-11-10 14:14:17 - Bean 'org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration' of type [org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-10 14:14:17 - Bean 'org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration' of type [org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-10 14:14:17 - Bean 'org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration' of type [org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-10 14:14:17 - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-10 14:14:17 - Bean 'loadBalancerClientsDefaultsMappingsProvider' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration$$Lambda$446/0x00007f6854328250] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-10 14:14:17 - Bean 'defaultsBindHandlerAdvisor' of type [org.springframework.cloud.commons.config.DefaultsBindHandlerAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-10 14:14:17 - Bean 'spring.cloud.loadbalancer-org.springframework.cloud.client.loadbalancer.LoadBalancerClientsProperties' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerClientsProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-10 14:14:17 - Bean 'default.org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration.LoadBalancerClientSpecification' of type [org.springframework.cloud.loadbalancer.annotation.LoadBalancerClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-10 14:14:17 - Bean 'default.org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration.LoadBalancerClientSpecification' of type [org.springframework.cloud.loadbalancer.annotation.LoadBalancerClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-10 14:14:17 - Bean 'default.org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration.LoadBalancerClientSpecification' of type [org.springframework.cloud.loadbalancer.annotation.LoadBalancerClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-10 14:14:17 - Bean 'loadBalancerClientFactory' of type [org.springframework.cloud.loadbalancer.support.LoadBalancerClientFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-10 14:14:17 - Bean 'blockingLoadBalancerClient' of type [org.springframework.cloud.loadbalancer.blocking.client.BlockingLoadBalancerClient] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-10 14:14:17 - Bean 'loadBalancerServiceInstanceCookieTransformer' of type [org.springframework.cloud.loadbalancer.core.LoadBalancerServiceInstanceCookieTransformer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-10 14:14:17 - Bean 'xForwarderHeadersTransformer' of type [org.springframework.cloud.loadbalancer.blocking.XForwardedHeadersTransformer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-10 14:14:17 - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-10 14:14:17 - Bean 'loadBalancerRequestFactory' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerRequestFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-10 14:14:17 - Bean 'loadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-10 14:14:17 - Tomcat initialized with port 8761 (http)
+2025-11-10 14:14:17 - Starting service [Tomcat]
+2025-11-10 14:14:17 - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-11-10 14:14:17 - Initializing Spring embedded WebApplicationContext
+2025-11-10 14:14:17 - Root WebApplicationContext: initialization completed in 1526 ms
+2025-11-10 14:14:18 - Filter 'eurekaVersionFilterRegistration' configured for use
+2025-11-10 14:14:18 - Using JSON encoding codec LegacyJacksonJson
+2025-11-10 14:14:18 - Using JSON decoding codec LegacyJacksonJson
+2025-11-10 14:14:18 - Using XML encoding codec XStreamXml
+2025-11-10 14:14:18 - Using XML decoding codec XStreamXml
+2025-11-10 14:14:19 - Constructed eureka meta-data healthcheckUrl: http://10.0.1.198:8761/actuator/health
+2025-11-10 14:14:19 - Constructed eureka meta-data statusPageUrl: http://10.0.1.198:8761/actuator/info
+2025-11-10 14:14:19 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-11-10 14:14:19 - Setting initial instance status as: STARTING
+2025-11-10 14:14:19 - Initializing Eureka in region us-east-1
+2025-11-10 14:14:19 - Client configured to neither register nor query for data.
+2025-11-10 14:14:19 - Discovery Client initialized at timestamp 1762784059716 with initial instances count: 0
+2025-11-10 14:14:19 - Initializing ...
+2025-11-10 14:14:19 - Adding new peer nodes [http://localhost:8761/eureka/]
+2025-11-10 14:14:19 - Using JSON encoding codec LegacyJacksonJson
+2025-11-10 14:14:19 - Using JSON decoding codec LegacyJacksonJson
+2025-11-10 14:14:19 - Using XML encoding codec XStreamXml
+2025-11-10 14:14:19 - Using XML decoding codec XStreamXml
+2025-11-10 14:14:20 - Replica node URL:  http://localhost:8761/eureka/
+2025-11-10 14:14:20 - Finished initializing remote region registries. All known remote regions: []
+2025-11-10 14:14:20 - Initialized
+2025-11-10 14:14:20 - Exposing 3 endpoint(s) beneath base path '/actuator'
+2025-11-10 14:14:20 - Registering application EUREKA-SERVER with eureka with status UP
+2025-11-10 14:14:20 - isAws returned false
+2025-11-10 14:14:20 - Initialized server context
+2025-11-10 14:14:20 - Got 1 instances from neighboring DS node
+2025-11-10 14:14:20 - Renew threshold is: 1
+2025-11-10 14:14:20 - Changing status to UP
+2025-11-10 14:14:20 - Started Eureka Server
+2025-11-10 14:14:20 - Tomcat started on port 8761 (http) with context path ''
+2025-11-10 14:14:20 - Updating port to 8761
+2025-11-10 14:14:20 - Started EurekaServerApplication in 4.648 seconds (process running for 5.008)
+==============================================
+Eureka Server started successfully!
+Dashboard: http://localhost:8761
+==============================================
+2025-11-10 14:14:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:14:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:14:41 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-10 14:14:41 - Initializing Servlet 'dispatcherServlet'
+2025-11-10 14:14:41 - Completed initialization in 1 ms
+2025-11-10 14:14:41 - register GATEWAY-SERVICE, vip gateway-service, leaseDuration 90, isReplication false
+2025-11-10 14:14:41 - Registered instance GATEWAY-SERVICE/gateway-service:8765 with status UP (replication=false)
+2025-11-10 14:14:42 - register GATEWAY-SERVICE, vip gateway-service, leaseDuration 90, isReplication true
+2025-11-10 14:14:42 - Registered instance GATEWAY-SERVICE/gateway-service:8765 with status UP (replication=true)
+2025-11-10 14:14:50 - Running the evict task with compensationTime 1ms
+2025-11-10 14:15:00 - Running the evict task with compensationTime 0ms
+2025-11-10 14:15:10 - Running the evict task with compensationTime 0ms
+2025-11-10 14:15:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:15:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:15:19 - register USER-SERVICE, vip user-service, leaseDuration 90, isReplication false
+2025-11-10 14:15:19 - Registered instance USER-SERVICE/user-service:8081 with status UP (replication=false)
+2025-11-10 14:15:19 - register USER-SERVICE, vip user-service, leaseDuration 90, isReplication true
+2025-11-10 14:15:19 - Registered instance USER-SERVICE/user-service:8081 with status UP (replication=true)
+2025-11-10 14:15:20 - Running the evict task with compensationTime 0ms
+2025-11-10 14:15:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:15:40 - Running the evict task with compensationTime 3ms
+2025-11-10 14:15:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:15:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:15:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:15:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:15:49 - register PROJECT-SERVICE, vip project-service, leaseDuration 90, isReplication false
+2025-11-10 14:15:49 - Registered instance PROJECT-SERVICE/project-service:8083 with status UP (replication=false)
+2025-11-10 14:15:50 - Running the evict task with compensationTime 1ms
+2025-11-10 14:15:50 - register PROJECT-SERVICE, vip project-service, leaseDuration 90, isReplication true
+2025-11-10 14:15:50 - Registered instance PROJECT-SERVICE/project-service:8083 with status UP (replication=true)
+2025-11-10 14:16:00 - Running the evict task with compensationTime 1ms
+2025-11-10 14:16:10 - Running the evict task with compensationTime 3ms
+2025-11-10 14:16:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:16:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:16:17 - register FREELANCER-SERVICE, vip freelancer-service, leaseDuration 90, isReplication false
+2025-11-10 14:16:17 - Registered instance FREELANCER-SERVICE/freelancer-service:8082 with status UP (replication=false)
+2025-11-10 14:16:17 - register FREELANCER-SERVICE, vip freelancer-service, leaseDuration 90, isReplication true
+2025-11-10 14:16:17 - Registered instance FREELANCER-SERVICE/freelancer-service:8082 with status UP (replication=true)
+2025-11-10 14:16:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:16:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:16:19 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:16:20 - Running the evict task with compensationTime 0ms
+2025-11-10 14:16:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:16:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:16:38 - register PAYMENT-SERVICE, vip payment-service, leaseDuration 90, isReplication false
+2025-11-10 14:16:38 - Registered instance PAYMENT-SERVICE/payment-service:8084 with status UP (replication=false)
+2025-11-10 14:16:39 - register PAYMENT-SERVICE, vip payment-service, leaseDuration 90, isReplication true
+2025-11-10 14:16:39 - Registered instance PAYMENT-SERVICE/payment-service:8084 with status UP (replication=true)
+2025-11-10 14:16:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:16:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:16:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:16:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:16:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:16:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:16:49 - register NOTIFICATION-SERVICE, vip notification-service, leaseDuration 90, isReplication false
+2025-11-10 14:16:49 - Registered instance NOTIFICATION-SERVICE/notification-service:8085 with status UP (replication=false)
+2025-11-10 14:16:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:16:49 - register NOTIFICATION-SERVICE, vip notification-service, leaseDuration 90, isReplication true
+2025-11-10 14:16:49 - Registered instance NOTIFICATION-SERVICE/notification-service:8085 with status UP (replication=true)
+2025-11-10 14:16:49 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:16:50 - Running the evict task with compensationTime 0ms
+2025-11-10 14:16:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:17:00 - Running the evict task with compensationTime 1ms
+2025-11-10 14:17:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:17:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:17:10 - Running the evict task with compensationTime 0ms
+2025-11-10 14:17:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:17:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:17:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:17:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:17:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:17:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:17:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:17:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:17:19 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:17:20 - Running the evict task with compensationTime 0ms
+2025-11-10 14:17:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:17:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:17:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:17:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:17:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:17:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:17:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:17:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:17:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:17:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:17:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:17:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:17:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:17:49 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:17:50 - Running the evict task with compensationTime 0ms
+2025-11-10 14:17:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:18:00 - Running the evict task with compensationTime 0ms
+2025-11-10 14:18:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:18:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:18:10 - Running the evict task with compensationTime 0ms
+2025-11-10 14:18:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:18:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:18:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:18:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:18:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:18:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:18:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:18:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:18:19 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:18:20 - Running the evict task with compensationTime 0ms
+2025-11-10 14:18:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:18:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:18:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:18:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:18:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:18:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:18:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:18:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:18:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:18:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:18:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:18:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:18:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:18:49 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:18:50 - Running the evict task with compensationTime 0ms
+2025-11-10 14:18:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:19:00 - Running the evict task with compensationTime 0ms
+2025-11-10 14:19:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:19:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:19:10 - Running the evict task with compensationTime 0ms
+2025-11-10 14:19:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:19:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:19:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:19:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:19:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:19:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:19:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:19:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:19:19 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:19:20 - Running the evict task with compensationTime 0ms
+2025-11-10 14:19:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:19:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:19:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:19:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:19:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:19:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:19:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:19:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:19:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:19:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:19:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:19:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:19:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:19:49 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:19:50 - Running the evict task with compensationTime 0ms
+2025-11-10 14:19:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:20:00 - Running the evict task with compensationTime 0ms
+2025-11-10 14:20:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:20:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:20:10 - Running the evict task with compensationTime 0ms
+2025-11-10 14:20:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:20:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:20:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:20:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:20:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:20:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:20:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:20:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:20:19 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:20:20 - Running the evict task with compensationTime 0ms
+2025-11-10 14:20:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:20:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:20:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:20:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:20:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:20:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:20:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:20:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:20:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:20:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:20:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:20:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:20:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:20:49 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:20:50 - Running the evict task with compensationTime 0ms
+2025-11-10 14:20:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:21:00 - Running the evict task with compensationTime 0ms
+2025-11-10 14:21:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:21:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:21:10 - Running the evict task with compensationTime 0ms
+2025-11-10 14:21:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:21:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:21:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:21:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:21:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:21:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:21:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:21:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:21:19 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:21:20 - Running the evict task with compensationTime 0ms
+2025-11-10 14:21:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:21:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:21:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:21:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:21:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:21:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:21:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:21:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:21:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:21:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:21:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:21:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:21:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:21:49 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:21:50 - Running the evict task with compensationTime 0ms
+2025-11-10 14:21:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:22:00 - Running the evict task with compensationTime 0ms
+2025-11-10 14:22:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:22:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:22:10 - Running the evict task with compensationTime 0ms
+2025-11-10 14:22:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:22:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:22:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:22:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:22:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:22:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:22:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:22:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:22:19 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:22:20 - Running the evict task with compensationTime 0ms
+2025-11-10 14:22:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:22:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:22:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:22:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:22:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:22:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:22:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:22:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:22:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:22:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:22:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:22:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:22:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:22:49 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:22:50 - Running the evict task with compensationTime 0ms
+2025-11-10 14:22:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:23:00 - Running the evict task with compensationTime 0ms
+2025-11-10 14:23:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:23:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:23:10 - Running the evict task with compensationTime 0ms
+2025-11-10 14:23:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:23:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:23:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:23:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:23:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:23:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:23:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:23:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:23:19 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:23:20 - Running the evict task with compensationTime 0ms
+2025-11-10 14:23:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:23:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:23:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:23:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:23:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:23:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:23:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:23:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:23:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:23:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:23:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:23:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:23:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:23:49 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:23:50 - Running the evict task with compensationTime 0ms
+2025-11-10 14:23:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:24:00 - Running the evict task with compensationTime 0ms
+2025-11-10 14:24:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:24:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:24:10 - Running the evict task with compensationTime 0ms
+2025-11-10 14:24:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:24:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:24:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:24:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:24:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:24:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:24:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:24:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:24:19 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:24:20 - Running the evict task with compensationTime 0ms
+2025-11-10 14:24:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:24:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:24:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:24:39 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:24:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:24:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:24:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:24:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:24:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:24:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:24:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:24:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:24:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:24:49 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:24:50 - Running the evict task with compensationTime 0ms
+2025-11-10 14:24:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:25:00 - Running the evict task with compensationTime 0ms
+2025-11-10 14:25:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:25:09 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:25:10 - Running the evict task with compensationTime 0ms
+2025-11-10 14:25:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:25:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:25:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:25:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:25:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:25:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:25:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:25:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:25:19 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:25:20 - Running the evict task with compensationTime 0ms
+2025-11-10 14:25:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:25:30 - Running the evict task with compensationTime 2ms
+2025-11-10 14:25:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:25:39 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:25:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:25:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:25:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:25:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:25:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:25:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:25:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:25:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:25:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:25:49 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:25:50 - Running the evict task with compensationTime 0ms
+2025-11-10 14:25:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:26:00 - Running the evict task with compensationTime 0ms
+2025-11-10 14:26:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:26:09 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:26:10 - Running the evict task with compensationTime 0ms
+2025-11-10 14:26:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:26:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:26:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:26:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:26:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:26:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:26:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:26:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:26:19 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:26:20 - Running the evict task with compensationTime 0ms
+2025-11-10 14:26:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:26:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:26:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:26:39 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:26:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:26:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:26:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:26:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:26:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:26:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:26:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:26:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:26:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:26:49 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:26:50 - Running the evict task with compensationTime 0ms
+2025-11-10 14:26:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:27:00 - Running the evict task with compensationTime 0ms
+2025-11-10 14:27:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:27:09 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:27:10 - Running the evict task with compensationTime 0ms
+2025-11-10 14:27:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:27:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:27:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:27:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:27:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:27:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:27:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:27:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:27:19 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:27:20 - Running the evict task with compensationTime 1ms
+2025-11-10 14:27:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:27:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:27:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:27:39 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:27:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:27:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:27:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:27:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:27:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:27:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:27:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:27:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:27:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:27:49 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:27:50 - Running the evict task with compensationTime 0ms
+2025-11-10 14:27:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:28:00 - Running the evict task with compensationTime 1ms
+2025-11-10 14:28:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:28:09 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:28:10 - Running the evict task with compensationTime 0ms
+2025-11-10 14:28:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:28:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:28:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:28:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:28:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:28:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:28:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:28:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:28:19 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:28:20 - Running the evict task with compensationTime 0ms
+2025-11-10 14:28:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:28:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:28:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:28:39 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:28:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:28:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:28:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:28:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:28:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:28:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:28:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:28:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:28:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:28:49 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:28:50 - Running the evict task with compensationTime 0ms
+2025-11-10 14:28:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:29:00 - Running the evict task with compensationTime 0ms
+2025-11-10 14:29:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:29:09 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:29:10 - Running the evict task with compensationTime 0ms
+2025-11-10 14:29:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:29:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:29:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:29:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:29:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:29:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:29:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:29:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:29:19 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:29:20 - Current renewal threshold is : 0
+2025-11-10 14:29:20 - Running the evict task with compensationTime 0ms
+2025-11-10 14:29:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:29:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:29:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:29:39 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:29:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:29:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:29:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:29:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:29:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:29:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:29:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:29:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:29:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:29:49 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:29:50 - Running the evict task with compensationTime 0ms
+2025-11-10 14:29:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:30:00 - Running the evict task with compensationTime 0ms
+2025-11-10 14:30:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:30:09 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:30:10 - Running the evict task with compensationTime 0ms
+2025-11-10 14:30:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:30:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:30:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:30:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:30:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:30:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:30:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:30:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:30:19 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:30:20 - Running the evict task with compensationTime 0ms
+2025-11-10 14:30:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:30:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:30:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:30:39 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:30:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:30:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:30:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:30:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:30:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:30:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:30:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:30:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:30:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:30:49 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:30:50 - Running the evict task with compensationTime 0ms
+2025-11-10 14:30:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:31:00 - Running the evict task with compensationTime 0ms
+2025-11-10 14:31:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:31:09 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:31:10 - Running the evict task with compensationTime 0ms
+2025-11-10 14:31:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:31:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:31:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:31:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:31:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:31:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:31:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:31:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:31:19 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:31:20 - Running the evict task with compensationTime 0ms
+2025-11-10 14:31:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:31:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:31:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:31:39 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:31:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:31:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:31:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:31:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:31:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:31:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:31:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:31:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:31:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:31:49 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:31:50 - Running the evict task with compensationTime 0ms
+2025-11-10 14:31:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:32:00 - Running the evict task with compensationTime 0ms
+2025-11-10 14:32:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:32:09 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:32:10 - Running the evict task with compensationTime 0ms
+2025-11-10 14:32:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:32:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:32:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:32:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:32:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:32:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:32:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:32:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:32:19 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:32:20 - Running the evict task with compensationTime 0ms
+2025-11-10 14:32:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:32:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:32:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:32:39 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:32:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:32:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:32:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:32:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:32:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:32:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:32:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:32:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:32:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:32:49 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:32:50 - Running the evict task with compensationTime 0ms
+2025-11-10 14:32:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:33:00 - Running the evict task with compensationTime 0ms
+2025-11-10 14:33:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:33:09 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:33:10 - Running the evict task with compensationTime 0ms
+2025-11-10 14:33:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:33:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:33:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:33:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:33:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:33:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:33:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:33:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:33:19 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:33:20 - Running the evict task with compensationTime 0ms
+2025-11-10 14:33:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:33:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:33:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:33:39 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:33:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:33:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:33:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:33:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:33:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:33:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:33:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:33:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:33:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:33:49 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:33:50 - Running the evict task with compensationTime 0ms
+2025-11-10 14:33:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:34:00 - Running the evict task with compensationTime 0ms
+2025-11-10 14:34:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:34:09 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:34:10 - Running the evict task with compensationTime 0ms
+2025-11-10 14:34:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:34:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:34:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:34:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:34:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:34:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:34:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:34:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:34:19 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:34:20 - Running the evict task with compensationTime 0ms
+2025-11-10 14:34:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:34:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:34:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:34:39 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:34:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:34:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:34:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:34:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:34:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:34:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:34:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:34:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:34:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:34:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:34:50 - Running the evict task with compensationTime 0ms
+2025-11-10 14:34:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:35:00 - Running the evict task with compensationTime 0ms
+2025-11-10 14:35:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:35:09 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:35:10 - Running the evict task with compensationTime 0ms
+2025-11-10 14:35:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:35:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:35:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:35:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:35:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:35:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:35:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:35:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:35:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:35:20 - Running the evict task with compensationTime 0ms
+2025-11-10 14:35:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:35:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:35:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:35:39 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:35:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:35:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:35:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:35:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:35:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:35:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:35:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:35:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:35:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:35:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:35:50 - Running the evict task with compensationTime 0ms
+2025-11-10 14:35:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:36:00 - Running the evict task with compensationTime 0ms
+2025-11-10 14:36:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:36:09 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:36:10 - Running the evict task with compensationTime 0ms
+2025-11-10 14:36:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:36:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:36:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:36:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:36:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:36:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:36:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:36:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:36:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:36:20 - Running the evict task with compensationTime 0ms
+2025-11-10 14:36:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:36:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:36:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:36:39 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:36:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:36:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:36:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:36:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:36:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:36:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:36:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:36:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:36:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:36:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:36:50 - Running the evict task with compensationTime 0ms
+2025-11-10 14:36:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:37:00 - Running the evict task with compensationTime 0ms
+2025-11-10 14:37:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:37:09 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:37:10 - Running the evict task with compensationTime 0ms
+2025-11-10 14:37:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:37:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:37:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:37:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:37:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:37:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:37:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:37:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:37:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:37:20 - Running the evict task with compensationTime 0ms
+2025-11-10 14:37:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:37:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:37:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:37:39 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:37:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:37:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:37:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:37:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:37:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:37:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:37:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:37:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:37:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:37:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:37:50 - Running the evict task with compensationTime 0ms
+2025-11-10 14:37:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:38:00 - Running the evict task with compensationTime 0ms
+2025-11-10 14:38:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:38:09 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:38:10 - Running the evict task with compensationTime 0ms
+2025-11-10 14:38:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:38:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:38:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:38:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:38:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:38:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:38:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:38:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:38:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:38:20 - Running the evict task with compensationTime 0ms
+2025-11-10 14:38:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:38:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:38:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:38:39 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:38:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:38:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:38:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:38:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:38:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:38:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:38:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:38:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:38:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:38:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:38:50 - Running the evict task with compensationTime 0ms
+2025-11-10 14:38:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:39:00 - Running the evict task with compensationTime 0ms
+2025-11-10 14:39:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:39:09 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:39:10 - Running the evict task with compensationTime 0ms
+2025-11-10 14:39:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:39:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:39:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:39:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:39:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:39:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:39:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:39:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:39:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:39:20 - Running the evict task with compensationTime 0ms
+2025-11-10 14:39:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:39:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:39:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:39:39 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:39:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:39:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:39:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:39:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:39:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:39:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:39:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:39:49 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:39:49 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:39:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:39:50 - Running the evict task with compensationTime 0ms
+2025-11-10 14:39:50 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:40:00 - Running the evict task with compensationTime 0ms
+2025-11-10 14:40:08 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:40:09 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:40:10 - Running the evict task with compensationTime 0ms
+2025-11-10 14:40:11 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:40:12 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:40:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:40:17 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
+2025-11-10 14:40:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}false
+2025-11-10 14:40:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}false
+2025-11-10 14:40:19 - renew USER-SERVICE serverId user-service:8081, isReplication {}true
+2025-11-10 14:40:19 - renew NOTIFICATION-SERVICE serverId notification-service:8085, isReplication {}true
+2025-11-10 14:40:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}false
+2025-11-10 14:40:20 - Running the evict task with compensationTime 0ms
+2025-11-10 14:40:20 - renew PROJECT-SERVICE serverId project-service:8083, isReplication {}true
+2025-11-10 14:40:30 - Running the evict task with compensationTime 0ms
+2025-11-10 14:40:38 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}false
+2025-11-10 14:40:39 - renew PAYMENT-SERVICE serverId payment-service:8084, isReplication {}true
+2025-11-10 14:40:40 - Running the evict task with compensationTime 0ms
+2025-11-10 14:40:41 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}false
+2025-11-10 14:40:42 - renew GATEWAY-SERVICE serverId gateway-service:8765, isReplication {}true
+2025-11-10 14:40:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}false
+2025-11-10 14:40:47 - renew FREELANCER-SERVICE serverId freelancer-service:8082, isReplication {}true
