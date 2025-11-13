@@ -1,5 +1,10 @@
 package com.freelancenexus.payment.controller;
 
+import com.freelancenexus.payment.model.Payment;
+import com.freelancenexus.payment.model.PaymentStatus;
+import com.freelancenexus.payment.model.TransactionHistory;
+import com.freelancenexus.payment.repository.PaymentRepository;
+import com.freelancenexus.payment.repository.TransactionHistoryRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.freelancenexus.payment.dto.*;
 import com.freelancenexus.payment.service.PaymentService;
@@ -86,14 +91,14 @@ class PaymentControllerTest {
                 .currency("INR")
                 .paymentMethod("UPI")
                 .upiId("test@upi")
-                .status(PaymentStatus.SUCCESS)
+                .status(PaymentStatus.COMPLETED)
                 .paymentDate(LocalDateTime.now())
                 .description("Test payment")
                 .build();
 
         transactionStatus = TransactionStatusDTO.builder()
                 .transactionId("TXN123")
-                .status(PaymentStatus.SUCCESS)
+                .status(PaymentStatus.COMPLETED)
                 .amount(BigDecimal.valueOf(100))
                 .currency("INR")
                 .timestamp(LocalDateTime.now())
@@ -132,7 +137,7 @@ class PaymentControllerTest {
         mockMvc.perform(post("/api/payments/verify")
                         .param("transactionId", "TXN123"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.status").value("SUCCESS"))
+                .andExpect(jsonPath("$.status").value("COMPLETED"))
                 .andExpect(jsonPath("$.transactionId").value("TXN123"));
     }
 
