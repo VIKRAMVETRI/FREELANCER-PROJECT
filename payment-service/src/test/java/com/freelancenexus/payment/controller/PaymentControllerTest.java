@@ -12,6 +12,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.http.ResponseEntity;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -40,10 +43,27 @@ class PaymentControllerTest {
     private PaymentResponseDTO paymentResponse;
     private TransactionStatusDTO transactionStatus;
 
+    // Global exception handler for tests
+    @RestControllerAdvice
+    static class TestExceptionHandler {
+        @ExceptionHandler(IllegalArgumentException.class)
+        public ResponseEntity<Map<String, String>> handleIllegalArgumentException(IllegalArgumentException ex) {
+            return ResponseEntity.badRequest().body(Map.of("error", ex.getMessage()));
+        }
+
+        @ExceptionHandler(RuntimeException.class)
+        public ResponseEntity<Map<String, String>> handleRuntimeException(RuntimeException ex) {
+            return ResponseEntity.internalServerError().body(Map.of("error", ex.getMessage()));
+        }
+    }
+
     @BeforeEach
     void setUp() {
         objectMapper = new ObjectMapper();
-        mockMvc = MockMvcBuilders.standaloneSetup(paymentController).build();
+        objectMapper.findAndRegisterModules(); // Register JavaTimeModule for LocalDateTime
+        mockMvc = MockMvcBuilders.standaloneSetup(paymentController)
+                .setControllerAdvice(new TestExceptionHandler())
+                .build();
 
         paymentRequest = PaymentRequestDTO.builder()
                 .projectId(1L)
@@ -101,7 +121,8 @@ class PaymentControllerTest {
         mockMvc.perform(post("/api/payments/initiate")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(paymentRequest)))
-                .andExpect(status().isBadRequest());
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.error").value("Invalid request"));
     }
 
     @Test

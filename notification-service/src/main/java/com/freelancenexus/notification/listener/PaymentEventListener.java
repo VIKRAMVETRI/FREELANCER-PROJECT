@@ -17,7 +17,7 @@ public class PaymentEventListener {
 
     @RabbitListener(queues = "${rabbitmq.queue.payment.completed}")
     public void handlePaymentCompleted(@Payload PaymentEventDTO event) {
-        log.info("🔔 Received PAYMENT_COMPLETED event from RabbitMQ");
+        log.info(" Received PAYMENT_COMPLETED event from RabbitMQ");
         log.info("Payment ID: {}, Amount: ${}, Transaction: {}, Project: {}", 
                 event.getPaymentId(),
                 event.getAmount(),
@@ -26,9 +26,9 @@ public class PaymentEventListener {
         
         try {
             notificationService.handlePaymentCompleted(event);
-            log.info("✅ PAYMENT_COMPLETED event processed successfully");
+            log.info(" PAYMENT_COMPLETED event processed successfully");
         } catch (Exception e) {
-            log.error("❌ Error processing PAYMENT_COMPLETED event: {}", e.getMessage(), e);
+            log.error(" Error processing PAYMENT_COMPLETED event: {}", e.getMessage(), e);
             throw e; // Re-throw to trigger retry mechanism
         }
     }

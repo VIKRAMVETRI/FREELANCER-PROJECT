@@ -4,9 +4,6 @@ DELETE FROM skills;
 -- Reset the sequence for the skills table to start from 1
 ALTER SEQUENCE skills_id_seq RESTART WITH 1;
 
--- Insert Skills for Freelancers
--- Each freelancer gets 3-5 relevant skills based on their specialization
-
 -- Freelancer 1: Full Stack Developer
 INSERT INTO skills (freelancer_id, skill_name, proficiency_level, years_experience) VALUES
 (1, 'React', 'EXPERT', 5),
@@ -159,19 +156,3 @@ INSERT INTO skills (freelancer_id, skill_name, proficiency_level, years_experien
 (20, 'Adobe Illustrator', 'EXPERT', 7),
 (20, 'Procreate', 'EXPERT', 4);
 
--- Verify the inserted data
-SELECT s.id, s.freelancer_id, s.skill_name, s.proficiency_level, s.years_experience
-FROM skills s
-ORDER BY s.freelancer_id, s.id;
-
--- Count skills per freelancer
-SELECT s.freelancer_id, COUNT(*) as skill_count
-FROM skills s
-GROUP BY s.freelancer_id
-ORDER BY s.freelancer_id;
-
--- Count by proficiency level
-SELECT s.proficiency_level, COUNT(*) as count
-FROM skills s
-GROUP BY s.proficiency_level
-ORDER BY s.proficiency_level;

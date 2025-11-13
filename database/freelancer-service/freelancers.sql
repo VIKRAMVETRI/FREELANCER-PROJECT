@@ -47,8 +47,3 @@ INSERT INTO freelancers (user_id, title, bio, hourly_rate, availability, total_e
 (39, 'DevOps Engineer', 'DevOps engineer experienced in CI/CD pipelines, Docker, Kubernetes, and infrastructure automation. I streamline development and deployment processes.', 100.00, 'FULL_TIME', 21400.00, 13, 4.94, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
 
 (40, 'Brand Illustrator', 'Creative illustrator specializing in brand identity, character design, and editorial illustrations. I create unique visuals that capture brand essence.', 65.00, 'PART_TIME', 11800.00, 24, 4.81, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-
--- Verify the inserted data
-SELECT f.id, f.user_id, f.title, f.hourly_rate, f.availability, f.completed_projects, f.average_rating
-FROM freelancers f
-ORDER BY f.id;

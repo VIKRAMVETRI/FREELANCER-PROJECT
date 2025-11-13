@@ -26,41 +26,46 @@ class GeminiIntegrationServiceTest {
     @Mock
     private GeminiConfig geminiConfig;
 
-    @Mock
-    private ObjectMapper objectMapper;
+    // Use REAL ObjectMapper instead of mock
+    private ObjectMapper objectMapper = new ObjectMapper();
 
     @InjectMocks
     private GeminiIntegrationService geminiService;
 
     @Mock
-    private RequestBodyUriSpec uriSpec;
+    private RequestBodyUriSpec requestBodyUriSpec;
 
     @Mock
-    private RequestBodySpec bodySpec;
+    private RequestBodySpec requestBodySpec;
 
     @Mock
-    private RequestHeadersSpec headersSpec;  // Removed generic type
+    private RequestHeadersSpec requestHeadersSpec;
 
     @Mock
     private ResponseSpec responseSpec;
 
     @BeforeEach
     void setUp() {
-        when(geminiConfig.getModel()).thenReturn("test-model");
-        when(geminiConfig.getApiKey()).thenReturn("test-key");
-        when(geminiConfig.getTimeout()).thenReturn(5000);  // Changed from 5000L to 5000
-        when(geminiConfig.getMaxRetries()).thenReturn(2);
+        // Use lenient for config mocks
+        lenient().when(geminiConfig.getModel()).thenReturn("test-model");
+        lenient().when(geminiConfig.getApiKey()).thenReturn("test-key");
+        lenient().when(geminiConfig.getTimeout()).thenReturn(5000);
+        lenient().when(geminiConfig.getMaxRetries()).thenReturn(2);
+        
+        // Manually inject the real ObjectMapper
+        geminiService = new GeminiIntegrationService(geminiWebClient, geminiConfig, objectMapper);
     }
 
     @Test
     void shouldCallGeminiSuccessfully() {
         String prompt = "Test prompt";
+        String mockResponse = "{\"candidates\":[{\"content\":{\"parts\":[{\"text\":\"response text\"}]}}]}";
 
-        when(geminiWebClient.post()).thenReturn(uriSpec);
-        when(uriSpec.uri(anyString())).thenReturn(bodySpec);
-        when(bodySpec.bodyValue(any())).thenReturn(headersSpec);
-        when(headersSpec.retrieve()).thenReturn(responseSpec);
-        when(responseSpec.bodyToMono(String.class)).thenReturn(Mono.just("{\"candidates\":[{\"content\":{\"parts\":[{\"text\":\"response text\"}]}}]}"));
+        when(geminiWebClient.post()).thenReturn(requestBodyUriSpec);
+        when(requestBodyUriSpec.uri(anyString())).thenReturn(requestBodySpec);
+        when(requestBodySpec.bodyValue(any())).thenReturn(requestHeadersSpec);
+        when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
+        when(responseSpec.bodyToMono(String.class)).thenReturn(Mono.just(mockResponse));
 
         String result = geminiService.callGemini(prompt);
 
@@ -70,12 +75,13 @@ class GeminiIntegrationServiceTest {
     @Test
     void shouldReturnErrorMessageWhenGeminiReturnsError() {
         String prompt = "Test prompt";
+        String errorResponse = "{\"error\":\"Something went wrong\"}";
 
-        when(geminiWebClient.post()).thenReturn(uriSpec);
-        when(uriSpec.uri(anyString())).thenReturn(bodySpec);
-        when(bodySpec.bodyValue(any())).thenReturn(headersSpec);
-        when(headersSpec.retrieve()).thenReturn(responseSpec);
-        when(responseSpec.bodyToMono(String.class)).thenReturn(Mono.just("{\"error\":\"Something went wrong\"}"));
+        when(geminiWebClient.post()).thenReturn(requestBodyUriSpec);
+        when(requestBodyUriSpec.uri(anyString())).thenReturn(requestBodySpec);
+        when(requestBodySpec.bodyValue(any())).thenReturn(requestHeadersSpec);
+        when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
+        when(responseSpec.bodyToMono(String.class)).thenReturn(Mono.just(errorResponse));
 
         String result = geminiService.callGemini(prompt);
 
@@ -85,41 +91,44 @@ class GeminiIntegrationServiceTest {
     @Test
     void shouldCallGeminiForJsonSuccessfully() throws Exception {
         String prompt = "Test prompt";
-        String jsonResponse = "{\"candidates\":[{\"content\":{\"parts\":[{\"text\":\"{\\\"key\\\":\\\"value\\\"}\"}]}}]}";
+        // Use escaped quotes to create proper nested JSON string
+        String mockResponse = "{\"candidates\":[{\"content\":{\"parts\":[{\"text\":\"{\\\"key\\\":\\\"value\\\"}\"}]}}]}";
 
-        when(geminiWebClient.post()).thenReturn(uriSpec);
-        when(uriSpec.uri(anyString())).thenReturn(bodySpec);
-        when(bodySpec.bodyValue(any())).thenReturn(headersSpec);
-        when(headersSpec.retrieve()).thenReturn(responseSpec);
-        when(responseSpec.bodyToMono(String.class)).thenReturn(Mono.just(jsonResponse));
-        
-        ObjectNode mockNode = mock(ObjectNode.class);  // Changed from JsonNode to ObjectNode
-        when(objectMapper.readTree("{\"key\":\"value\"}")).thenReturn(mockNode);
+        when(geminiWebClient.post()).thenReturn(requestBodyUriSpec);
+        when(requestBodyUriSpec.uri(anyString())).thenReturn(requestBodySpec);
+        when(requestBodySpec.bodyValue(any())).thenReturn(requestHeadersSpec);
+        when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
+        when(responseSpec.bodyToMono(String.class)).thenReturn(Mono.just(mockResponse));
 
         JsonNode result = geminiService.callGeminiForJson(prompt);
 
         assertNotNull(result);
-        verify(objectMapper).readTree("{\"key\":\"value\"}");
+        assertTrue(result.has("key"));
+        assertEquals("value", result.get("key").asText());
     }
 
     @Test
-    void shouldReturnEmptyJsonNodeWhenExceptionOccurs() throws Exception {
+    void shouldReturnEmptyJsonNodeWhenExceptionOccurs() {
         String prompt = "Test prompt";
-        when(geminiService.callGemini(prompt)).thenReturn("invalid json");
-        when(objectMapper.readTree(anyString())).thenThrow(new RuntimeException("parse error"));
+        String mockResponse = "{\"candidates\":[{\"content\":{\"parts\":[{\"text\":\"invalid json content\"}]}}]}";
         
-        ObjectNode mockObjectNode = mock(ObjectNode.class);  // Changed to ObjectNode
-        when(objectMapper.createObjectNode()).thenReturn(mockObjectNode);
+        when(geminiWebClient.post()).thenReturn(requestBodyUriSpec);
+        when(requestBodyUriSpec.uri(anyString())).thenReturn(requestBodySpec);
+        when(requestBodySpec.bodyValue(any())).thenReturn(requestHeadersSpec);
+        when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
+        when(responseSpec.bodyToMono(String.class)).thenReturn(Mono.just(mockResponse));
 
         JsonNode result = geminiService.callGeminiForJson(prompt);
 
         assertNotNull(result);
+        assertTrue(result.isEmpty()); // Empty ObjectNode
     }
 
     @Test
     void shouldBuildGeminiRequestCorrectly() throws Exception {
         // Using reflection to access private method
-        java.lang.reflect.Method method = GeminiIntegrationService.class.getDeclaredMethod("buildGeminiRequest", String.class);
+        java.lang.reflect.Method method = GeminiIntegrationService.class
+                .getDeclaredMethod("buildGeminiRequest", String.class);
         method.setAccessible(true);
 
         Object request = method.invoke(geminiService, "Test prompt");
@@ -128,7 +137,8 @@ class GeminiIntegrationServiceTest {
 
     @Test
     void shouldExtractTextFromResponseCorrectly() throws Exception {
-        java.lang.reflect.Method method = GeminiIntegrationService.class.getDeclaredMethod("extractTextFromResponse", String.class);
+        java.lang.reflect.Method method = GeminiIntegrationService.class
+                .getDeclaredMethod("extractTextFromResponse", String.class);
         method.setAccessible(true);
 
         String response = "{\"candidates\":[{\"content\":{\"parts\":[{\"text\":\"Hello World\"}]}}]}";

@@ -42,20 +42,20 @@ class ProjectControllerTest {
     private ProjectCreateDTO createDTO;
     private ProjectDTO projectDTO;
 
-    @BeforeEach
-    void setUp() {
-        mockMvc = MockMvcBuilders.standaloneSetup(projectController).build();
-        objectMapper = new ObjectMapper();
+  @BeforeEach
+void setUp() {
+    mockMvc = MockMvcBuilders.standaloneSetup(projectController).build();
+    objectMapper = new ObjectMapper();
+    objectMapper.registerModule(new com.fasterxml.jackson.datatype.jsr310.JavaTimeModule());
+    createDTO = new ProjectCreateDTO(1L, "Test Project", "Description",
+            BigDecimal.valueOf(1000), BigDecimal.valueOf(5000), 30,
+            Arrays.asList("Java", "Spring"), "IT", LocalDate.now().plusDays(5));
 
-        createDTO = new ProjectCreateDTO(1L, "Test Project", "Description",
-                BigDecimal.valueOf(1000), BigDecimal.valueOf(5000), 30,
-                Arrays.asList("Java", "Spring"), "IT", LocalDate.now().plusDays(5));
-
-        projectDTO = new ProjectDTO(1L, 1L, "Test Project", "Description",
-                BigDecimal.valueOf(1000), BigDecimal.valueOf(5000), 30,
-                Arrays.asList("Java", "Spring"), "IT", null, LocalDate.now().plusDays(5),
-                null, LocalDateTime.now(), LocalDateTime.now(), 0);
-    }
+    projectDTO = new ProjectDTO(1L, 1L, "Test Project", "Description",
+            BigDecimal.valueOf(1000), BigDecimal.valueOf(5000), 30,
+            Arrays.asList("Java", "Spring"), "IT", null, LocalDate.now().plusDays(5),
+            null, LocalDateTime.now(), LocalDateTime.now(), 0);
+}
 
     @Test
     void shouldCreateProjectSuccessfully() throws Exception {

@@ -6,9 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class UserServiceApplicationTests {
 
-	@Test
-	void contextLoads() {
-   // document why this method is empty
- }
-
+    @Test
+    void contextLoads() {
+    }
 }

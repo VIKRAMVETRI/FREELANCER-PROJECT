@@ -51,8 +51,3 @@ INSERT INTO portfolios (freelancer_id, title, description, project_url, image_ur
 (19, 'CI/CD Pipeline Implementation', 'Implemented automated CI/CD pipeline reducing deployment time from 2 hours to 15 minutes and eliminating manual errors.', 'https://github.com/logandevops/cicd-pipeline', 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=800', 'Jenkins, GitLab CI, Docker, Kubernetes, Terraform, Ansible', '2024-09-25', CURRENT_TIMESTAMP),
 
 (20, 'Children Book Illustrations', 'Illustrated a series of children books with 50+ colorful illustrations, published by major publishing house.', 'https://harperillustrator.com/childrens-books', 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800', 'Digital Illustration, Procreate, Adobe Illustrator, Character Design', '2024-07-15', CURRENT_TIMESTAMP);
-
--- Verify the inserted data
-SELECT p.id, p.freelancer_id, p.title, p.technologies_used, p.completion_date
-FROM portfolios p
-ORDER BY p.id;

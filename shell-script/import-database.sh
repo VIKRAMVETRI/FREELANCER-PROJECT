@@ -8,6 +8,15 @@ DB_PORT="5432"
 DB_USER="postgres"
 DB_PASSWORD="123456"
 
+# Get the script's directory and project root
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+SQL_DIR="$PROJECT_ROOT/database"
+
+echo "📂 Project root: $PROJECT_ROOT"
+echo "📂 SQL directory: $SQL_DIR"
+echo ""
+
 # Function to execute SQL file
 execute_sql() {
     local db_name=$1
@@ -53,9 +62,6 @@ wait_for_db() {
 
 # Wait for database to be ready
 wait_for_db
-
-# Set the base directory for SQL files
-SQL_DIR="database"
 
 echo ""
 echo "=========================================="
@@ -103,40 +109,47 @@ echo ""
 echo "📊 Verification - Row Counts:"
 echo ""
 
+# Function to safely get row count
+get_count() {
+    local db_name=$1
+    local table_name=$2
+    local label=$3
+    
+    result=$(docker exec postgres-freelance \
+        psql -U "$DB_USER" -d "$db_name" -t -c \
+        "SELECT COUNT(*) FROM $table_name;" 2>&1)
+    
+    if [ $? -eq 0 ]; then
+        echo "$label: $result"
+    else
+        echo "$label: ❌ Table not found"
+    fi
+}
+
 echo "User Service:"
-docker exec -e PGPASSWORD="$DB_PASSWORD" postgres-freelance \
-    psql -U "$DB_USER" -d freelance_nexus_users -t -c \
-    "SELECT 'Users: ' || COUNT(*) FROM users;"
+get_count "freelance_nexus_users" "users" "  Users"
 
 echo ""
 echo "Freelancer Service:"
-docker exec -e PGPASSWORD="$DB_PASSWORD" postgres-freelance \
-    psql -U "$DB_USER" -d freelance_nexus_freelancers -t -c \
-    "SELECT 'Freelancers: ' || COUNT(*) FROM freelancers;
-     SELECT 'Portfolios: ' || COUNT(*) FROM portfolios;
-     SELECT 'Ratings: ' || COUNT(*) FROM ratings;
-     SELECT 'Skills: ' || COUNT(*) FROM skills;"
+get_count "freelance_nexus_freelancers" "freelancers" "  Freelancers"
+get_count "freelance_nexus_freelancers" "portfolios" "  Portfolios"
+get_count "freelance_nexus_freelancers" "ratings" "  Ratings"
+get_count "freelance_nexus_freelancers" "skills" "  Skills"
 
 echo ""
 echo "Project Service:"
-docker exec -e PGPASSWORD="$DB_PASSWORD" postgres-freelance \
-    psql -U "$DB_USER" -d freelance_nexus_projects -t -c \
-    "SELECT 'Projects: ' || COUNT(*) FROM projects;
-     SELECT 'Proposals: ' || COUNT(*) FROM proposals;
-     SELECT 'Milestones: ' || COUNT(*) FROM project_milestones;"
+get_count "freelance_nexus_projects" "projects" "  Projects"
+get_count "freelance_nexus_projects" "proposals" "  Proposals"
+get_count "freelance_nexus_projects" "project_milestones" "  Milestones"
 
 echo ""
 echo "Payment Service:"
-docker exec -e PGPASSWORD="$DB_PASSWORD" postgres-freelance \
-    psql -U "$DB_USER" -d freelance_nexus_payments -t -c \
-    "SELECT 'Payments: ' || COUNT(*) FROM payments;
-     SELECT 'Transaction History: ' || COUNT(*) FROM transaction_history;"
+get_count "freelance_nexus_payments" "payments" "  Payments"
+get_count "freelance_nexus_payments" "transaction_history" "  Transaction History"
 
 echo ""
 echo "Notification Service:"
-docker exec -e PGPASSWORD="$DB_PASSWORD" postgres-freelance \
-    psql -U "$DB_USER" -d freelance_nexus_notifications -t -c \
-    "SELECT 'Notifications: ' || COUNT(*) FROM notifications;"
+get_count "freelance_nexus_notifications" "notifications" "  Notifications"
 
 echo ""
 echo "=========================================="

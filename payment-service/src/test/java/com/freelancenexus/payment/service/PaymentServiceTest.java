@@ -49,14 +49,28 @@ class PaymentServiceTest {
                 .paymentMethod("UPI").upiId("test@upi").build();
 
         when(upiPaymentService.isValidUPIId("test@upi")).thenReturn(true);
-        when(paymentRepository.save(any())).thenAnswer(i -> i.getArgument(0));
+        
+        // Capture the saved payment to get the generated transaction ID
+        ArgumentCaptor<Payment> paymentCaptor = ArgumentCaptor.forClass(Payment.class);
+        when(paymentRepository.save(paymentCaptor.capture())).thenAnswer(invocation -> {
+            Payment savedPayment = invocation.getArgument(0);
+            savedPayment.setId(1L); // Set ID as if saved to database
+            return savedPayment;
+        });
+        
         when(upiPaymentService.generateUPIPaymentLink(anyString(), any(), anyString(), anyString()))
-                .thenReturn(UPIPaymentDTO.builder().transactionId("TXN-1").build());
+                .thenReturn(UPIPaymentDTO.builder().transactionId("TXN-123").build());
 
         PaymentResponseDTO response = paymentService.initiatePayment(request);
 
         assertNotNull(response);
-        assertEquals("TXN-1", response.getTransactionId());
+        assertNotNull(response.getTransactionId());
+        assertTrue(response.getTransactionId().startsWith("TXN-"));
+        assertEquals(request.getProjectId(), response.getProjectId());
+        assertEquals(request.getPayerId(), response.getPayerId());
+        assertEquals(request.getPayeeId(), response.getPayeeId());
+        assertEquals(request.getAmount(), response.getAmount());
+        assertEquals(PaymentStatus.PENDING, response.getStatus());
         verify(transactionHistoryRepository).save(any(TransactionHistory.class));
     }
 

@@ -3,6 +3,8 @@ package com.freelancenexus.freelancer.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.freelancenexus.freelancer.dto.FreelancerDTO;
 import com.freelancenexus.freelancer.dto.FreelancerProfileDTO;
+import com.freelancenexus.freelancer.exception.GlobalExceptionHandler;
+import com.freelancenexus.freelancer.exception.ResourceNotFoundException;
 import com.freelancenexus.freelancer.service.FreelancerService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -39,7 +41,12 @@ class FreelancerControllerTest {
 
     @BeforeEach
     void setUp() {
-        mockMvc = MockMvcBuilders.standaloneSetup(freelancerController).build();
+        // Setup MockMvc with GlobalExceptionHandler to properly handle exceptions
+        mockMvc = MockMvcBuilders
+                .standaloneSetup(freelancerController)
+                .setControllerAdvice(new GlobalExceptionHandler())
+                .build();
+        
         objectMapper = new ObjectMapper();
 
         freelancerDTO = new FreelancerDTO(
@@ -87,11 +94,15 @@ class FreelancerControllerTest {
 
     @Test
     void shouldReturnNotFoundWhenFreelancerDoesNotExist() throws Exception {
-        when(freelancerService.getFreelancerById(999L)).thenThrow(new RuntimeException("Freelancer not found"));
+        // Mock the service to throw ResourceNotFoundException
+        when(freelancerService.getFreelancerById(999L))
+                .thenThrow(new ResourceNotFoundException("Freelancer not found with ID: 999"));
 
+        // With GlobalExceptionHandler configured, this should now return 404
         mockMvc.perform(get("/api/freelancers/999"))
-                .andExpect(status().isInternalServerError())
-                .andExpect(content().string("")); // controller currently returns exception as 500
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.status").value(404))
+                .andExpect(jsonPath("$.message").value("Freelancer not found with ID: 999"));
 
         verify(freelancerService, times(1)).getFreelancerById(999L);
     }

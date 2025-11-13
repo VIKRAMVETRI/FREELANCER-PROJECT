@@ -95,18 +95,15 @@ class AIServiceTest {
         assertTrue(recommendations.isEmpty());
     }
 
-    @Test
-    void shouldRankProposalsSuccessfully() throws Exception {
-        when(projectRepository.findById(1L)).thenReturn(Optional.of(project));
-        when(proposalRepository.findByProjectId(1L)).thenReturn(List.of(proposal));
-        when(geminiService.callGeminiForJson(anyString())).thenReturn(mock(JsonNode.class));
-        when(proposalRepository.findById(anyLong())).thenReturn(Optional.of(proposal));
-        when(proposalRepository.save(any(Proposal.class))).thenReturn(proposal);
+   @Test
+void shouldRankProposalsSuccessfully() throws Exception {
+    when(projectRepository.findById(1L)).thenReturn(Optional.of(project));
+    when(proposalRepository.findByProjectId(1L)).thenReturn(List.of(proposal));
+    when(geminiService.callGeminiForJson(anyString())).thenReturn(mock(JsonNode.class));
+    List<RankedProposalDTO> rankings = aiService.rankProposalsForProject(1L);
 
-        List<RankedProposalDTO> rankings = aiService.rankProposalsForProject(1L);
-
-        assertNotNull(rankings);
-    }
+    assertNotNull(rankings);
+}
 
     @Test
     void shouldReturnEmptyRanking_whenNoProposals() {

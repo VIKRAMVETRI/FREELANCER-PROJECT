@@ -4,11 +4,6 @@ DELETE FROM ratings;
 -- Reset the sequence for the ratings table to start from 1
 ALTER SEQUENCE ratings_id_seq RESTART WITH 1;
 
--- Insert 20 Rating entries
--- Distributed across different freelancers (freelancer_ids 1-20)
--- client_ids are from 1-20 (the CLIENT users we created earlier)
--- project_ids can be null for now or you can add them later
-
 INSERT INTO ratings (freelancer_id, client_id, project_id, rating, review, created_at) VALUES
 (1, 1, NULL, 5, 'Outstanding developer! Alex delivered a complex e-commerce platform ahead of schedule. The code quality is exceptional and the application performs flawlessly. Highly recommended!', '2024-08-20 10:30:00'),
 
@@ -49,19 +44,3 @@ INSERT INTO ratings (freelancer_id, client_id, project_id, rating, review, creat
 (15, 19, NULL, 5, 'Mason built a fantastic PWA for our restaurant. Customers love the easy ordering system and the loyalty program features. Great job!', '2024-09-23 16:00:00'),
 
 (16, 20, NULL, 5, 'Charlotte designed an incredibly user-friendly healthcare app. Her focus on accessibility for elderly patients was exactly what we needed. Excellent work!', '2024-08-05 10:30:00');
-
--- Verify the inserted data
-SELECT r.id, r.freelancer_id, r.client_id, r.rating, 
-       LEFT(r.review, 50) as review_preview, r.created_at
-FROM ratings r
-ORDER BY r.id;
-
--- Check average ratings per freelancer
-SELECT r.freelancer_id, 
-       COUNT(*) as total_ratings,
-       AVG(r.rating) as avg_rating,
-       MIN(r.rating) as min_rating,
-       MAX(r.rating) as max_rating
-FROM ratings r
-GROUP BY r.freelancer_id
-ORDER BY r.freelancer_id;

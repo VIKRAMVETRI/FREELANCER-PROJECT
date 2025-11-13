@@ -19,7 +19,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
-
+import org.springframework.test.util.ReflectionTestUtils;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -44,6 +44,10 @@ class ProposalServiceTest {
 
     @BeforeEach
     void setUp() {
+    ReflectionTestUtils.setField(proposalService, "projectExchange", "project.exchange");
+    ReflectionTestUtils.setField(proposalService, "proposalSubmittedRoutingKey", "proposal.submitted");
+    
+    
         project = new Project();
         project.setId(1L);
         project.setTitle("Project 1");

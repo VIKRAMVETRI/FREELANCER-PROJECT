@@ -1,6 +1,7 @@
 package com.freelancenexus.freelancer.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.freelancenexus.freelancer.dto.RatingDTO;
 import com.freelancenexus.freelancer.service.RatingService;
 import org.junit.jupiter.api.BeforeEach;
@@ -39,7 +40,10 @@ class RatingControllerTest {
     @BeforeEach
     void setUp() {
         mockMvc = MockMvcBuilders.standaloneSetup(ratingController).build();
+        
+        // Configure ObjectMapper with JavaTimeModule for LocalDateTime support
         objectMapper = new ObjectMapper();
+        objectMapper.registerModule(new JavaTimeModule());
 
         ratingDTO = new RatingDTO(
                 1L,

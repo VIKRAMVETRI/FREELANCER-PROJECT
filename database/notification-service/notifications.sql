@@ -1,3 +1,19 @@
+CREATE TABLE notifications (
+    id SERIAL PRIMARY KEY,
+    user_id BIGINT NOT NULL,
+    type VARCHAR(50) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    message TEXT,
+    is_read BOOLEAN NOT NULL DEFAULT FALSE,
+    email_sent BOOLEAN NOT NULL DEFAULT FALSE,
+    recipient_email VARCHAR(255),
+    related_entity_type VARCHAR(100),
+    related_entity_id BIGINT,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    read_at TIMESTAMP,
+    metadata TEXT
+);
+
 delete from notifications;
 
 -- Reset sequence

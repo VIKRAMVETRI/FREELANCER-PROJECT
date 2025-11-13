@@ -29,7 +29,7 @@ INSERT INTO users (email, password, full_name, phone, role, is_active, profile_i
 
 -- Step 4: Insert 20 FREELANCER users
 INSERT INTO users (email, password, full_name, phone, role, is_active, profile_image_url, created_at, updated_at) VALUES
-('alex.developer@freelancer.com', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhLu', 'Alex Developer', '+1-555-0201', 'FREELANCER', true, 'https://i.pravatar.cc/150?img=33', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('harvik.developer@freelancer.com', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhLu', 'Harvik Developer', '+1-555-0201', 'FREELANCER', true, 'https://i.pravatar.cc/150?img=33', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
 ('maria.designer@freelancer.com', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhLu', 'Maria Designer', '+1-555-0202', 'FREELANCER', true, 'https://i.pravatar.cc/150?img=38', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
 ('carlos.writer@freelancer.com', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhLu', 'Carlos Writer', '+1-555-0203', 'FREELANCER', true, 'https://i.pravatar.cc/150?img=34', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
 ('sophia.marketer@freelancer.com', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhLu', 'Sophia Marketer', '+1-555-0204', 'FREELANCER', true, 'https://i.pravatar.cc/150?img=40', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
@@ -49,11 +49,3 @@ INSERT INTO users (email, password, full_name, phone, role, is_active, profile_i
 ('amelia.editor@freelancer.com', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhLu', 'Amelia Editor', '+1-555-0218', 'FREELANCER', true, 'https://i.pravatar.cc/150?img=50', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
 ('logan.devops@freelancer.com', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhLu', 'Logan DevOps', '+1-555-0219', 'FREELANCER', true, 'https://i.pravatar.cc/150?img=51', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
 ('harper.illustrator@freelancer.com', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhLu', 'Harper Illustrator', '+1-555-0220', 'FREELANCER', true, 'https://i.pravatar.cc/150?img=52', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-
--- Step 5: Verify the data
-SELECT COUNT(*) as total_users, role, COUNT(*) 
-FROM users 
-GROUP BY role;
-
--- Step 6: Display data
-select * from users;

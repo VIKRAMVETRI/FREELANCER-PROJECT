@@ -1,0 +1,28 @@
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-dependencies/$%7Bspring-cloud.version%7D/spring-cloud-dependencies-$%7Bspring-cloud.version%7D.pom
+[ERROR] [ERROR] Some problems were encountered while processing the POMs:
+[ERROR] Non-resolvable import POM: The following artifacts could not be resolved: org.springframework.cloud:spring-cloud-dependencies:pom:${spring-cloud.version} (absent): Could not find artifact org.springframework.cloud:spring-cloud-dependencies:pom:${spring-cloud.version} in central (https://repo.maven.apache.org/maven2) @ line 130, column 25
+[ERROR] 'dependencies.dependency.version' for org.springframework.cloud:spring-cloud-starter-gateway:jar is missing. @ line 24, column 21
+[ERROR] 'dependencies.dependency.version' for org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:jar is missing. @ line 30, column 21
+[ERROR] 'dependencies.dependency.version' for org.springframework.cloud:spring-cloud-starter-config:jar is missing. @ line 36, column 21
+[ERROR] 'dependencies.dependency.version' for org.springframework.cloud:spring-cloud-starter-bootstrap:jar is missing. @ line 53, column 22
+[ERROR] 'dependencies.dependency.version' for org.springframework.cloud:spring-cloud-starter-circuitbreaker-reactor-resilience4j:jar is missing. @ line 70, column 21
+[ERROR] 'dependencies.dependency.version' for org.springframework.cloud:spring-cloud-starter-loadbalancer:jar is missing. @ line 76, column 21
+ @ 
+[ERROR] The build could not read 1 project -> [Help 1]
+[ERROR]   
+[ERROR]   The project com.freelancenexus:gateway-service:1.0.0 (/workspaces/FREELANCER-PROJECT/gateway-service/pom.xml) has 7 errors
+[ERROR]     Non-resolvable import POM: The following artifacts could not be resolved: org.springframework.cloud:spring-cloud-dependencies:pom:${spring-cloud.version} (absent): Could not find artifact org.springframework.cloud:spring-cloud-dependencies:pom:${spring-cloud.version} in central (https://repo.maven.apache.org/maven2) @ line 130, column 25 -> [Help 2]
+[ERROR]     'dependencies.dependency.version' for org.springframework.cloud:spring-cloud-starter-gateway:jar is missing. @ line 24, column 21
+[ERROR]     'dependencies.dependency.version' for org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:jar is missing. @ line 30, column 21
+[ERROR]     'dependencies.dependency.version' for org.springframework.cloud:spring-cloud-starter-config:jar is missing. @ line 36, column 21
+[ERROR]     'dependencies.dependency.version' for org.springframework.cloud:spring-cloud-starter-bootstrap:jar is missing. @ line 53, column 22
+[ERROR]     'dependencies.dependency.version' for org.springframework.cloud:spring-cloud-starter-circuitbreaker-reactor-resilience4j:jar is missing. @ line 70, column 21
+[ERROR]     'dependencies.dependency.version' for org.springframework.cloud:spring-cloud-starter-loadbalancer:jar is missing. @ line 76, column 21
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/ProjectBuildingException
+[ERROR] [Help 2] http://cwiki.apache.org/confluence/display/MAVEN/UnresolvableModelException

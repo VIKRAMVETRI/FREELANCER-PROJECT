@@ -1,3 +1,15 @@
+CREATE TABLE transaction_history (
+    id SERIAL PRIMARY KEY,
+    payment_id BIGINT NOT NULL,
+    status_change VARCHAR(50) NOT NULL,
+    notes TEXT,
+    changed_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_payment
+        FOREIGN KEY (payment_id)
+        REFERENCES payments (id)
+        ON DELETE CASCADE
+);
+
 delete from transaction_history;
 
 ALTER SEQUENCE transaction_history_id_seq RESTART WITH 1;
