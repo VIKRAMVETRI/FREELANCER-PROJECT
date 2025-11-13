@@ -1,0 +1,57 @@
+[INFO] Scanning for projects...
+[WARNING] The artifact org.codehaus.mojo:sonar-maven-plugin:jar:4.0.0.4121 has been relocated to org.sonarsource.scanner.maven:sonar-maven-plugin:jar:4.0.0.4121: SonarQube plugin was moved to SonarSource organisation
+[INFO] 
+[INFO] -----------------< com.freelancenexus:project-service >-----------------
+[INFO] Building Project Service 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- sonar:4.0.0.4121:sonar (default-cli) @ project-service ---
+[WARNING] 10:20:58.075 Using an unspecified version instead of an explicit plugin version may introduce breaking analysis changes at an unwanted time. It is highly recommended to use an explicit version, e.g. 'org.sonarsource.scanner.maven:sonar-maven-plugin:4.0.0.4121'.
+[INFO] 10:20:58.085 Java 17.0.17 Microsoft (64-bit)
+[INFO] 10:20:58.085 Linux 6.8.0-1030-azure (amd64)
+[INFO] 10:20:58.305 User cache: /home/vscode/.sonar/cache
+[INFO] 10:20:59.452 Communicating with SonarCloud
+[INFO] 10:20:59.479 Default locale: "en_US", source code encoding: "UTF-8"
+[INFO] 10:21:00.392 Load global settings
+[INFO] 10:21:01.348 Load global settings (done) | time=957ms
+[INFO] 10:21:01.403 Server id: 1BD809FA-AWHW8ct9-T_TB3XqouNu
+[INFO] 10:21:01.630 Loading required plugins
+[INFO] 10:21:01.631 Load plugins index
+[INFO] 10:21:01.875 Load plugins index (done) | time=244ms
+[INFO] 10:21:01.876 Load/download plugins
+[INFO] 10:21:01.942 Load/download plugins (done) | time=66ms
+[INFO] 10:21:02.236 Loaded core extensions: sca, a3s, architecture
+[INFO] 10:21:02.590 Process project properties
+[INFO] 10:21:02.607 Project key: freelancenexus-project-service
+[INFO] 10:21:02.607 Base dir: /workspaces/FREELANCER-PROJECT/project-service
+[INFO] 10:21:02.608 Working dir: /workspaces/FREELANCER-PROJECT/project-service/target/sonar
+[INFO] 10:21:02.635 Load project branches
+[INFO] 10:21:03.181 Load project branches (done) | time=546ms
+[INFO] 10:21:03.193 Load project settings for component key: 'freelancenexus-project-service'
+[INFO] 10:21:03.719 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
+[INFO] 10:21:04.163 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
+[INFO] 10:21:04.813 Check ALM binding of project 'freelancenexus-project-service'
+[INFO] 10:21:05.322 Detected project binding: NONEXISTENT
+[INFO] 10:21:05.323 Check ALM binding of project 'freelancenexus-project-service' (done) | time=510ms
+[INFO] 10:21:05.326 Load project pull requests
+[INFO] 10:21:05.534 Load project pull requests (done) | time=209ms
+[INFO] 10:21:05.537 Load branch configuration
+[INFO] 10:21:05.539 Load branch configuration (done) | time=2ms
+[INFO] 10:21:05.547 Load quality profiles
+[INFO] 10:21:06.450 Load quality profiles (done) | time=903ms
+[INFO] 10:21:06.472 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
+[INFO] 10:21:06.474 Create analysis
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  10.726 s
+[INFO] Finished at: 2025-11-13T10:21:06Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.sonarsource.scanner.maven:sonar-maven-plugin:4.0.0.4121:sonar (default-cli) on project project-service: Error creating bean with name 'org.sonarsource.scanner.api.internal.IsolatedClassloader@ee8e7ff-org.sonar.scanner.report.ReportPublisher': Unsatisfied dependency expressed through constructor parameter 7: Error creating bean with name 'org.sonarsource.scanner.api.internal.IsolatedClassloader@ee8e7ff-org.sonar.scanner.report.MetadataPublisher': Unsatisfied dependency expressed through constructor parameter 8: Error creating bean with name 'Analysis' defined in org.sonar.scanner.analysis.AnalysisProvider: Failed to instantiate [org.sonar.scanner.extension.api.Analysis]: Factory method 'provide' threw exception with message: Unable to create analysis: Error 404 on https://api.sonarcloud.io/analysis/analyses : -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
