@@ -8,14 +8,13 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-
+import com.freelancenexus.userservice.exception.GlobalExceptionHandler;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
@@ -25,6 +24,12 @@ import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import com.freelancenexus.userservice.model.UserRole;
+
+import com.freelancenexus.userservice.exception.UserNotFoundException;
+import com.freelancenexus.userservice.exception.DuplicateResourceException;
+import com.freelancenexus.userservice.exception.UnauthorizedException;
+
+
 @ExtendWith(MockitoExtension.class)
 class UserControllerTest {
 
@@ -48,7 +53,10 @@ class UserControllerTest {
     @BeforeEach
     void setUp() {
         objectMapper = new ObjectMapper();
-        mockMvc = MockMvcBuilders.standaloneSetup(userController).build();
+        mockMvc = MockMvcBuilders
+            .standaloneSetup(userController)
+            .setControllerAdvice(new GlobalExceptionHandler()) 
+            .build();
 
         registrationDTO = new UserRegistrationDTO(
                 "test@example.com",
@@ -193,4 +201,132 @@ class UserControllerTest {
                         .content(objectMapper.writeValueAsString(invalidDTO)))
                 .andExpect(status().isBadRequest());
     }
+
+    @Test
+@WithMockUser
+void shouldHandleServiceExceptionOnGetProfile() throws Exception {
+    when(userService.getCurrentUserProfile())
+        .thenThrow(new UserNotFoundException("User not found"));
+    
+    mockMvc.perform(get("/api/users/profile"))
+        .andExpect(status().isNotFound());
+}
+
+@Test
+void shouldHandleDuplicateEmailOnRegister() throws Exception {
+    when(userService.registerUser(any(UserRegistrationDTO.class)))
+        .thenThrow(new DuplicateResourceException("Email already exists"));
+    
+    mockMvc.perform(post("/api/users/register")
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(objectMapper.writeValueAsString(registrationDTO)))
+        .andExpect(status().isConflict());
+}
+
+@Test
+void shouldHandleUnauthorizedExceptionOnLogin() throws Exception {
+    when(userService.loginUser(any(UserLoginDTO.class)))
+        .thenThrow(new UnauthorizedException("Invalid credentials"));
+    
+    mockMvc.perform(post("/api/users/login")
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(objectMapper.writeValueAsString(loginDTO)))
+        .andExpect(status().isUnauthorized());
+}
+
+@Test
+@WithMockUser
+void shouldHandleUserNotFoundOnGetById() throws Exception {
+    when(userService.getUserById(999L))
+        .thenThrow(new UserNotFoundException("User not found"));
+    
+    mockMvc.perform(get("/api/users/{id}", 999L))
+        .andExpect(status().isNotFound());
+}
+
+@Test
+@WithMockUser
+void shouldHandleUserNotFoundOnUpdate() throws Exception {
+    when(userService.updateCurrentUserProfile(any(UserUpdateDTO.class)))
+        .thenThrow(new UserNotFoundException("User not found"));
+    
+    mockMvc.perform(put("/api/users/profile")
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(objectMapper.writeValueAsString(updateDTO)))
+        .andExpect(status().isNotFound());
+}
+
+@Test
+@WithMockUser(roles = "ADMIN")
+void shouldHandleUserNotFoundOnDelete() throws Exception {
+    doThrow(new UserNotFoundException("User not found"))
+        .when(userService).deleteUser(999L);
+    
+    mockMvc.perform(delete("/api/users/{id}", 999L))
+        .andExpect(status().isNotFound());
+}
+
+@Test
+@WithMockUser(roles = "ADMIN")
+void shouldReturnEmptyListWhenNoUsers() throws Exception {
+    when(userService.getAllUsers()).thenReturn(List.of());
+    
+    mockMvc.perform(get("/api/users"))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.length()").value(0));
+}
+
+@Test
+@WithMockUser
+void shouldAcceptPartialUpdateWithOnlyFullName() throws Exception {
+    UserUpdateDTO partialUpdate = new UserUpdateDTO("Only Name", null, null);
+    when(userService.updateCurrentUserProfile(any(UserUpdateDTO.class)))
+        .thenReturn(userResponseDTO);
+    
+    mockMvc.perform(put("/api/users/profile")
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(objectMapper.writeValueAsString(partialUpdate)))
+        .andExpect(status().isOk());
+}
+
+@Test
+void shouldRegisterFreelancerUser() throws Exception {
+    UserRegistrationDTO freelancerDTO = new UserRegistrationDTO(
+        "freelancer@example.com",
+        "password123",
+        "Freelancer User",
+        "1234567890",
+        UserRole.FREELANCER,
+        null
+    );
+    
+    when(userService.registerUser(any(UserRegistrationDTO.class)))
+        .thenReturn(userResponseDTO);
+    
+    mockMvc.perform(post("/api/users/register")
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(objectMapper.writeValueAsString(freelancerDTO)))
+        .andExpect(status().isCreated());
+}
+
+@Test
+void shouldRegisterUserWithProfileImage() throws Exception {
+    UserRegistrationDTO dtoWithImage = new UserRegistrationDTO(
+        "withimage@example.com",
+        "password123",
+        "User With Image",
+        "1234567890",
+        UserRole.CLIENT,
+        "http://image.url"
+    );
+    
+    when(userService.registerUser(any(UserRegistrationDTO.class)))
+        .thenReturn(userResponseDTO);
+    
+    mockMvc.perform(post("/api/users/register")
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(objectMapper.writeValueAsString(dtoWithImage)))
+        .andExpect(status().isCreated());
+}
+
 }

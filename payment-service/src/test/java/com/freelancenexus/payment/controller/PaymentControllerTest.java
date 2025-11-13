@@ -1,13 +1,17 @@
 package com.freelancenexus.payment.controller;
 
-import com.freelancenexus.payment.model.Payment;
-import com.freelancenexus.payment.model.PaymentStatus;
-import com.freelancenexus.payment.model.TransactionHistory;
-import com.freelancenexus.payment.repository.PaymentRepository;
-import com.freelancenexus.payment.repository.TransactionHistoryRepository;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.freelancenexus.payment.dto.*;
-import com.freelancenexus.payment.service.PaymentService;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Map;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,21 +19,19 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import org.springframework.http.ResponseEntity;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Map;
-
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.freelancenexus.payment.dto.PaymentHistoryDTO;
+import com.freelancenexus.payment.dto.PaymentRequestDTO;
+import com.freelancenexus.payment.dto.PaymentResponseDTO;
+import com.freelancenexus.payment.dto.TransactionStatusDTO;
+import com.freelancenexus.payment.model.PaymentStatus;
+import com.freelancenexus.payment.service.PaymentService;
 
 @ExtendWith(MockitoExtension.class)
 class PaymentControllerTest {

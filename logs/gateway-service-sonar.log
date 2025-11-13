@@ -6,197 +6,239 @@
 [INFO]   from pom.xml
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ gateway-service ---
+[INFO] Deleting /workspaces/FREELANCER-PROJECT/gateway-service/target
+[INFO] 
+[INFO] --- jacoco:0.8.11:prepare-agent (default) @ gateway-service ---
+[INFO] argLine set to -javaagent:/home/vscode/.m2/repository/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar=destfile=/workspaces/FREELANCER-PROJECT/gateway-service/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ gateway-service ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ gateway-service ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 9 source files with javac [debug release 17] to target/classes
+[WARNING] /workspaces/FREELANCER-PROJECT/gateway-service/src/main/java/com/freelancenexus/gateway/exception/GlobalExceptionHandler.java:[34,1] Field 'log' already exists.
+[WARNING] /workspaces/FREELANCER-PROJECT/gateway-service/src/main/java/com/freelancenexus/gateway/filter/LoggingFilter.java:[27,1] Field 'log' already exists.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ gateway-service ---
+[INFO] skip non existing resourceDirectory /workspaces/FREELANCER-PROJECT/gateway-service/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ gateway-service ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ gateway-service ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- jacoco:0.8.11:report (report) @ gateway-service ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ gateway-service ---
+[INFO] Building jar: /workspaces/FREELANCER-PROJECT/gateway-service/target/gateway-service-1.0.0.jar
+[INFO] 
+[INFO] --- spring-boot:3.2.0:repackage (repackage) @ gateway-service ---
+[INFO] Replacing main artifact /workspaces/FREELANCER-PROJECT/gateway-service/target/gateway-service-1.0.0.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /workspaces/FREELANCER-PROJECT/gateway-service/target/gateway-service-1.0.0.jar.original
+[INFO] 
+[INFO] -----------------< com.freelancenexus:gateway-service >-----------------
+[INFO] Building API Gateway 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
 [INFO] --- sonar:4.0.0.4121:sonar (default-cli) @ gateway-service ---
-[WARNING] 09:55:07.935 Using an unspecified version instead of an explicit plugin version may introduce breaking analysis changes at an unwanted time. It is highly recommended to use an explicit version, e.g. 'org.sonarsource.scanner.maven:sonar-maven-plugin:4.0.0.4121'.
-[INFO] 09:55:07.948 Java 17.0.17 Microsoft (64-bit)
-[INFO] 09:55:07.949 Linux 6.8.0-1030-azure (amd64)
-[INFO] 09:55:08.159 User cache: /home/vscode/.sonar/cache
-[INFO] 09:55:09.550 Communicating with SonarCloud
-[INFO] 09:55:09.576 Default locale: "en_US", source code encoding: "UTF-8"
-[INFO] 09:55:10.632 Load global settings
-[INFO] 09:55:12.182 Load global settings (done) | time=1553ms
-[INFO] 09:55:12.239 Server id: 1BD809FA-AWHW8ct9-T_TB3XqouNu
-[INFO] 09:55:12.440 Loading required plugins
-[INFO] 09:55:12.442 Load plugins index
-[INFO] 09:55:13.268 Load plugins index (done) | time=826ms
-[INFO] 09:55:13.269 Load/download plugins
-[INFO] 09:55:13.336 Load/download plugins (done) | time=67ms
-[INFO] 09:55:13.836 Loaded core extensions: a3s, architecture, sca
-[INFO] 09:55:14.204 Process project properties
-[INFO] 09:55:14.222 Project key: freelancenexus-gateway-service
-[INFO] 09:55:14.223 Base dir: /workspaces/FREELANCER-PROJECT/gateway-service
-[INFO] 09:55:14.223 Working dir: /workspaces/FREELANCER-PROJECT/gateway-service/target/sonar
-[INFO] 09:55:14.254 Load project branches
-[INFO] 09:55:14.865 Load project branches (done) | time=611ms
-[INFO] 09:55:14.871 Load project settings for component key: 'freelancenexus-gateway-service'
-[INFO] 09:55:15.991 Load project settings for component key: 'freelancenexus-gateway-service' (done) | time=1120ms
-[INFO] 09:55:15.999 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
-[INFO] 09:55:16.169 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
-[INFO] 09:55:16.410 Check ALM binding of project 'freelancenexus-gateway-service'
-[INFO] 09:55:16.807 Detected project binding: NOT_BOUND
-[INFO] 09:55:16.807 Check ALM binding of project 'freelancenexus-gateway-service' (done) | time=398ms
-[INFO] 09:55:16.810 Load project pull requests
-[INFO] 09:55:17.367 Load project pull requests (done) | time=557ms
-[INFO] 09:55:17.370 Load branch configuration
-[INFO] 09:55:17.372 Load branch configuration (done) | time=2ms
-[INFO] 09:55:17.382 Load quality profiles
-[INFO] 09:55:18.354 Load quality profiles (done) | time=971ms
-[INFO] 09:55:18.383 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
-[INFO] 09:55:18.384 Create analysis
-[INFO] 09:55:18.795 Create analysis (done) | time=411ms
-[INFO] 09:55:18.798 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
-[INFO] 09:55:18.932 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
-[INFO] 09:55:18.933 Load active rules
-[INFO] 09:55:20.051 Load active rules (done) | time=1118ms
-[INFO] 09:55:20.510 Organization key: vikram1704
-[INFO] 09:55:20.537 Preprocessing files...
-[INFO] 09:55:20.720 2 languages detected in 10 preprocessed files (done) | time=183ms
-[INFO] 09:55:20.721 0 files ignored because of inclusion/exclusion patterns
-[INFO] 09:55:20.721 0 files ignored because of scm ignore settings
-[INFO] 09:55:20.762 Loading plugins for detected languages
-[INFO] 09:55:20.763 Load/download plugins
-[INFO] 09:55:20.886 Load/download plugins (done) | time=123ms
-[INFO] 09:55:21.170 Load project repositories
-[INFO] 09:55:21.704 Load project repositories (done) | time=534ms
-[INFO] 09:55:21.713 Indexing files...
-[INFO] 09:55:21.714 Project configuration:
-[INFO] 09:55:21.714   Excluded sources: **/build-wrapper-dump.json
-[INFO] 09:55:21.720 10 files indexed (done) | time=6ms
-[INFO] 09:55:21.732 Quality profile for java: Sonar way
-[INFO] 09:55:21.734 Quality profile for xml: Sonar way
-[INFO] 09:55:21.734 ------------- Run sensors on module API Gateway
-[INFO] 09:55:21.835 Load metrics repository
-[INFO] 09:55:22.280 Load metrics repository (done) | time=445ms
-[INFO] 09:55:22.290 Sensor cache enabled
-[INFO] 09:55:22.292 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
-[INFO] 09:55:22.294 Load sensor cache
-[INFO] 09:55:23.574 Load sensor cache (101 KB) | time=1280ms
-[INFO] 09:55:23.577 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
-[INFO] 09:55:24.800 Sensor JavaSensor [java]
-[INFO] 09:55:24.803 Configured Java source version (sonar.java.source): 17, preview features enabled (sonar.java.enablePreview): false
-[INFO] 09:55:24.841 Server-side caching is enabled. The Java analyzer will not try to leverage data from a previous analysis.
-[INFO] 09:55:24.843 Using ECJ batch to parse 9 Main java source files with batch size 104 KB.
-[INFO] 09:55:25.184 Starting batch processing.
-[INFO] 09:55:25.773 The Java analyzer cannot skip unchanged files in this context. A full analysis is performed for all files.
-[INFO] 09:55:28.852 100% analyzed
-[INFO] 09:55:28.853 Batch processing: Done.
-[INFO] 09:55:28.855 Did not optimize analysis for any files, performed a full analysis for all 9 files.
-[WARNING] 09:55:28.934 Use of preview features have been detected during analysis. Enable DEBUG mode to see them.
-[INFO] 09:55:28.934 No "Test" source files to scan.
-[INFO] 09:55:28.935 No "Generated" source files to scan.
-[INFO] 09:55:28.940 Sensor JavaSensor [java] (done) | time=4140ms
-[INFO] 09:55:28.942 Sensor JaCoCo XML Report Importer [jacoco]
-[INFO] 09:55:28.943 'sonar.coverage.jacoco.xmlReportPaths' is not defined. Using default locations: target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml,build/reports/jacoco/test/jacocoTestReport.xml
-[INFO] 09:55:28.944 No report imported, no coverage information will be imported by JaCoCo XML Report Importer
-[INFO] 09:55:28.944 Sensor JaCoCo XML Report Importer [jacoco] (done) | time=2ms
-[INFO] 09:55:28.945 Sensor IaC GitHub Actions Sensor [iacenterprise]
-[INFO] 09:55:28.947 There are no files to be analyzed for the GitHub Actions language
-[INFO] 09:55:28.948 Sensor IaC GitHub Actions Sensor [iacenterprise] (done) | time=3ms
-[INFO] 09:55:28.950 Sensor IaC Shell Sensor [iacenterprise]
-[INFO] 09:55:28.950 There are no files to be analyzed for the Shell language
-[INFO] 09:55:28.950 Sensor IaC Shell Sensor [iacenterprise] (done) | time=0ms
-[INFO] 09:55:28.951 Sensor IaC Docker Sensor [iac]
-[INFO] 09:55:28.952 There are no files to be analyzed for the Docker language
-[INFO] 09:55:28.953 Sensor IaC Docker Sensor [iac] (done) | time=2ms
-[INFO] 09:55:28.953 Sensor IaC hadolint report Sensor [iac]
-[INFO] 09:55:28.955 Sensor IaC hadolint report Sensor [iac] (done) | time=2ms
-[INFO] 09:55:28.955 Sensor Java Config Sensor [iac]
-[INFO] 09:55:28.963 There are no files to be analyzed for the Java language
-[INFO] 09:55:28.964 Sensor Java Config Sensor [iac] (done) | time=9ms
-[INFO] 09:55:28.964 Sensor ThymeLeaf template sensor [securityjavafrontend]
-[INFO] 09:55:28.968 Sensor ThymeLeaf template sensor [securityjavafrontend] (done) | time=4ms
-[INFO] 09:55:28.969 Sensor JavaAndroidConfigurationSensor [securityjavafrontend]
-[INFO] 09:55:28.969 Sensor JavaAndroidConfigurationSensor [securityjavafrontend] (done) | time=0ms
-[INFO] 09:55:28.971 Sensor SurefireSensor [java]
-[INFO] 09:55:28.971 parsing [/workspaces/FREELANCER-PROJECT/gateway-service/target/surefire-reports]
-[INFO] 09:55:28.972 Sensor SurefireSensor [java] (done) | time=1ms
-[INFO] 09:55:28.973 Sensor XML Sensor [xml]
-[INFO] 09:55:28.982 1 source file to be analyzed
-[INFO] 09:55:29.158 1/1 source file has been analyzed
-[INFO] 09:55:29.159 Sensor XML Sensor [xml] (done) | time=186ms
-[INFO] 09:55:29.159 Sensor DBD/Java IR Generation [dbdjavafrontendrewrite]
-[INFO] 09:55:29.320 Sensor DBD/Java IR Generation [dbdjavafrontendrewrite] (done) | time=160ms
-[INFO] 09:55:29.320 Sensor javabugs [dbd]
-[INFO] 09:55:29.644 Analyzing 343/587 functions to detect bugs.
-[INFO] 09:55:30.319 Sensor javabugs [dbd] (done) | time=999ms
-[INFO] 09:55:30.321 Sensor pythonbugs [dbd]
-[INFO] 09:55:30.324 No IR files have been included for analysis.
-[INFO] 09:55:30.324 Sensor pythonbugs [dbd] (done) | time=4ms
-[INFO] 09:55:30.324 Sensor EnterpriseTextAndSecretsSensor [textenterprise]
-[INFO] 09:55:30.332 Available processors: 2
-[INFO] 09:55:30.332 Using 2 threads for analysis.
-[INFO] 09:55:30.856 The property "sonar.tests" is not set. To improve the analysis accuracy, we categorize a file as a test file if any of the following is true:
+[WARNING] 10:59:22.176 Using an unspecified version instead of an explicit plugin version may introduce breaking analysis changes at an unwanted time. It is highly recommended to use an explicit version, e.g. 'org.sonarsource.scanner.maven:sonar-maven-plugin:4.0.0.4121'.
+[INFO] 10:59:22.186 Java 17.0.17 Microsoft (64-bit)
+[INFO] 10:59:22.187 Linux 6.8.0-1030-azure (amd64)
+[INFO] 10:59:22.389 User cache: /home/vscode/.sonar/cache
+[INFO] 10:59:22.903 Communicating with SonarCloud
+[INFO] 10:59:22.927 Default locale: "en_US", source code encoding: "UTF-8"
+[INFO] 10:59:23.772 Load global settings
+[INFO] 10:59:24.250 Load global settings (done) | time=481ms
+[INFO] 10:59:24.360 Server id: 1BD809FA-AWHW8ct9-T_TB3XqouNu
+[INFO] 10:59:24.610 Loading required plugins
+[INFO] 10:59:24.613 Load plugins index
+[INFO] 10:59:24.798 Load plugins index (done) | time=185ms
+[INFO] 10:59:24.799 Load/download plugins
+[INFO] 10:59:24.885 Load/download plugins (done) | time=87ms
+[INFO] 10:59:25.156 Loaded core extensions: architecture, sca, a3s
+[INFO] 10:59:25.535 Process project properties
+[INFO] 10:59:25.551 Project key: VIKRAMVETRI_gateway-service
+[INFO] 10:59:25.551 Base dir: /workspaces/FREELANCER-PROJECT/gateway-service
+[INFO] 10:59:25.552 Working dir: /workspaces/FREELANCER-PROJECT/gateway-service/target/sonar
+[INFO] 10:59:25.571 Load project branches
+[INFO] 10:59:25.713 Load project branches (done) | time=142ms
+[INFO] 10:59:25.723 Load project settings for component key: 'VIKRAMVETRI_gateway-service'
+[INFO] 10:59:25.869 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
+[INFO] 10:59:26.055 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
+[INFO] 10:59:26.425 Check ALM binding of project 'VIKRAMVETRI_gateway-service'
+[INFO] 10:59:26.560 Detected project binding: NONEXISTENT
+[INFO] 10:59:26.562 Check ALM binding of project 'VIKRAMVETRI_gateway-service' (done) | time=136ms
+[INFO] 10:59:26.564 Load project pull requests
+[INFO] 10:59:27.076 Load project pull requests (done) | time=512ms
+[INFO] 10:59:27.079 Load branch configuration
+[INFO] 10:59:27.082 Load branch configuration (done) | time=3ms
+[INFO] 10:59:27.096 Load quality profiles
+[INFO] 10:59:27.785 Load quality profiles (done) | time=689ms
+[INFO] 10:59:27.807 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
+[INFO] 10:59:27.808 Create analysis
+[INFO] 10:59:30.262 Create analysis (done) | time=2454ms
+[INFO] 10:59:30.265 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
+[INFO] 10:59:30.432 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
+[INFO] 10:59:30.434 Load active rules
+[INFO] 10:59:32.024 Load active rules (done) | time=1590ms
+[INFO] 10:59:32.224 Organization key: vikramvetri
+[INFO] 10:59:32.249 Preprocessing files...
+[INFO] 10:59:32.403 2 languages detected in 10 preprocessed files (done) | time=153ms
+[INFO] 10:59:32.404 0 files ignored because of inclusion/exclusion patterns
+[INFO] 10:59:32.405 0 files ignored because of scm ignore settings
+[INFO] 10:59:32.435 Loading plugins for detected languages
+[INFO] 10:59:32.437 Load/download plugins
+[INFO] 10:59:32.555 Load/download plugins (done) | time=118ms
+[INFO] 10:59:32.810 Load project repositories
+[INFO] 10:59:33.119 Load project repositories (done) | time=309ms
+[INFO] 10:59:33.126 Indexing files...
+[INFO] 10:59:33.126 Project configuration:
+[INFO] 10:59:33.127   Excluded sources: **/build-wrapper-dump.json
+[INFO] 10:59:33.132 10 files indexed (done) | time=6ms
+[INFO] 10:59:33.140 Quality profile for java: Sonar way
+[INFO] 10:59:33.141 Quality profile for xml: Sonar way
+[INFO] 10:59:33.141 ------------- Run sensors on module gateway-service
+[INFO] 10:59:33.267 Load metrics repository
+[INFO] 10:59:33.414 Load metrics repository (done) | time=147ms
+[INFO] 10:59:33.421 Sensor cache enabled
+[INFO] 10:59:33.423 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
+[INFO] 10:59:33.425 Load sensor cache
+[INFO] 10:59:33.734 Load sensor cache (404) | time=309ms
+[INFO] 10:59:33.736 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
+[INFO] 10:59:35.194 Sensor JavaSensor [java]
+[INFO] 10:59:35.203 Configured Java source version (sonar.java.source): 17, preview features enabled (sonar.java.enablePreview): false
+[INFO] 10:59:35.278 Server-side caching is enabled. The Java analyzer will not try to leverage data from a previous analysis.
+[INFO] 10:59:35.281 Using ECJ batch to parse 9 Main java source files with batch size 104 KB.
+[INFO] 10:59:35.668 Starting batch processing.
+[INFO] 10:59:36.268 The Java analyzer cannot skip unchanged files in this context. A full analysis is performed for all files.
+[INFO] 10:59:39.640 100% analyzed
+[INFO] 10:59:39.640 Batch processing: Done.
+[INFO] 10:59:39.643 Did not optimize analysis for any files, performed a full analysis for all 9 files.
+[WARNING] 10:59:39.699 Use of preview features have been detected during analysis. Enable DEBUG mode to see them.
+[INFO] 10:59:39.700 No "Test" source files to scan.
+[INFO] 10:59:39.700 No "Generated" source files to scan.
+[INFO] 10:59:39.709 Sensor JavaSensor [java] (done) | time=4515ms
+[INFO] 10:59:39.712 Sensor JaCoCo XML Report Importer [jacoco]
+[INFO] 10:59:39.713 'sonar.coverage.jacoco.xmlReportPaths' is not defined. Using default locations: target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml,build/reports/jacoco/test/jacocoTestReport.xml
+[INFO] 10:59:39.715 No report imported, no coverage information will be imported by JaCoCo XML Report Importer
+[INFO] 10:59:39.715 Sensor JaCoCo XML Report Importer [jacoco] (done) | time=3ms
+[INFO] 10:59:39.716 Sensor IaC GitHub Actions Sensor [iacenterprise]
+[INFO] 10:59:39.719 There are no files to be analyzed for the GitHub Actions language
+[INFO] 10:59:39.719 Sensor IaC GitHub Actions Sensor [iacenterprise] (done) | time=3ms
+[INFO] 10:59:39.719 Sensor IaC Shell Sensor [iacenterprise]
+[INFO] 10:59:39.720 There are no files to be analyzed for the Shell language
+[INFO] 10:59:39.721 Sensor IaC Shell Sensor [iacenterprise] (done) | time=2ms
+[INFO] 10:59:39.721 Sensor IaC Docker Sensor [iac]
+[INFO] 10:59:39.722 There are no files to be analyzed for the Docker language
+[INFO] 10:59:39.722 Sensor IaC Docker Sensor [iac] (done) | time=1ms
+[INFO] 10:59:39.724 Sensor IaC hadolint report Sensor [iac]
+[INFO] 10:59:39.725 Sensor IaC hadolint report Sensor [iac] (done) | time=1ms
+[INFO] 10:59:39.726 Sensor Java Config Sensor [iac]
+[INFO] 10:59:39.732 There are no files to be analyzed for the Java language
+[INFO] 10:59:39.732 Sensor Java Config Sensor [iac] (done) | time=6ms
+[INFO] 10:59:39.732 Sensor ThymeLeaf template sensor [securityjavafrontend]
+[INFO] 10:59:39.737 Sensor ThymeLeaf template sensor [securityjavafrontend] (done) | time=5ms
+[INFO] 10:59:39.737 Sensor JavaAndroidConfigurationSensor [securityjavafrontend]
+[INFO] 10:59:39.738 Sensor JavaAndroidConfigurationSensor [securityjavafrontend] (done) | time=1ms
+[INFO] 10:59:39.738 Sensor SurefireSensor [java]
+[INFO] 10:59:39.739 parsing [/workspaces/FREELANCER-PROJECT/gateway-service/target/surefire-reports]
+[INFO] 10:59:39.740 Sensor SurefireSensor [java] (done) | time=2ms
+[INFO] 10:59:39.740 Sensor XML Sensor [xml]
+[INFO] 10:59:39.749 1 source file to be analyzed
+[INFO] 10:59:39.986 1/1 source file has been analyzed
+[INFO] 10:59:39.987 Sensor XML Sensor [xml] (done) | time=247ms
+[INFO] 10:59:39.988 Sensor DBD/Java IR Generation [dbdjavafrontendrewrite]
+[INFO] 10:59:40.148 Sensor DBD/Java IR Generation [dbdjavafrontendrewrite] (done) | time=159ms
+[INFO] 10:59:40.148 Sensor javabugs [dbd]
+[INFO] 10:59:40.580 Analyzing 343/587 functions to detect bugs.
+[INFO] 10:59:41.350 Sensor javabugs [dbd] (done) | time=1202ms
+[INFO] 10:59:41.352 Sensor pythonbugs [dbd]
+[INFO] 10:59:41.354 No IR files have been included for analysis.
+[INFO] 10:59:41.357 Sensor pythonbugs [dbd] (done) | time=5ms
+[INFO] 10:59:41.357 Sensor EnterpriseTextAndSecretsSensor [textenterprise]
+[INFO] 10:59:41.377 Available processors: 2
+[INFO] 10:59:41.377 Using 2 threads for analysis.
+[INFO] 10:59:41.981 The property "sonar.tests" is not set. To improve the analysis accuracy, we categorize a file as a test file if any of the following is true:
   * The filename starts with "test"
   * The filename contains "test." or "tests."
   * Any directory in the file path is named: "doc", "docs", "test" or "tests"
   * Any directory in the file path has a name ending in "test" or "tests"
 
-[INFO] 09:55:30.957 Start fetching files for the text and secrets analysis
-[INFO] 09:55:30.973 Using Git CLI to retrieve untracked files
-[INFO] 09:55:30.992 Retrieving language associated files and files included via "sonar.text.inclusions" that are tracked by git
-[INFO] 09:55:30.993 Starting the text and secrets analysis
-[INFO] 09:55:30.996 10 source files to be analyzed for the text and secrets analysis
-[INFO] 09:55:31.108 10/10 source files have been analyzed for the text and secrets analysis
-[INFO] 09:55:31.110 Start fetching files for the binary file analysis
-[INFO] 09:55:31.111 There are no files to be analyzed for the binary file analysis
-[INFO] 09:55:31.112 Sensor EnterpriseTextAndSecretsSensor [textenterprise] (done) | time=788ms
-[INFO] 09:55:31.113 Sensor JavaSecuritySensor [security]
-[INFO] 09:55:31.121 29 taint analysis rules enabled.
-[INFO] 09:55:31.343 Analyzing 55 UCFGs to detect vulnerabilities.
-[INFO] 09:55:33.840 No entry points found.
-[INFO] 09:55:33.847 java security sensor: Begin: 2025-11-13T09:55:31.116025509Z, End: 2025-11-13T09:55:33.844077184Z, Duration: 00:00:02.728
-  Load type hierarchy and UCFGs: Begin: 2025-11-13T09:55:31.122560729Z, End: 2025-11-13T09:55:31.343408248Z, Duration: 00:00:00.220
-    Load type hierarchy: Begin: 2025-11-13T09:55:31.122574835Z, End: 2025-11-13T09:55:31.204919724Z, Duration: 00:00:00.082
-    Load UCFGs: Begin: 2025-11-13T09:55:31.205107063Z, End: 2025-11-13T09:55:31.343191814Z, Duration: 00:00:00.138
-  Check cache: Begin: 2025-11-13T09:55:31.343842918Z, End: 2025-11-13T09:55:31.344126167Z, Duration: 00:00:00.000
-    Load cache: Begin: 2025-11-13T09:55:31.343851374Z, End: 2025-11-13T09:55:31.343875900Z, Duration: 00:00:00.000
-  Create runtime call graph: Begin: 2025-11-13T09:55:31.344172914Z, End: 2025-11-13T09:55:31.372711936Z, Duration: 00:00:00.028
-    Variable Type Analysis #1: Begin: 2025-11-13T09:55:31.344880924Z, End: 2025-11-13T09:55:31.363705329Z, Duration: 00:00:00.018
-      Create runtime type propagation graph: Begin: 2025-11-13T09:55:31.345699100Z, End: 2025-11-13T09:55:31.358641916Z, Duration: 00:00:00.012
-      Run SCC (Tarjan) on 239 nodes: Begin: 2025-11-13T09:55:31.358892453Z, End: 2025-11-13T09:55:31.360201985Z, Duration: 00:00:00.001
-      Propagate runtime types to strongly connected components: Begin: 2025-11-13T09:55:31.360271134Z, End: 2025-11-13T09:55:31.363653011Z, Duration: 00:00:00.003
-    Variable Type Analysis #2: Begin: 2025-11-13T09:55:31.365375624Z, End: 2025-11-13T09:55:31.372121665Z, Duration: 00:00:00.006
-      Create runtime type propagation graph: Begin: 2025-11-13T09:55:31.365379641Z, End: 2025-11-13T09:55:31.370784902Z, Duration: 00:00:00.005
-      Run SCC (Tarjan) on 239 nodes: Begin: 2025-11-13T09:55:31.370846376Z, End: 2025-11-13T09:55:31.371439102Z, Duration: 00:00:00.000
-      Propagate runtime types to strongly connected components: Begin: 2025-11-13T09:55:31.371487923Z, End: 2025-11-13T09:55:31.372073765Z, Duration: 00:00:00.000
-  Load config: Begin: 2025-11-13T09:55:31.372766337Z, End: 2025-11-13T09:55:33.813482967Z, Duration: 00:00:02.440
-  Compute entry points: Begin: 2025-11-13T09:55:33.813661961Z, End: 2025-11-13T09:55:33.840085700Z, Duration: 00:00:00.026
-[INFO] 09:55:33.847 java security sensor peak memory: 661 MB
-[INFO] 09:55:33.847 Sensor JavaSecuritySensor [security] (done) | time=2734ms
-[INFO] 09:55:33.857 ------------- Run sensors on project
-[INFO] 09:55:33.968 Sensor JavaProjectSensor [java]
-[INFO] 09:55:33.971 Sensor JavaProjectSensor [java] (done) | time=3ms
-[INFO] 09:55:33.972 Sensor JavaArchitectureSensor [architecture]
-[INFO] 09:55:33.985 Architecture analysis is enabled with the following features: legacy
-[INFO] 09:55:33.990 * Protobuf reading starting | memory total=741 | free=209 | used=531 (MB)
-[INFO] 09:55:33.990 * Reading SonarArchitecture IR data from directory "/workspaces/FREELANCER-PROJECT/gateway-service/target/sonar/architecture/java"
-[INFO] 09:55:34.208 * Files successfully loaded: "9" out of "9"
-[INFO] 09:55:34.211 * Protobuf reading complete | memory total=741 | free=194 | used=546 (MB)
-[INFO] 09:55:34.239 * Build architecture.graph.java.namespace_graph.default_perspective hierarchy graph complete (filtered=false) | memory total=741 | free=192 | used=548 (MB)
-[INFO] 09:55:34.251 Sensor JavaArchitectureSensor [architecture] (done) | time=279ms
-[INFO] 09:55:34.251 Sensor Zero Coverage Sensor
-[INFO] 09:55:34.268 Sensor Zero Coverage Sensor (done) | time=17ms
-[INFO] 09:55:34.268 Sensor Java CPD Block Indexer
-[INFO] 09:55:34.385 Sensor Java CPD Block Indexer (done) | time=117ms
-[INFO] 09:55:34.387 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
-[INFO] 09:55:34.535 ------------- Gather SCA dependencies on project
-[INFO] 09:55:34.536 Checking if SCA is enabled for organization vikram1704
-[INFO] 09:55:34.837 Dependency analysis skipped
-[INFO] 09:55:34.840 CPD Executor 4 files had no CPD blocks
-[INFO] 09:55:34.840 CPD Executor Calculating CPD for 5 files
-[INFO] 09:55:34.846 CPD Executor CPD calculation finished (done) | time=6ms
-[INFO] 09:55:35.039 Analysis report generated in 179ms, dir size=380 KB
-[INFO] 09:55:35.203 Analysis report compressed in 164ms, zip size=90 KB
-[INFO] 09:55:36.482 Analysis report uploaded in 1278ms
-[INFO] 09:55:36.484 ANALYSIS SUCCESSFUL, you can find the results at: https://sonarcloud.io/dashboard?id=freelancenexus-gateway-service
-[INFO] 09:55:36.484 Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
-[INFO] 09:55:36.484 More about the report processing at https://sonarcloud.io/api/ce/task?id=AZp8pFbS75nX5bFDXbIb
-[INFO] 09:55:36.485 ------------- Upload SCA dependency files
-[INFO] 09:55:37.718 Sensor cache published successfully
-[INFO] 09:55:37.743 Analysis total time: 23.907 s
+[INFO] 10:59:42.088 Start fetching files for the text and secrets analysis
+[INFO] 10:59:42.096 Using Git CLI to retrieve untracked files
+[INFO] 10:59:42.108 Retrieving language associated files and files included via "sonar.text.inclusions" that are tracked by git
+[INFO] 10:59:42.109 Starting the text and secrets analysis
+[INFO] 10:59:42.111 10 source files to be analyzed for the text and secrets analysis
+[INFO] 10:59:42.238 10/10 source files have been analyzed for the text and secrets analysis
+[INFO] 10:59:42.244 Start fetching files for the binary file analysis
+[INFO] 10:59:42.245 There are no files to be analyzed for the binary file analysis
+[INFO] 10:59:42.247 Sensor EnterpriseTextAndSecretsSensor [textenterprise] (done) | time=890ms
+[INFO] 10:59:42.247 Sensor JavaSecuritySensor [security]
+[INFO] 10:59:42.253 29 taint analysis rules enabled.
+[INFO] 10:59:42.462 Analyzing 55 UCFGs to detect vulnerabilities.
+[INFO] 10:59:45.152 No entry points found.
+[INFO] 10:59:45.160 java security sensor: Begin: 2025-11-13T10:59:42.250759842Z, End: 2025-11-13T10:59:45.157500715Z, Duration: 00:00:02.906
+  Load type hierarchy and UCFGs: Begin: 2025-11-13T10:59:42.254375664Z, End: 2025-11-13T10:59:42.462519112Z, Duration: 00:00:00.208
+    Load type hierarchy: Begin: 2025-11-13T10:59:42.254391193Z, End: 2025-11-13T10:59:42.328307253Z, Duration: 00:00:00.073
+    Load UCFGs: Begin: 2025-11-13T10:59:42.328515040Z, End: 2025-11-13T10:59:42.462450665Z, Duration: 00:00:00.133
+  Check cache: Begin: 2025-11-13T10:59:42.463494300Z, End: 2025-11-13T10:59:42.463806212Z, Duration: 00:00:00.000
+    Load cache: Begin: 2025-11-13T10:59:42.463504269Z, End: 2025-11-13T10:59:42.463524567Z, Duration: 00:00:00.000
+  Create runtime call graph: Begin: 2025-11-13T10:59:42.463850775Z, End: 2025-11-13T10:59:42.494873587Z, Duration: 00:00:00.031
+    Variable Type Analysis #1: Begin: 2025-11-13T10:59:42.464591245Z, End: 2025-11-13T10:59:42.479823334Z, Duration: 00:00:00.015
+      Create runtime type propagation graph: Begin: 2025-11-13T10:59:42.465334742Z, End: 2025-11-13T10:59:42.475855548Z, Duration: 00:00:00.010
+      Run SCC (Tarjan) on 239 nodes: Begin: 2025-11-13T10:59:42.476104552Z, End: 2025-11-13T10:59:42.477468626Z, Duration: 00:00:00.001
+      Propagate runtime types to strongly connected components: Begin: 2025-11-13T10:59:42.477535430Z, End: 2025-11-13T10:59:42.479776256Z, Duration: 00:00:00.002
+    Variable Type Analysis #2: Begin: 2025-11-13T10:59:42.482514594Z, End: 2025-11-13T10:59:42.492800903Z, Duration: 00:00:00.010
+      Create runtime type propagation graph: Begin: 2025-11-13T10:59:42.482518331Z, End: 2025-11-13T10:59:42.491562153Z, Duration: 00:00:00.009
+      Run SCC (Tarjan) on 239 nodes: Begin: 2025-11-13T10:59:42.491614741Z, End: 2025-11-13T10:59:42.492156772Z, Duration: 00:00:00.000
+      Propagate runtime types to strongly connected components: Begin: 2025-11-13T10:59:42.492192989Z, End: 2025-11-13T10:59:42.492766809Z, Duration: 00:00:00.000
+  Load config: Begin: 2025-11-13T10:59:42.494921757Z, End: 2025-11-13T10:59:45.129477117Z, Duration: 00:00:02.634
+  Compute entry points: Begin: 2025-11-13T10:59:45.129589286Z, End: 2025-11-13T10:59:45.152845175Z, Duration: 00:00:00.023
+[INFO] 10:59:45.160 java security sensor peak memory: 503 MB
+[INFO] 10:59:45.161 Sensor JavaSecuritySensor [security] (done) | time=2914ms
+[INFO] 10:59:45.168 ------------- Run sensors on project
+[INFO] 10:59:45.322 Sensor JavaProjectSensor [java]
+[INFO] 10:59:45.326 Sensor JavaProjectSensor [java] (done) | time=4ms
+[INFO] 10:59:45.326 Sensor JavaArchitectureSensor [architecture]
+[INFO] 10:59:45.340 Architecture analysis is enabled with the following features: legacy
+[INFO] 10:59:45.347 * Protobuf reading starting | memory total=1111 | free=610 | used=500 (MB)
+[INFO] 10:59:45.348 * Reading SonarArchitecture IR data from directory "/workspaces/FREELANCER-PROJECT/gateway-service/target/sonar/architecture/java"
+[INFO] 10:59:45.539 * Files successfully loaded: "9" out of "9"
+[INFO] 10:59:45.540 * Protobuf reading complete | memory total=1111 | free=595 | used=515 (MB)
+[INFO] 10:59:45.581 * Build architecture.graph.java.namespace_graph.default_perspective hierarchy graph complete (filtered=false) | memory total=1111 | free=593 | used=517 (MB)
+[INFO] 10:59:45.608 Sensor JavaArchitectureSensor [architecture] (done) | time=282ms
+[INFO] 10:59:45.608 Sensor Zero Coverage Sensor
+[INFO] 10:59:45.631 Sensor Zero Coverage Sensor (done) | time=23ms
+[INFO] 10:59:45.631 Sensor Java CPD Block Indexer
+[INFO] 10:59:45.679 Sensor Java CPD Block Indexer (done) | time=48ms
+[INFO] 10:59:45.681 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
+[INFO] 10:59:45.887 ------------- Gather SCA dependencies on project
+[INFO] 10:59:45.887 Checking if SCA is enabled for organization vikramvetri
+[INFO] 10:59:46.222 Dependency analysis skipped
+[INFO] 10:59:46.225 CPD Executor 4 files had no CPD blocks
+[INFO] 10:59:46.225 CPD Executor Calculating CPD for 5 files
+[INFO] 10:59:46.233 CPD Executor CPD calculation finished (done) | time=7ms
+[INFO] 10:59:46.234 SCM Publisher SCM provider for this project is: git
+[INFO] 10:59:46.236 SCM Publisher 10 source files to be analyzed
+[INFO] 10:59:46.618 SCM Publisher 10/10 source files have been analyzed (done) | time=381ms
+[INFO] 10:59:46.832 Analysis report generated in 203ms, dir size=379 KB
+[INFO] 10:59:46.997 Analysis report compressed in 165ms, zip size=90 KB
+[INFO] 10:59:47.675 Analysis report uploaded in 677ms
+[INFO] 10:59:47.677 ANALYSIS SUCCESSFUL, you can find the results at: https://sonarcloud.io/dashboard?id=VIKRAMVETRI_gateway-service
+[INFO] 10:59:47.677 Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+[INFO] 10:59:47.677 More about the report processing at https://sonarcloud.io/api/ce/task?id=AZp83xrkh8DCFW5QKmOF
+[INFO] 10:59:47.678 ------------- Upload SCA dependency files
+[INFO] 10:59:48.827 Sensor cache published successfully
+[INFO] 10:59:48.860 Analysis total time: 23.704 s
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  31.921 s
-[INFO] Finished at: 2025-11-13T09:55:37Z
+[INFO] Total time:  33.561 s
+[INFO] Finished at: 2025-11-13T10:59:48Z
 [INFO] ------------------------------------------------------------------------
