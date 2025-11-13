@@ -223,6 +223,112 @@ class UserServiceTest {
         assertThrows(UnauthorizedException.class,
                 () -> userService.getCurrentUserProfile());
     }
+     
+    @Test
+void shouldHandleAuthenticationWithNonLongPrincipal() {
+    // Test the else branch in getCurrentUserId()
+    var auth = mock(org.springframework.security.core.Authentication.class);
+    when(auth.getPrincipal()).thenReturn("stringPrincipal"); // Not a Long
+    SecurityContextHolder.setContext(securityContext);
+    when(securityContext.getAuthentication()).thenReturn(auth);
+    
+    assertThrows(UnauthorizedException.class, () -> userService.getCurrentUserProfile());
+}
+
+@Test
+void shouldHandleNullAuthentication() {
+    SecurityContextHolder.setContext(securityContext);
+    when(securityContext.getAuthentication()).thenReturn(null);
+    
+    assertThrows(UnauthorizedException.class, () -> userService.getCurrentUserProfile());
+}
+
+@Test
+void shouldUpdateOnlyFullNameWhenOtherFieldsNull() {
+    setAuthenticatedUserId(1L);
+    when(userRepository.findById(1L)).thenReturn(Optional.of(user));
+    when(userRepository.save(user)).thenReturn(user);
+    
+    UserUpdateDTO partialUpdate = new UserUpdateDTO("Only Name", null, null);
+    var response = userService.updateCurrentUserProfile(partialUpdate);
+    
+    assertEquals("Only Name", response.getFullName());
+    verify(userRepository).save(user);
+}
+
+@Test
+void shouldUpdateOnlyPhoneWhenOtherFieldsNull() {
+    setAuthenticatedUserId(1L);
+    when(userRepository.findById(1L)).thenReturn(Optional.of(user));
+    when(userRepository.save(user)).thenReturn(user);
+    
+    UserUpdateDTO partialUpdate = new UserUpdateDTO(null, "9876543210", null);
+    var response = userService.updateCurrentUserProfile(partialUpdate);
+    
+    assertEquals("9876543210", response.getPhone());
+    verify(userRepository).save(user);
+}
+
+@Test
+void shouldUpdateOnlyProfileImageWhenOtherFieldsNull() {
+    setAuthenticatedUserId(1L);
+    when(userRepository.findById(1L)).thenReturn(Optional.of(user));
+    when(userRepository.save(user)).thenReturn(user);
+    
+    UserUpdateDTO partialUpdate = new UserUpdateDTO(null, null, "http://image.url");
+    var response = userService.updateCurrentUserProfile(partialUpdate);
+    
+    assertEquals("http://image.url", response.getProfileImageUrl());
+    verify(userRepository).save(user);
+}
+
+@Test
+void shouldNotUpdateAnyFieldsWhenAllNull() {
+    setAuthenticatedUserId(1L);
+    String originalName = user.getFullName();
+    String originalPhone = user.getPhone();
+    
+    when(userRepository.findById(1L)).thenReturn(Optional.of(user));
+    when(userRepository.save(user)).thenReturn(user);
+    
+    UserUpdateDTO emptyUpdate = new UserUpdateDTO(null, null, null);
+    var response = userService.updateCurrentUserProfile(emptyUpdate);
+    
+    assertEquals(originalName, response.getFullName());
+    assertEquals(originalPhone, response.getPhone());
+    verify(userRepository).save(user);
+}
+
+@Test
+void shouldRegisterUserWithProfileImage() {
+    UserRegistrationDTO dtoWithImage = new UserRegistrationDTO(
+        "newuser@example.com",
+        "password123",
+        "New User",
+        "1234567890",
+        UserRole.FREELANCER,
+        "http://profile.image.url"
+    );
+    
+    when(userRepository.existsByEmail(dtoWithImage.getEmail())).thenReturn(false);
+    when(passwordEncoder.encode(dtoWithImage.getPassword())).thenReturn("encoded");
+    when(userRepository.save(any(User.class))).thenReturn(user);
+    
+    var response = userService.registerUser(dtoWithImage);
+    
+    assertNotNull(response);
+    verify(userRepository).save(any(User.class));
+}
+
+@Test
+void shouldReturnEmptyListWhenNoUsers() {
+    when(userRepository.findAll()).thenReturn(List.of());
+    
+    List<UserResponseDTO> users = userService.getAllUsers();
+    
+    assertTrue(users.isEmpty());
+    verify(userRepository).findAll();
+}
 
     private void setAuthenticatedUserId(Long userId) {
         var auth = mock(org.springframework.security.core.Authentication.class);

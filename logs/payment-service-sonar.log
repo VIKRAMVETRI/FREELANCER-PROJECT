@@ -6,52 +6,369 @@
 [INFO]   from pom.xml
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ payment-service ---
+[INFO] Deleting /workspaces/FREELANCER-PROJECT/payment-service/target
+[INFO] 
+[INFO] --- jacoco:0.8.11:prepare-agent (default) @ payment-service ---
+[INFO] argLine set to -javaagent:/home/vscode/.m2/repository/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar=destfile=/workspaces/FREELANCER-PROJECT/payment-service/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ payment-service ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 2 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ payment-service ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 17 source files with javac [debug release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ payment-service ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ payment-service ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 4 source files with javac [debug release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ payment-service ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.freelancenexus.payment.service.PaymentServiceTest
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+11:03:06.032 [main] INFO com.freelancenexus.payment.service.PaymentService -- Initiating refund for payment: 1
+11:03:06.069 [main] INFO com.freelancenexus.payment.service.PaymentService -- Payment refunded successfully: 1
+11:03:06.219 [main] INFO com.freelancenexus.payment.service.PaymentService -- Initiating payment for project: null
+11:03:06.237 [main] INFO com.freelancenexus.payment.service.PaymentService -- Verifying payment: TXN-1
+11:03:06.306 [main] INFO com.freelancenexus.payment.service.PaymentService -- Payment completed event published for transaction: TXN-1
+11:03:06.306 [main] INFO com.freelancenexus.payment.service.PaymentService -- Payment completed successfully: TXN-1
+11:03:06.337 [main] INFO com.freelancenexus.payment.service.PaymentService -- Initiating payment for project: 1
+11:03:06.339 [main] INFO com.freelancenexus.payment.service.PaymentService -- Payment initiated successfully with transaction ID: TXN-4FA6C4F1-60A2-469A-8F05-955A01E64841
+11:03:06.364 [main] INFO com.freelancenexus.payment.service.PaymentService -- Verifying payment: TXN-2
+11:03:06.366 [main] WARN com.freelancenexus.payment.service.PaymentService -- Payment verification failed: TXN-2
+11:03:06.382 [main] INFO com.freelancenexus.payment.service.PaymentService -- Initiating refund for payment: 2
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.241 s -- in com.freelancenexus.payment.service.PaymentServiceTest
+[INFO] Running com.freelancenexus.payment.service.UPIPaymentServiceTest
+11:03:06.414 [main] INFO com.freelancenexus.payment.service.UPIPaymentService -- Generating UPI payment link for transaction: TXN124
+11:03:06.416 [main] INFO com.freelancenexus.payment.service.UPIPaymentService -- UPI payment link generated for transaction: TXN124
+11:03:06.416 [main] INFO com.freelancenexus.payment.service.UPIPaymentService -- Initiating UPI refund for transaction: TXN124
+11:03:06.421 [main] INFO com.freelancenexus.payment.service.UPIPaymentService -- Generating UPI payment link for transaction: TXN123
+11:03:06.425 [main] INFO com.freelancenexus.payment.service.UPIPaymentService -- UPI payment link generated for transaction: TXN123
+11:03:06.425 [main] INFO com.freelancenexus.payment.service.UPIPaymentService -- Initiating UPI refund for transaction: TXN123
+11:03:06.425 [main] INFO com.freelancenexus.payment.service.UPIPaymentService -- Refund successful for transaction: TXN123
+11:03:06.432 [main] INFO com.freelancenexus.payment.service.UPIPaymentService -- Generating UPI payment link for transaction: TXN123
+11:03:06.432 [main] INFO com.freelancenexus.payment.service.UPIPaymentService -- UPI payment link generated for transaction: TXN123
+11:03:06.432 [main] INFO com.freelancenexus.payment.service.UPIPaymentService -- Verifying UPI payment for transaction: TXN123
+11:03:06.433 [main] INFO com.freelancenexus.payment.service.UPIPaymentService -- UPI payment verification result for TXN123: FAILED
+11:03:06.446 [main] INFO com.freelancenexus.payment.service.UPIPaymentService -- Verifying UPI payment for transaction: INVALID
+11:03:06.446 [main] WARN com.freelancenexus.payment.service.UPIPaymentService -- UPI transaction not found: INVALID
+11:03:06.452 [main] INFO com.freelancenexus.payment.service.UPIPaymentService -- Processing UPI payment callback
+11:03:06.452 [main] INFO com.freelancenexus.payment.service.UPIPaymentService -- Callback processed for transaction: INVALID
+11:03:06.460 [main] INFO com.freelancenexus.payment.service.UPIPaymentService -- Initiating UPI refund for transaction: INVALID
+11:03:06.467 [main] INFO com.freelancenexus.payment.service.UPIPaymentService -- Generating UPI payment link for transaction: TXN123
+11:03:06.468 [main] INFO com.freelancenexus.payment.service.UPIPaymentService -- UPI payment link generated for transaction: TXN123
+11:03:06.474 [main] INFO com.freelancenexus.payment.service.UPIPaymentService -- Generating UPI payment link for transaction: TXN123
+11:03:06.474 [main] INFO com.freelancenexus.payment.service.UPIPaymentService -- UPI payment link generated for transaction: TXN123
+11:03:06.474 [main] INFO com.freelancenexus.payment.service.UPIPaymentService -- Processing UPI payment callback
+11:03:06.474 [main] INFO com.freelancenexus.payment.service.UPIPaymentService -- Callback processed for transaction: TXN123
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.071 s -- in com.freelancenexus.payment.service.UPIPaymentServiceTest
+[INFO] Running com.freelancenexus.payment.controller.PaymentControllerTest
+11:03:09.012 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 8.0.1.Final
+11:03:10.347 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+11:03:10.347 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+11:03:10.354 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 6 ms
+11:03:10.864 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+11:03:10.865 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+11:03:10.865 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+11:03:11.047 [main] INFO com.freelancenexus.payment.controller.PaymentController -- POST /api/payments/1/refund - Initiating refund
+11:03:11.213 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+11:03:11.213 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+11:03:11.214 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 1 ms
+11:03:11.218 [main] INFO com.freelancenexus.payment.controller.PaymentController -- GET /api/payments/1 - Fetching payment
+11:03:11.290 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+11:03:11.290 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+11:03:11.290 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+11:03:11.294 [main] INFO com.freelancenexus.payment.controller.PaymentController -- GET /api/payments/transaction/TXN123 - Fetching payment
+11:03:11.348 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+11:03:11.348 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+11:03:11.348 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+11:03:11.632 [main] INFO com.freelancenexus.payment.controller.PaymentController -- POST /api/payments/initiate - Initiating payment for project: 1
+11:03:11.633 [main] ERROR com.freelancenexus.payment.controller.PaymentController -- Invalid payment request: Invalid request
+11:03:11.665 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+11:03:11.666 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+11:03:11.666 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+11:03:11.669 [main] INFO com.freelancenexus.payment.controller.PaymentController -- POST /api/payments/1/refund - Initiating refund
+11:03:11.669 [main] ERROR com.freelancenexus.payment.controller.PaymentController -- Cannot refund payment: Cannot refund
+11:03:11.707 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+11:03:11.707 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+11:03:11.708 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 1 ms
+11:03:11.711 [main] INFO com.freelancenexus.payment.controller.PaymentController -- GET /api/payments/1 - Fetching payment
+11:03:11.711 [main] ERROR com.freelancenexus.payment.controller.PaymentController -- Payment not found: 1
+11:03:11.761 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+11:03:11.761 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+11:03:11.761 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+11:03:11.765 [main] INFO com.freelancenexus.payment.controller.PaymentController -- GET /api/payments/history/2 - Fetching user transaction history
+11:03:11.811 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+11:03:11.811 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+11:03:11.811 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+11:03:11.846 [main] INFO com.freelancenexus.payment.controller.PaymentController -- POST /api/payments/initiate - Initiating payment for project: 1
+11:03:11.905 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+11:03:11.905 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+11:03:11.905 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+11:03:11.907 [main] INFO com.freelancenexus.payment.controller.PaymentController -- GET /api/payments/user/2 - Fetching user payment history
+11:03:11.950 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+11:03:11.950 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+11:03:11.950 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+11:03:11.953 [main] INFO com.freelancenexus.payment.controller.PaymentController -- GET /api/payments/transaction/TXN123 - Fetching payment
+11:03:11.953 [main] ERROR com.freelancenexus.payment.controller.PaymentController -- Payment not found: TXN123
+11:03:11.998 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+11:03:11.998 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+11:03:11.998 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+11:03:12.001 [main] INFO com.freelancenexus.payment.controller.PaymentController -- GET /api/payments/project/1 - Fetching project payments
+11:03:12.044 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+11:03:12.044 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+11:03:12.044 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+11:03:12.046 [main] INFO com.freelancenexus.payment.controller.PaymentController -- GET /api/payments/1/history - Fetching transaction history
+11:03:12.067 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+11:03:12.067 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+11:03:12.067 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+11:03:12.072 [main] INFO com.freelancenexus.payment.controller.PaymentController -- POST /api/payments/verify - Verifying transaction: TXN123
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.403 s -- in com.freelancenexus.payment.controller.PaymentControllerTest
+[INFO] Running com.freelancenexus.payment_service.PaymentServiceApplicationTests
+2025-11-13T11:03:17.243Z  WARN 32178 --- [payment-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$RetryInterceptorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$RetryInterceptorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-11-13T11:03:17.256Z  WARN 32178 --- [payment-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration' of type [org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-13T11:03:17.266Z  WARN 32178 --- [payment-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration' of type [org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-13T11:03:17.291Z  WARN 32178 --- [payment-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration' of type [org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-13T11:03:17.299Z  WARN 32178 --- [payment-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-13T11:03:17.301Z  WARN 32178 --- [payment-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'loadBalancerClientsDefaultsMappingsProvider' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration$$Lambda$1253/0x00007499587d6d98] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-13T11:03:17.307Z  WARN 32178 --- [payment-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'defaultsBindHandlerAdvisor' of type [org.springframework.cloud.commons.config.DefaultsBindHandlerAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-13T11:03:17.331Z  WARN 32178 --- [payment-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.cloud.loadbalancer-org.springframework.cloud.client.loadbalancer.LoadBalancerClientsProperties' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerClientsProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-13T11:03:17.359Z  WARN 32178 --- [payment-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'default.org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration.LoadBalancerClientSpecification' of type [org.springframework.cloud.loadbalancer.annotation.LoadBalancerClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-13T11:03:17.366Z  WARN 32178 --- [payment-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'default.org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration.LoadBalancerClientSpecification' of type [org.springframework.cloud.loadbalancer.annotation.LoadBalancerClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-13T11:03:17.369Z  WARN 32178 --- [payment-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'loadBalancerClientFactory' of type [org.springframework.cloud.loadbalancer.support.LoadBalancerClientFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-13T11:03:17.389Z  WARN 32178 --- [payment-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'blockingLoadBalancerClient' of type [org.springframework.cloud.loadbalancer.blocking.client.BlockingLoadBalancerClient] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-13T11:03:17.404Z  WARN 32178 --- [payment-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'loadBalancerServiceInstanceCookieTransformer' of type [org.springframework.cloud.loadbalancer.core.LoadBalancerServiceInstanceCookieTransformer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-13T11:03:17.407Z  WARN 32178 --- [payment-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'xForwarderHeadersTransformer' of type [org.springframework.cloud.loadbalancer.blocking.XForwardedHeadersTransformer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-13T11:03:17.410Z  WARN 32178 --- [payment-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-13T11:03:17.414Z  WARN 32178 --- [payment-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'loadBalancerRequestFactory' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerRequestFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-13T11:03:17.417Z  WARN 32178 --- [payment-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerRetryConfig' of type [org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerRetryConfig$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-13T11:03:17.425Z  WARN 32178 --- [payment-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'loadBalancedRetryFactory' of type [org.springframework.cloud.loadbalancer.blocking.retry.BlockingLoadBalancedRetryFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-13T11:03:17.437Z  WARN 32178 --- [payment-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'loadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.RetryLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-13T11:03:19.007Z  WARN 32178 --- [payment-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-13T11:03:25.360Z  WARN 32178 --- [payment-service] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.56 s -- in com.freelancenexus.payment_service.PaymentServiceApplicationTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 30, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco:0.8.11:report (report) @ payment-service ---
+[INFO] Loading execution data file /workspaces/FREELANCER-PROJECT/payment-service/target/jacoco.exec
+[INFO] Analyzed bundle 'Payment Service' with 25 classes
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ payment-service ---
+[INFO] Building jar: /workspaces/FREELANCER-PROJECT/payment-service/target/payment-service-1.0.0.jar
+[INFO] 
+[INFO] --- spring-boot:3.2.0:repackage (repackage) @ payment-service ---
+[INFO] Replacing main artifact /workspaces/FREELANCER-PROJECT/payment-service/target/payment-service-1.0.0.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /workspaces/FREELANCER-PROJECT/payment-service/target/payment-service-1.0.0.jar.original
+[INFO] 
+[INFO] -----------------< com.freelancenexus:payment-service >-----------------
+[INFO] Building Payment Service 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
 [INFO] --- sonar:4.0.0.4121:sonar (default-cli) @ payment-service ---
-[WARNING] 10:21:47.409 Using an unspecified version instead of an explicit plugin version may introduce breaking analysis changes at an unwanted time. It is highly recommended to use an explicit version, e.g. 'org.sonarsource.scanner.maven:sonar-maven-plugin:4.0.0.4121'.
-[INFO] 10:21:47.420 Java 17.0.17 Microsoft (64-bit)
-[INFO] 10:21:47.421 Linux 6.8.0-1030-azure (amd64)
-[INFO] 10:21:47.646 User cache: /home/vscode/.sonar/cache
-[INFO] 10:21:48.792 Communicating with SonarCloud
-[INFO] 10:21:48.819 Default locale: "en_US", source code encoding: "UTF-8"
-[INFO] 10:21:49.852 Load global settings
-[INFO] 10:21:50.994 Load global settings (done) | time=1145ms
-[INFO] 10:21:51.046 Server id: 1BD809FA-AWHW8ct9-T_TB3XqouNu
-[INFO] 10:21:51.297 Loading required plugins
-[INFO] 10:21:51.297 Load plugins index
-[INFO] 10:21:51.630 Load plugins index (done) | time=333ms
-[INFO] 10:21:51.631 Load/download plugins
-[INFO] 10:21:51.693 Load/download plugins (done) | time=61ms
-[INFO] 10:21:52.011 Loaded core extensions: architecture, sca, a3s
-[INFO] 10:21:52.425 Process project properties
-[INFO] 10:21:52.448 Project key: freelancenexus-payment-service
-[INFO] 10:21:52.448 Base dir: /workspaces/FREELANCER-PROJECT/payment-service
-[INFO] 10:21:52.454 Working dir: /workspaces/FREELANCER-PROJECT/payment-service/target/sonar
-[INFO] 10:21:52.497 Load project branches
-[INFO] 10:21:53.016 Load project branches (done) | time=518ms
-[INFO] 10:21:53.023 Load project settings for component key: 'freelancenexus-payment-service'
-[INFO] 10:21:53.570 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
-[INFO] 10:21:53.753 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
-[INFO] 10:21:53.978 Check ALM binding of project 'freelancenexus-payment-service'
-[INFO] 10:21:54.209 Detected project binding: NONEXISTENT
-[INFO] 10:21:54.210 Check ALM binding of project 'freelancenexus-payment-service' (done) | time=232ms
-[INFO] 10:21:54.212 Load project pull requests
-[INFO] 10:21:54.663 Load project pull requests (done) | time=450ms
-[INFO] 10:21:54.666 Load branch configuration
-[INFO] 10:21:54.667 Load branch configuration (done) | time=1ms
-[INFO] 10:21:54.675 Load quality profiles
-[INFO] 10:21:55.511 Load quality profiles (done) | time=836ms
-[INFO] 10:21:55.540 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
-[INFO] 10:21:55.541 Create analysis
+[WARNING] 11:03:28.994 Using an unspecified version instead of an explicit plugin version may introduce breaking analysis changes at an unwanted time. It is highly recommended to use an explicit version, e.g. 'org.sonarsource.scanner.maven:sonar-maven-plugin:4.0.0.4121'.
+[INFO] 11:03:29.010 Java 17.0.17 Microsoft (64-bit)
+[INFO] 11:03:29.011 Linux 6.8.0-1030-azure (amd64)
+[INFO] 11:03:29.251 User cache: /home/vscode/.sonar/cache
+[INFO] 11:03:31.191 Communicating with SonarCloud
+[INFO] 11:03:31.211 Default locale: "en_US", source code encoding: "UTF-8"
+[INFO] 11:03:32.247 Load global settings
+[INFO] 11:03:33.611 Load global settings (done) | time=1366ms
+[INFO] 11:03:33.671 Server id: 1BD809FA-AWHW8ct9-T_TB3XqouNu
+[INFO] 11:03:33.992 Loading required plugins
+[INFO] 11:03:33.992 Load plugins index
+[INFO] 11:03:34.448 Load plugins index (done) | time=456ms
+[INFO] 11:03:34.450 Load/download plugins
+[INFO] 11:03:34.611 Load/download plugins (done) | time=161ms
+[INFO] 11:03:35.124 Loaded core extensions: architecture, sca, a3s
+[INFO] 11:03:35.888 Process project properties
+[INFO] 11:03:35.925 Project key: VIKRAMVETRI_payment-service
+[INFO] 11:03:35.927 Base dir: /workspaces/FREELANCER-PROJECT/payment-service
+[INFO] 11:03:35.927 Working dir: /workspaces/FREELANCER-PROJECT/payment-service/target/sonar
+[INFO] 11:03:35.963 Load project branches
+[INFO] 11:03:36.321 Load project branches (done) | time=358ms
+[INFO] 11:03:36.341 Load project settings for component key: 'VIKRAMVETRI_payment-service'
+[INFO] 11:03:36.570 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
+[INFO] 11:03:37.126 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
+[INFO] 11:03:37.470 Check ALM binding of project 'VIKRAMVETRI_payment-service'
+[INFO] 11:03:37.693 Detected project binding: NONEXISTENT
+[INFO] 11:03:37.693 Check ALM binding of project 'VIKRAMVETRI_payment-service' (done) | time=228ms
+[INFO] 11:03:37.698 Load project pull requests
+[INFO] 11:03:37.909 Load project pull requests (done) | time=211ms
+[INFO] 11:03:37.921 Load branch configuration
+[INFO] 11:03:37.925 Load branch configuration (done) | time=4ms
+[INFO] 11:03:37.957 Load quality profiles
+[INFO] 11:03:40.728 Load quality profiles (done) | time=2759ms
+[INFO] 11:03:40.850 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
+[INFO] 11:03:40.851 Create analysis
+[INFO] 11:03:49.565 Create analysis (done) | time=8713ms
+[INFO] 11:03:49.578 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
+[INFO] 11:03:49.940 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
+[INFO] 11:03:49.943 Load active rules
+[INFO] 11:03:52.353 Load active rules (done) | time=2410ms
+[INFO] 11:03:54.864 Organization key: vikramvetri
+[INFO] 11:03:54.934 Preprocessing files...
+[INFO] 11:03:55.250 2 languages detected in 23 preprocessed files (done) | time=315ms
+[INFO] 11:03:55.253 0 files ignored because of inclusion/exclusion patterns
+[INFO] 11:03:55.253 0 files ignored because of scm ignore settings
+[INFO] 11:03:55.323 Loading plugins for detected languages
+[INFO] 11:03:55.326 Load/download plugins
+[INFO] 11:03:55.631 Load/download plugins (done) | time=305ms
+[INFO] 11:03:56.378 Load project repositories
+[INFO] 11:04:01.291 Load project repositories (done) | time=4913ms
+[INFO] 11:04:01.313 Indexing files...
+[INFO] 11:04:01.317 Project configuration:
+[INFO] 11:04:01.318   Excluded sources: **/build-wrapper-dump.json
+[INFO] 11:04:01.338 23 files indexed (done) | time=19ms
+[INFO] 11:04:01.357 Quality profile for java: Sonar way
+[INFO] 11:04:01.361 Quality profile for xml: Sonar way
+[INFO] 11:04:01.361 ------------- Run sensors on module payment-service
+[INFO] 11:04:01.598 Load metrics repository
+[INFO] 11:04:01.831 Load metrics repository (done) | time=233ms
+[INFO] 11:04:01.858 Sensor cache enabled
+[INFO] 11:04:01.862 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
+[INFO] 11:04:01.864 Load sensor cache
+[INFO] 11:04:02.273 Load sensor cache (404) | time=408ms
+[INFO] 11:04:02.279 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
+[INFO] 11:04:04.835 Sensor JavaSensor [java]
+[INFO] 11:04:04.841 Configured Java source version (sonar.java.source): 17, preview features enabled (sonar.java.enablePreview): false
+[INFO] 11:04:04.939 Server-side caching is enabled. The Java analyzer will not try to leverage data from a previous analysis.
+[INFO] 11:04:04.941 Using ECJ batch to parse 17 Main java source files with batch size 104 KB.
+[INFO] 11:04:05.851 Starting batch processing.
+[INFO] 11:04:07.505 The Java analyzer cannot skip unchanged files in this context. A full analysis is performed for all files.
+[INFO] 11:04:15.781 100% analyzed
+[INFO] 11:04:15.781 Batch processing: Done.
+[INFO] 11:04:15.785 Did not optimize analysis for any files, performed a full analysis for all 17 files.
+[WARNING] 11:04:15.969 Use of preview features have been detected during analysis. Enable DEBUG mode to see them.
+[INFO] 11:04:15.970 Using ECJ batch to parse 4 Test java source files with batch size 104 KB.
+[INFO] 11:04:15.995 Starting batch processing.
+[INFO] 11:04:17.513 100% analyzed
+[INFO] 11:04:17.513 Batch processing: Done.
+[INFO] 11:04:17.515 Did not optimize analysis for any files, performed a full analysis for all 4 files.
+[INFO] 11:04:17.518 No "Generated" source files to scan.
+[INFO] 11:04:17.532 Sensor JavaSensor [java] (done) | time=12697ms
+[INFO] 11:04:17.533 Sensor JaCoCo XML Report Importer [jacoco]
+[INFO] 11:04:17.538 'sonar.coverage.jacoco.xmlReportPaths' is not defined. Using default locations: target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml,build/reports/jacoco/test/jacocoTestReport.xml
+[INFO] 11:04:17.547 Importing 1 report(s). Turn your logs in debug mode in order to see the exhaustive list.
+[INFO] 11:04:17.735 Sensor JaCoCo XML Report Importer [jacoco] (done) | time=202ms
+[INFO] 11:04:17.739 Sensor IaC GitHub Actions Sensor [iacenterprise]
+[INFO] 11:04:17.745 There are no files to be analyzed for the GitHub Actions language
+[INFO] 11:04:17.746 Sensor IaC GitHub Actions Sensor [iacenterprise] (done) | time=7ms
+[INFO] 11:04:17.747 Sensor IaC Shell Sensor [iacenterprise]
+[INFO] 11:04:17.747 There are no files to be analyzed for the Shell language
+[INFO] 11:04:17.749 Sensor IaC Shell Sensor [iacenterprise] (done) | time=2ms
+[INFO] 11:04:17.751 Sensor IaC Docker Sensor [iac]
+[INFO] 11:04:17.753 There are no files to be analyzed for the Docker language
+[INFO] 11:04:17.755 Sensor IaC Docker Sensor [iac] (done) | time=5ms
+[INFO] 11:04:17.755 Sensor IaC hadolint report Sensor [iac]
+[INFO] 11:04:17.756 Sensor IaC hadolint report Sensor [iac] (done) | time=1ms
+[INFO] 11:04:17.759 Sensor Java Config Sensor [iac]
+[INFO] 11:04:17.768 There are no files to be analyzed for the Java language
+[INFO] 11:04:17.768 Sensor Java Config Sensor [iac] (done) | time=9ms
+[INFO] 11:04:17.768 Sensor ThymeLeaf template sensor [securityjavafrontend]
+[INFO] 11:04:17.776 Sensor ThymeLeaf template sensor [securityjavafrontend] (done) | time=8ms
+[INFO] 11:04:17.776 Sensor JavaAndroidConfigurationSensor [securityjavafrontend]
+[INFO] 11:04:17.777 Sensor JavaAndroidConfigurationSensor [securityjavafrontend] (done) | time=0ms
+[INFO] 11:04:17.777 Sensor SurefireSensor [java]
+[INFO] 11:04:17.782 parsing [/workspaces/FREELANCER-PROJECT/payment-service/target/surefire-reports]
+[INFO] 11:04:17.879 Sensor SurefireSensor [java] (done) | time=101ms
+[INFO] 11:04:17.880 Sensor XML Sensor [xml]
+[INFO] 11:04:17.902 1 source file to be analyzed
+[INFO] 11:04:18.284 1/1 source file has been analyzed
+[INFO] 11:04:18.287 Sensor XML Sensor [xml] (done) | time=407ms
+[INFO] 11:04:18.287 Sensor DBD/Java IR Generation [dbdjavafrontendrewrite]
+[INFO] 11:04:18.674 Sensor DBD/Java IR Generation [dbdjavafrontendrewrite] (done) | time=387ms
+[INFO] 11:04:18.676 Sensor javabugs [dbd]
+[INFO] 11:04:19.617 Analyzing 369/597 functions to detect bugs.
+[INFO] 11:04:21.361 Sensor javabugs [dbd] (done) | time=2685ms
+[INFO] 11:04:21.366 Sensor pythonbugs [dbd]
+[INFO] 11:04:21.368 No IR files have been included for analysis.
+[INFO] 11:04:21.373 Sensor pythonbugs [dbd] (done) | time=7ms
+[INFO] 11:04:21.373 Sensor EnterpriseTextAndSecretsSensor [textenterprise]
+[INFO] 11:04:21.399 Available processors: 2
+[INFO] 11:04:21.400 Using 2 threads for analysis.
+[INFO] 11:04:22.684 Start fetching files for the text and secrets analysis
+[INFO] 11:04:22.703 Using Git CLI to retrieve untracked files
+[INFO] 11:04:22.729 Retrieving language associated files and files included via "sonar.text.inclusions" that are tracked by git
+[INFO] 11:04:22.733 Starting the text and secrets analysis
+[INFO] 11:04:22.736 22 source files to be analyzed for the text and secrets analysis
+[INFO] 11:04:22.988 22/22 source files have been analyzed for the text and secrets analysis
+[INFO] 11:04:22.998 Start fetching files for the binary file analysis
+[INFO] 11:04:23.001 There are no files to be analyzed for the binary file analysis
+[INFO] 11:04:23.013 Sensor EnterpriseTextAndSecretsSensor [textenterprise] (done) | time=1640ms
+[INFO] 11:04:23.013 Sensor JavaSecuritySensor [security]
+[INFO] 11:04:23.030 29 taint analysis rules enabled.
+[INFO] 11:04:23.429 Analyzing 53 UCFGs to detect vulnerabilities.
+[INFO] 11:04:30.674 No entry points found.
+[INFO] 11:04:30.690 java security sensor: Begin: 2025-11-13T11:04:23.020977682Z, End: 2025-11-13T11:04:30.689555343Z, Duration: 00:00:07.668
+  Load type hierarchy and UCFGs: Begin: 2025-11-13T11:04:23.031264773Z, End: 2025-11-13T11:04:23.429730785Z, Duration: 00:00:00.398
+    Load type hierarchy: Begin: 2025-11-13T11:04:23.031280502Z, End: 2025-11-13T11:04:23.174669583Z, Duration: 00:00:00.143
+    Load UCFGs: Begin: 2025-11-13T11:04:23.174876058Z, End: 2025-11-13T11:04:23.429625258Z, Duration: 00:00:00.254
+  Check cache: Begin: 2025-11-13T11:04:23.432222882Z, End: 2025-11-13T11:04:23.432518272Z, Duration: 00:00:00.000
+    Load cache: Begin: 2025-11-13T11:04:23.432233241Z, End: 2025-11-13T11:04:23.432253719Z, Duration: 00:00:00.000
+  Create runtime call graph: Begin: 2025-11-13T11:04:23.432565300Z, End: 2025-11-13T11:04:23.492363094Z, Duration: 00:00:00.059
+    Variable Type Analysis #1: Begin: 2025-11-13T11:04:23.433429481Z, End: 2025-11-13T11:04:23.469462716Z, Duration: 00:00:00.036
+      Create runtime type propagation graph: Begin: 2025-11-13T11:04:23.437812403Z, End: 2025-11-13T11:04:23.456604211Z, Duration: 00:00:00.018
+      Run SCC (Tarjan) on 273 nodes: Begin: 2025-11-13T11:04:23.456846262Z, End: 2025-11-13T11:04:23.462180217Z, Duration: 00:00:00.005
+      Propagate runtime types to strongly connected components: Begin: 2025-11-13T11:04:23.462245389Z, End: 2025-11-13T11:04:23.469417281Z, Duration: 00:00:00.007
+    Variable Type Analysis #2: Begin: 2025-11-13T11:04:23.474397577Z, End: 2025-11-13T11:04:23.491687704Z, Duration: 00:00:00.017
+      Create runtime type propagation graph: Begin: 2025-11-13T11:04:23.474402566Z, End: 2025-11-13T11:04:23.486250577Z, Duration: 00:00:00.011
+      Run SCC (Tarjan) on 273 nodes: Begin: 2025-11-13T11:04:23.486310949Z, End: 2025-11-13T11:04:23.486802346Z, Duration: 00:00:00.000
+      Propagate runtime types to strongly connected components: Begin: 2025-11-13T11:04:23.486840707Z, End: 2025-11-13T11:04:23.491644414Z, Duration: 00:00:00.004
+  Load config: Begin: 2025-11-13T11:04:23.492409931Z, End: 2025-11-13T11:04:30.613298030Z, Duration: 00:00:07.120
+  Compute entry points: Begin: 2025-11-13T11:04:30.613405461Z, End: 2025-11-13T11:04:30.674692972Z, Duration: 00:00:00.061
+[INFO] 11:04:30.693 java security sensor peak memory: 697 MB
+[INFO] 11:04:30.697 Sensor JavaSecuritySensor [security] (done) | time=7684ms
+[INFO] 11:04:30.721 ------------- Run sensors on project
+[INFO] 11:04:31.262 Sensor JavaProjectSensor [java]
+[INFO] 11:04:31.267 Sensor JavaProjectSensor [java] (done) | time=5ms
+[INFO] 11:04:31.268 Sensor JavaArchitectureSensor [architecture]
+[INFO] 11:04:31.315 Architecture analysis is enabled with the following features: legacy
+[INFO] 11:04:31.332 * Protobuf reading starting | memory total=1106 | free=842 | used=263 (MB)
+[INFO] 11:04:31.335 * Reading SonarArchitecture IR data from directory "/workspaces/FREELANCER-PROJECT/payment-service/target/sonar/architecture/java"
+[INFO] 11:04:31.900 * Files successfully loaded: "21" out of "21"
+[INFO] 11:04:31.900 * Protobuf reading complete | memory total=1106 | free=824 | used=281 (MB)
+[INFO] 11:04:31.974 * Build architecture.graph.java.namespace_graph.default_perspective hierarchy graph complete (filtered=false) | memory total=1106 | free=822 | used=283 (MB)
+[INFO] 11:04:32.015 Sensor JavaArchitectureSensor [architecture] (done) | time=747ms
+[INFO] 11:04:32.016 Sensor Zero Coverage Sensor
+[INFO] 11:04:32.017 Sensor Zero Coverage Sensor (done) | time=1ms
+[INFO] 11:04:32.019 Sensor Java CPD Block Indexer
+[INFO] 11:04:32.111 Sensor Java CPD Block Indexer (done) | time=91ms
+[INFO] 11:04:32.114 Inferred api base url 'https://api.sonarcloud.io' from host url 'https://sonarcloud.io'.
+[INFO] 11:04:32.410 ------------- Gather SCA dependencies on project
+[INFO] 11:04:32.411 Checking if SCA is enabled for organization vikramvetri
+[INFO] 11:04:32.953 Dependency analysis skipped
+[INFO] 11:04:32.974 CPD Executor 5 files had no CPD blocks
+[INFO] 11:04:32.975 CPD Executor Calculating CPD for 12 files
+[INFO] 11:04:33.006 CPD Executor CPD calculation finished (done) | time=30ms
+[INFO] 11:04:33.008 SCM Publisher SCM provider for this project is: git
+[INFO] 11:04:33.010 SCM Publisher 22 source files to be analyzed
+[INFO] 11:04:33.869 SCM Publisher 22/22 source files have been analyzed (done) | time=858ms
+[INFO] 11:04:34.366 Analysis report generated in 451ms, dir size=444 KB
+[INFO] 11:04:34.941 Analysis report compressed in 572ms, zip size=123 KB
+[INFO] 11:04:36.065 Analysis report uploaded in 1122ms
+[INFO] 11:04:36.072 ANALYSIS SUCCESSFUL, you can find the results at: https://sonarcloud.io/dashboard?id=VIKRAMVETRI_payment-service
+[INFO] 11:04:36.075 Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+[INFO] 11:04:36.075 More about the report processing at https://sonarcloud.io/api/ce/task?id=AZp844EoVGdyBAYihjvP
+[INFO] 11:04:36.076 ------------- Upload SCA dependency files
+[INFO] 11:04:37.583 Sensor cache published successfully
+[INFO] 11:04:37.650 Analysis total time: 1:02.526 s
 [INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
+[INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  10.309 s
-[INFO] Finished at: 2025-11-13T10:21:55Z
+[INFO] Total time:  01:47 min
+[INFO] Finished at: 2025-11-13T11:04:37Z
 [INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.sonarsource.scanner.maven:sonar-maven-plugin:4.0.0.4121:sonar (default-cli) on project payment-service: Error creating bean with name 'org.sonarsource.scanner.api.internal.IsolatedClassloader@6411504a-org.sonar.scanner.report.ReportPublisher': Unsatisfied dependency expressed through constructor parameter 7: Error creating bean with name 'org.sonarsource.scanner.api.internal.IsolatedClassloader@6411504a-org.sonar.scanner.report.MetadataPublisher': Unsatisfied dependency expressed through constructor parameter 8: Error creating bean with name 'Analysis' defined in org.sonar.scanner.analysis.AnalysisProvider: Failed to instantiate [org.sonar.scanner.extension.api.Analysis]: Factory method 'provide' threw exception with message: Unable to create analysis: Error 404 on https://api.sonarcloud.io/analysis/analyses : -> [Help 1]
-[ERROR] 
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

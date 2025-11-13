@@ -1,0 +1,76 @@
+
+> freelance-nexus-frontend@1.0.0 start
+> react-scripts start
+
+(node:299887) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:299887) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+Compiled successfully!
+
+You can now view freelance-nexus-frontend in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://10.0.0.23:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/services/authService.js
+Syntax error: Missing semicolon. (89:6) (89:6)
+ERROR in ./src/services/authService.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/src/services/authService.js: Missing semicolon. (89:6)
+
+  87 |
+  88 | 1. **API Endpoints** (lines 30-32 and 36-37):
+> 89 |    - `POST /api/users/register` - Backend registration endpoint
+     |       ^
+  90 |    - `POST /api/users/login` - Backend login endpoint
+  91 |
+  92 | 2. **Axios Instance**: Creates a configured axios instance with your backend URL
+    at constructor (/workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/@babel/parser/lib/index.js:367:19)
+    at FlowParserMixin.raise (/workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/@babel/parser/lib/index.js:6624:19)
+    at FlowParserMixin.semicolon (/workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/@babel/parser/lib/index.js:6920:10)
+    at FlowParserMixin.parseExpressionStatement (/workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/@babel/parser/lib/index.js:13361:10)
+    at FlowParserMixin.parseExpressionStatement (/workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/@babel/parser/lib/index.js:2967:18)
+    at FlowParserMixin.parseStatementContent (/workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/@babel/parser/lib/index.js:12975:19)
+    at FlowParserMixin.parseStatementLike (/workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/@babel/parser/lib/index.js:12843:17)
+    at FlowParserMixin.parseStatementLike (/workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/@babel/parser/lib/index.js:2945:24)
+    at FlowParserMixin.parseModuleItem (/workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/@babel/parser/lib/index.js:12820:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/@babel/parser/lib/index.js:13392:36)
+    at FlowParserMixin.parseBlockBody (/workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/@babel/parser/lib/index.js:13385:10)
+    at FlowParserMixin.parseProgram (/workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/@babel/parser/lib/index.js:12698:10)
+    at FlowParserMixin.parseTopLevel (/workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/@babel/parser/lib/index.js:12688:25)
+    at FlowParserMixin.parseTopLevel (/workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/@babel/parser/lib/index.js:3714:28)
+    at FlowParserMixin.parse (/workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/@babel/parser/lib/index.js:14568:25)
+    at parse (/workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/@babel/parser/lib/index.js:14602:38)
+    at parser (/workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (/workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/@babel/core/lib/transformation/normalize-file.js:64:37)
+    at normalizeFile.next (<anonymous>)
+    at run (/workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/@babel/core/lib/transformation/index.js:22:50)
+    at run.next (<anonymous>)
+    at transform (/workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/@babel/core/lib/transform.js:22:33)
+    at transform.next (<anonymous>)
+    at step (/workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/gensync/index.js:261:32)
+    at /workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/gensync/index.js:273:13
+    at async.call.result.err.err (/workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/gensync/index.js:223:11)
+    at /workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/gensync/index.js:189:28
+    at /workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/@babel/core/lib/gensync-utils/async.js:67:7
+    at /workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/gensync/index.js:113:33
+    at step (/workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/gensync/index.js:287:14)
+    at /workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/gensync/index.js:273:13
+    at async.call.result.err.err (/workspaces/FREELANCER-PROJECT/freelance-nexus-frontend/node_modules/gensync/index.js:223:11)
+
+ERROR in [eslint] 
+src/services/authService.js
+  Line 89:6:  Parsing error: Missing semicolon. (89:6)
+
+webpack compiled with 2 errors
