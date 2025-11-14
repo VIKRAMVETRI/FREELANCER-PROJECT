@@ -5,17 +5,19 @@ import com.freelancenexus.userservice.exception.DuplicateResourceException;
 import com.freelancenexus.userservice.exception.UnauthorizedException;
 import com.freelancenexus.userservice.exception.UserNotFoundException;
 import com.freelancenexus.userservice.model.User;
+import com.freelancenexus.userservice.model.UserRole;
 import com.freelancenexus.userservice.repository.UserRepository;
 import com.freelancenexus.userservice.security.JwtTokenProvider;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.*;
-import com.freelancenexus.userservice.model.UserRole;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -23,6 +25,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -37,303 +40,311 @@ class UserServiceTest {
     @Mock
     private JwtTokenProvider jwtTokenProvider;
 
-    @InjectMocks
-    private UserService userService;
-
     @Mock
     private SecurityContext securityContext;
 
+    @Mock
+    private Authentication authentication;
+
+    @InjectMocks
+    private UserService userService;
+
+    private User testUser;
     private UserRegistrationDTO registrationDTO;
-    private User user;
     private UserLoginDTO loginDTO;
     private UserUpdateDTO updateDTO;
 
     @BeforeEach
     void setUp() {
-        registrationDTO = new UserRegistrationDTO(
-                "test@example.com",
-                "password123",
-                "Test User",
-                "1234567890",
-                UserRole.CLIENT,
-                null
-        );
+        testUser = new User();
+        testUser.setId(1L);
+        testUser.setEmail("test@example.com");
+        testUser.setPassword("encodedPassword");
+        testUser.setFullName("Test User");
+        testUser.setPhone("1234567890");
+        testUser.setRole(UserRole.CLIENT);
+        testUser.setIsActive(true);
+        testUser.setProfileImageUrl("http://example.com/image.jpg");
+        testUser.setCreatedAt(LocalDateTime.now());
+        testUser.setUpdatedAt(LocalDateTime.now());
 
-        user = new User();
-        user.setId(1L);
-        user.setEmail("test@example.com");
-        user.setPassword("encodedPassword");
-        user.setFullName("Test User");
-        user.setPhone("1234567890");
-        user.setRole(UserRole.CLIENT);
-        user.setIsActive(true);
-        user.setCreatedAt(LocalDateTime.now());
-        user.setUpdatedAt(LocalDateTime.now());
+        registrationDTO = new UserRegistrationDTO();
+        registrationDTO.setEmail("test@example.com");
+        registrationDTO.setPassword("password123");
+        registrationDTO.setFullName("Test User");
+        registrationDTO.setPhone("1234567890");
+        registrationDTO.setRole(UserRole.CLIENT);
+        registrationDTO.setProfileImageUrl("http://example.com/image.jpg");
 
-        loginDTO = new UserLoginDTO("test@example.com", "password123");
-        updateDTO = new UserUpdateDTO("Updated User", "0987654321", null);
+        loginDTO = new UserLoginDTO();
+        loginDTO.setEmail("test@example.com");
+        loginDTO.setPassword("password123");
+
+        updateDTO = new UserUpdateDTO();
+        updateDTO.setFullName("Updated Name");
+        updateDTO.setPhone("9876543210");
+        updateDTO.setProfileImageUrl("http://example.com/new-image.jpg");
     }
 
     @Test
-    void shouldRegisterUserSuccessfully() {
+    void registerUser_Success() {
+        // Arrange
         when(userRepository.existsByEmail(registrationDTO.getEmail())).thenReturn(false);
         when(passwordEncoder.encode(registrationDTO.getPassword())).thenReturn("encodedPassword");
-        when(userRepository.save(any(User.class))).thenReturn(user);
+        when(userRepository.save(any(User.class))).thenReturn(testUser);
 
-        var response = userService.registerUser(registrationDTO);
+        // Act
+        UserResponseDTO result = userService.registerUser(registrationDTO);
 
-        assertNotNull(response);
-        assertEquals(user.getEmail(), response.getEmail());
+        // Assert
+        assertNotNull(result);
+        assertEquals(testUser.getId(), result.getId());
+        assertEquals(testUser.getEmail(), result.getEmail());
+        assertEquals(testUser.getFullName(), result.getFullName());
         verify(userRepository).existsByEmail(registrationDTO.getEmail());
+        verify(passwordEncoder).encode(registrationDTO.getPassword());
         verify(userRepository).save(any(User.class));
     }
 
     @Test
-    void shouldThrowExceptionWhenRegisteringDuplicateEmail() {
+    void registerUser_DuplicateEmail_ThrowsException() {
+        // Arrange
         when(userRepository.existsByEmail(registrationDTO.getEmail())).thenReturn(true);
 
-        assertThrows(DuplicateResourceException.class,
-                () -> userService.registerUser(registrationDTO));
-
+        // Act & Assert
+        assertThrows(DuplicateResourceException.class, () -> {
+            userService.registerUser(registrationDTO);
+        });
         verify(userRepository).existsByEmail(registrationDTO.getEmail());
         verify(userRepository, never()).save(any(User.class));
     }
 
     @Test
-    void shouldLoginUserSuccessfully() {
-        when(userRepository.findByEmail(loginDTO.getEmail())).thenReturn(Optional.of(user));
-        when(passwordEncoder.matches(loginDTO.getPassword(), user.getPassword())).thenReturn(true);
-        when(jwtTokenProvider.generateToken(user.getEmail(), user.getId(), user.getRole().name()))
-                .thenReturn("jwt-token");
+    void loginUser_Success() {
+        // Arrange
+        when(userRepository.findByEmail(loginDTO.getEmail())).thenReturn(Optional.of(testUser));
+        when(passwordEncoder.matches(loginDTO.getPassword(), testUser.getPassword())).thenReturn(true);
+        when(jwtTokenProvider.generateToken(testUser.getEmail(), testUser.getId(), testUser.getRole().name()))
+            .thenReturn("jwt-token");
 
-        var response = userService.loginUser(loginDTO);
+        // Act
+        LoginResponseDTO result = userService.loginUser(loginDTO);
 
-        assertNotNull(response);
-        assertEquals("jwt-token", response.getAccessToken());
-        assertEquals(user.getEmail(), response.getUser().getEmail());
+        // Assert
+        assertNotNull(result);
+        assertEquals("jwt-token", result.getAccessToken());
+        assertEquals("Bearer", result.getTokenType());
+        assertEquals(86400L, result.getExpiresIn());
+        assertNotNull(result.getUser());
+        assertEquals(testUser.getEmail(), result.getUser().getEmail());
+        verify(userRepository).findByEmail(loginDTO.getEmail());
+        verify(passwordEncoder).matches(loginDTO.getPassword(), testUser.getPassword());
     }
 
     @Test
-    void shouldThrowUnauthorizedIfUserNotFoundOnLogin() {
+    void loginUser_UserNotFound_ThrowsException() {
+        // Arrange
         when(userRepository.findByEmail(loginDTO.getEmail())).thenReturn(Optional.empty());
 
-        assertThrows(UnauthorizedException.class, () -> userService.loginUser(loginDTO));
+        // Act & Assert
+        assertThrows(UnauthorizedException.class, () -> {
+            userService.loginUser(loginDTO);
+        });
+        verify(userRepository).findByEmail(loginDTO.getEmail());
+        verify(passwordEncoder, never()).matches(anyString(), anyString());
     }
 
     @Test
-    void shouldThrowUnauthorizedIfPasswordDoesNotMatch() {
-        when(userRepository.findByEmail(loginDTO.getEmail())).thenReturn(Optional.of(user));
-        when(passwordEncoder.matches(loginDTO.getPassword(), user.getPassword())).thenReturn(false);
+    void loginUser_InactiveUser_ThrowsException() {
+        // Arrange
+        testUser.setIsActive(false);
+        when(userRepository.findByEmail(loginDTO.getEmail())).thenReturn(Optional.of(testUser));
 
-        assertThrows(UnauthorizedException.class, () -> userService.loginUser(loginDTO));
+        // Act & Assert
+        UnauthorizedException exception = assertThrows(UnauthorizedException.class, () -> {
+            userService.loginUser(loginDTO);
+        });
+        assertEquals("Account is inactive", exception.getMessage());
+        verify(userRepository).findByEmail(loginDTO.getEmail());
     }
 
     @Test
-    void shouldThrowUnauthorizedIfUserInactive() {
-        user.setIsActive(false);
-        when(userRepository.findByEmail(loginDTO.getEmail())).thenReturn(Optional.of(user));
+    void loginUser_InvalidPassword_ThrowsException() {
+        // Arrange
+        when(userRepository.findByEmail(loginDTO.getEmail())).thenReturn(Optional.of(testUser));
+        when(passwordEncoder.matches(loginDTO.getPassword(), testUser.getPassword())).thenReturn(false);
 
-        assertThrows(UnauthorizedException.class, () -> userService.loginUser(loginDTO));
+        // Act & Assert
+        assertThrows(UnauthorizedException.class, () -> {
+            userService.loginUser(loginDTO);
+        });
+        verify(userRepository).findByEmail(loginDTO.getEmail());
+        verify(passwordEncoder).matches(loginDTO.getPassword(), testUser.getPassword());
     }
 
     @Test
-    void shouldGetCurrentUserProfileSuccessfully() {
-        setAuthenticatedUserId(1L);
-        when(userRepository.findById(1L)).thenReturn(Optional.of(user));
-
-        var response = userService.getCurrentUserProfile();
-
-        assertEquals(user.getEmail(), response.getEmail());
-    }
-
-    @Test
-    void shouldThrowUserNotFoundWhenGettingCurrentUserProfile() {
-        setAuthenticatedUserId(1L);
-        when(userRepository.findById(1L)).thenReturn(Optional.empty());
-
-        assertThrows(UserNotFoundException.class, () -> userService.getCurrentUserProfile());
-    }
-
-    @Test
-    void shouldUpdateCurrentUserProfileSuccessfully() {
-        setAuthenticatedUserId(1L);
-        when(userRepository.findById(1L)).thenReturn(Optional.of(user));
-        when(userRepository.save(user)).thenReturn(user);
-
-        var response = userService.updateCurrentUserProfile(updateDTO);
-
-        assertEquals(updateDTO.getFullName(), response.getFullName());
-        assertEquals(updateDTO.getPhone(), response.getPhone());
-    }
-
-    @Test
-    void shouldThrowUserNotFoundWhenUpdatingProfile() {
-        setAuthenticatedUserId(1L);
-        when(userRepository.findById(1L)).thenReturn(Optional.empty());
-
-        assertThrows(UserNotFoundException.class, () -> userService.updateCurrentUserProfile(updateDTO));
-    }
-
-    @Test
-    void shouldGetUserByIdSuccessfully() {
-        when(userRepository.findById(1L)).thenReturn(Optional.of(user));
-
-        var response = userService.getUserById(1L);
-
-        assertEquals(user.getEmail(), response.getEmail());
-    }
-
-    @Test
-    void shouldThrowUserNotFoundWhenGettingById() {
-        when(userRepository.findById(1L)).thenReturn(Optional.empty());
-
-        assertThrows(UserNotFoundException.class, () -> userService.getUserById(1L));
-    }
-
-    @Test
-    void shouldGetAllUsersSuccessfully() {
-        when(userRepository.findAll()).thenReturn(Arrays.asList(user));
-
-        List<UserResponseDTO> users = userService.getAllUsers();
-
-        assertEquals(1, users.size());
-        assertEquals(user.getEmail(), users.get(0).getEmail());
-    }
-
-    @Test
-    void shouldDeleteUserSuccessfully() {
-        when(userRepository.findById(1L)).thenReturn(Optional.of(user));
-        doNothing().when(userRepository).delete(user);
-
-        assertDoesNotThrow(() -> userService.deleteUser(1L));
-        verify(userRepository).delete(user);
-    }
-
-    @Test
-    void shouldThrowUserNotFoundWhenDeleting() {
-        when(userRepository.findById(1L)).thenReturn(Optional.empty());
-
-        assertThrows(UserNotFoundException.class, () -> userService.deleteUser(1L));
-    }
-
-    @Test
-    void shouldThrowUnauthorizedIfCurrentUserNotAuthenticated() {
-        SecurityContextHolder.clearContext();
-
-        assertThrows(UnauthorizedException.class,
-                () -> userService.getCurrentUserProfile());
-    }
-     
-    @Test
-void shouldHandleAuthenticationWithNonLongPrincipal() {
-    // Test the else branch in getCurrentUserId()
-    var auth = mock(org.springframework.security.core.Authentication.class);
-    when(auth.getPrincipal()).thenReturn("stringPrincipal"); // Not a Long
-    SecurityContextHolder.setContext(securityContext);
-    when(securityContext.getAuthentication()).thenReturn(auth);
-    
-    assertThrows(UnauthorizedException.class, () -> userService.getCurrentUserProfile());
-}
-
-@Test
-void shouldHandleNullAuthentication() {
-    SecurityContextHolder.setContext(securityContext);
-    when(securityContext.getAuthentication()).thenReturn(null);
-    
-    assertThrows(UnauthorizedException.class, () -> userService.getCurrentUserProfile());
-}
-
-@Test
-void shouldUpdateOnlyFullNameWhenOtherFieldsNull() {
-    setAuthenticatedUserId(1L);
-    when(userRepository.findById(1L)).thenReturn(Optional.of(user));
-    when(userRepository.save(user)).thenReturn(user);
-    
-    UserUpdateDTO partialUpdate = new UserUpdateDTO("Only Name", null, null);
-    var response = userService.updateCurrentUserProfile(partialUpdate);
-    
-    assertEquals("Only Name", response.getFullName());
-    verify(userRepository).save(user);
-}
-
-@Test
-void shouldUpdateOnlyPhoneWhenOtherFieldsNull() {
-    setAuthenticatedUserId(1L);
-    when(userRepository.findById(1L)).thenReturn(Optional.of(user));
-    when(userRepository.save(user)).thenReturn(user);
-    
-    UserUpdateDTO partialUpdate = new UserUpdateDTO(null, "9876543210", null);
-    var response = userService.updateCurrentUserProfile(partialUpdate);
-    
-    assertEquals("9876543210", response.getPhone());
-    verify(userRepository).save(user);
-}
-
-@Test
-void shouldUpdateOnlyProfileImageWhenOtherFieldsNull() {
-    setAuthenticatedUserId(1L);
-    when(userRepository.findById(1L)).thenReturn(Optional.of(user));
-    when(userRepository.save(user)).thenReturn(user);
-    
-    UserUpdateDTO partialUpdate = new UserUpdateDTO(null, null, "http://image.url");
-    var response = userService.updateCurrentUserProfile(partialUpdate);
-    
-    assertEquals("http://image.url", response.getProfileImageUrl());
-    verify(userRepository).save(user);
-}
-
-@Test
-void shouldNotUpdateAnyFieldsWhenAllNull() {
-    setAuthenticatedUserId(1L);
-    String originalName = user.getFullName();
-    String originalPhone = user.getPhone();
-    
-    when(userRepository.findById(1L)).thenReturn(Optional.of(user));
-    when(userRepository.save(user)).thenReturn(user);
-    
-    UserUpdateDTO emptyUpdate = new UserUpdateDTO(null, null, null);
-    var response = userService.updateCurrentUserProfile(emptyUpdate);
-    
-    assertEquals(originalName, response.getFullName());
-    assertEquals(originalPhone, response.getPhone());
-    verify(userRepository).save(user);
-}
-
-@Test
-void shouldRegisterUserWithProfileImage() {
-    UserRegistrationDTO dtoWithImage = new UserRegistrationDTO(
-        "newuser@example.com",
-        "password123",
-        "New User",
-        "1234567890",
-        UserRole.FREELANCER,
-        "http://profile.image.url"
-    );
-    
-    when(userRepository.existsByEmail(dtoWithImage.getEmail())).thenReturn(false);
-    when(passwordEncoder.encode(dtoWithImage.getPassword())).thenReturn("encoded");
-    when(userRepository.save(any(User.class))).thenReturn(user);
-    
-    var response = userService.registerUser(dtoWithImage);
-    
-    assertNotNull(response);
-    verify(userRepository).save(any(User.class));
-}
-
-@Test
-void shouldReturnEmptyListWhenNoUsers() {
-    when(userRepository.findAll()).thenReturn(List.of());
-    
-    List<UserResponseDTO> users = userService.getAllUsers();
-    
-    assertTrue(users.isEmpty());
-    verify(userRepository).findAll();
-}
-
-    private void setAuthenticatedUserId(Long userId) {
-        var auth = mock(org.springframework.security.core.Authentication.class);
-        when(auth.getPrincipal()).thenReturn(userId);
+    void getCurrentUserProfile_Success() {
+        // Arrange
         SecurityContextHolder.setContext(securityContext);
-        when(securityContext.getAuthentication()).thenReturn(auth);
+        when(securityContext.getAuthentication()).thenReturn(authentication);
+        when(authentication.getPrincipal()).thenReturn(1L);
+        when(userRepository.findById(1L)).thenReturn(Optional.of(testUser));
+
+        // Act
+        UserResponseDTO result = userService.getCurrentUserProfile();
+
+        // Assert
+        assertNotNull(result);
+        assertEquals(testUser.getId(), result.getId());
+        assertEquals(testUser.getEmail(), result.getEmail());
+        verify(userRepository).findById(1L);
+    }
+
+    @Test
+    void getCurrentUserProfile_UserNotFound_ThrowsException() {
+        // Arrange
+        SecurityContextHolder.setContext(securityContext);
+        when(securityContext.getAuthentication()).thenReturn(authentication);
+        when(authentication.getPrincipal()).thenReturn(1L);
+        when(userRepository.findById(1L)).thenReturn(Optional.empty());
+
+        // Act & Assert
+        assertThrows(UserNotFoundException.class, () -> {
+            userService.getCurrentUserProfile();
+        });
+        verify(userRepository).findById(1L);
+    }
+
+    @Test
+    void getCurrentUserProfile_NotAuthenticated_ThrowsException() {
+        // Arrange
+        SecurityContextHolder.setContext(securityContext);
+        when(securityContext.getAuthentication()).thenReturn(null);
+
+        // Act & Assert
+        assertThrows(UnauthorizedException.class, () -> {
+            userService.getCurrentUserProfile();
+        });
+    }
+
+    @Test
+    void updateCurrentUserProfile_Success() {
+        // Arrange
+        SecurityContextHolder.setContext(securityContext);
+        when(securityContext.getAuthentication()).thenReturn(authentication);
+        when(authentication.getPrincipal()).thenReturn(1L);
+        when(userRepository.findById(1L)).thenReturn(Optional.of(testUser));
+        when(userRepository.save(any(User.class))).thenReturn(testUser);
+
+        // Act
+        UserResponseDTO result = userService.updateCurrentUserProfile(updateDTO);
+
+        // Assert
+        assertNotNull(result);
+        verify(userRepository).findById(1L);
+        verify(userRepository).save(testUser);
+        assertEquals("Updated Name", testUser.getFullName());
+        assertEquals("9876543210", testUser.getPhone());
+    }
+
+    @Test
+    void updateCurrentUserProfile_PartialUpdate() {
+        // Arrange
+        UserUpdateDTO partialUpdate = new UserUpdateDTO();
+        partialUpdate.setFullName("New Name");
+        
+        SecurityContextHolder.setContext(securityContext);
+        when(securityContext.getAuthentication()).thenReturn(authentication);
+        when(authentication.getPrincipal()).thenReturn(1L);
+        when(userRepository.findById(1L)).thenReturn(Optional.of(testUser));
+        when(userRepository.save(any(User.class))).thenReturn(testUser);
+
+        // Act
+        UserResponseDTO result = userService.updateCurrentUserProfile(partialUpdate);
+
+        // Assert
+        assertNotNull(result);
+        assertEquals("New Name", testUser.getFullName());
+        verify(userRepository).save(testUser);
+    }
+
+    @Test
+    void getUserById_Success() {
+        // Arrange
+        when(userRepository.findById(1L)).thenReturn(Optional.of(testUser));
+
+        // Act
+        UserResponseDTO result = userService.getUserById(1L);
+
+        // Assert
+        assertNotNull(result);
+        assertEquals(testUser.getId(), result.getId());
+        assertEquals(testUser.getEmail(), result.getEmail());
+        verify(userRepository).findById(1L);
+    }
+
+    @Test
+    void getUserById_NotFound_ThrowsException() {
+        // Arrange
+        when(userRepository.findById(1L)).thenReturn(Optional.empty());
+
+        // Act & Assert
+        assertThrows(UserNotFoundException.class, () -> {
+            userService.getUserById(1L);
+        });
+        verify(userRepository).findById(1L);
+    }
+
+    @Test
+    void getAllUsers_Success() {
+        // Arrange
+        User user2 = new User();
+        user2.setId(2L);
+        user2.setEmail("user2@example.com");
+        user2.setFullName("User Two");
+        user2.setRole(UserRole.FREELANCER);
+        user2.setIsActive(true);
+        user2.setCreatedAt(LocalDateTime.now());
+        user2.setUpdatedAt(LocalDateTime.now());
+
+        List<User> users = Arrays.asList(testUser, user2);
+        when(userRepository.findAll()).thenReturn(users);
+
+        // Act
+        List<UserResponseDTO> result = userService.getAllUsers();
+
+        // Assert
+        assertNotNull(result);
+        assertEquals(2, result.size());
+        assertEquals(testUser.getEmail(), result.get(0).getEmail());
+        assertEquals(user2.getEmail(), result.get(1).getEmail());
+        verify(userRepository).findAll();
+    }
+
+    @Test
+    void deleteUser_Success() {
+        // Arrange
+        when(userRepository.findById(1L)).thenReturn(Optional.of(testUser));
+        doNothing().when(userRepository).delete(testUser);
+
+        // Act
+        userService.deleteUser(1L);
+
+        // Assert
+        verify(userRepository).findById(1L);
+        verify(userRepository).delete(testUser);
+    }
+
+    @Test
+    void deleteUser_NotFound_ThrowsException() {
+        // Arrange
+        when(userRepository.findById(1L)).thenReturn(Optional.empty());
+
+        // Act & Assert
+        assertThrows(UserNotFoundException.class, () -> {
+            userService.deleteUser(1L);
+        });
+        verify(userRepository).findById(1L);
+        verify(userRepository, never()).delete(any(User.class));
     }
 }

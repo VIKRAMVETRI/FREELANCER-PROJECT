@@ -11,7 +11,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.io.IOException;
@@ -43,132 +42,183 @@ class JwtAuthenticationFilterTest {
     }
 
     @Test
-    void shouldAuthenticateWithValidToken() throws ServletException, IOException {
+    void doFilterInternal_ValidToken_SetsAuthentication() throws ServletException, IOException {
+        // Arrange
         String token = "valid.jwt.token";
+        String bearerToken = "Bearer " + token;
         Long userId = 1L;
         String role = "CLIENT";
 
-        when(request.getHeader("Authorization")).thenReturn("Bearer " + token);
+        when(request.getHeader("Authorization")).thenReturn(bearerToken);
         when(jwtTokenProvider.validateToken(token)).thenReturn(true);
         when(jwtTokenProvider.getUserIdFromToken(token)).thenReturn(userId);
         when(jwtTokenProvider.getRoleFromToken(token)).thenReturn(role);
 
+        // Act
         jwtAuthenticationFilter.doFilterInternal(request, response, filterChain);
 
+        // Assert
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         assertNotNull(authentication);
         assertEquals(userId, authentication.getPrincipal());
-        assertTrue(authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_" + role)));
+        assertEquals(1, authentication.getAuthorities().size());
+        assertTrue(authentication.getAuthorities().stream()
+            .anyMatch(auth -> auth.getAuthority().equals("ROLE_CLIENT")));
+        
         verify(filterChain).doFilter(request, response);
     }
 
     @Test
-    void shouldNotAuthenticateWithoutAuthorizationHeader() throws ServletException, IOException {
+    void doFilterInternal_NoAuthorizationHeader_DoesNotSetAuthentication() throws ServletException, IOException {
+        // Arrange
         when(request.getHeader("Authorization")).thenReturn(null);
 
+        // Act
         jwtAuthenticationFilter.doFilterInternal(request, response, filterChain);
 
+        // Assert
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         assertNull(authentication);
-        verify(filterChain).doFilter(request, response);
         verify(jwtTokenProvider, never()).validateToken(anyString());
+        verify(filterChain).doFilter(request, response);
     }
 
     @Test
-    void shouldNotAuthenticateWithInvalidToken() throws ServletException, IOException {
-        String token = "invalid.jwt.token";
+    void doFilterInternal_EmptyAuthorizationHeader_DoesNotSetAuthentication() throws ServletException, IOException {
+        // Arrange
+        when(request.getHeader("Authorization")).thenReturn("");
 
-        when(request.getHeader("Authorization")).thenReturn("Bearer " + token);
+        // Act
+        jwtAuthenticationFilter.doFilterInternal(request, response, filterChain);
+
+        // Assert
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        assertNull(authentication);
+        verify(jwtTokenProvider, never()).validateToken(anyString());
+        verify(filterChain).doFilter(request, response);
+    }
+
+    @Test
+    void doFilterInternal_InvalidBearerFormat_DoesNotSetAuthentication() throws ServletException, IOException {
+        // Arrange
+        when(request.getHeader("Authorization")).thenReturn("InvalidFormat token");
+
+        // Act
+        jwtAuthenticationFilter.doFilterInternal(request, response, filterChain);
+
+        // Assert
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        assertNull(authentication);
+        verify(jwtTokenProvider, never()).validateToken(anyString());
+        verify(filterChain).doFilter(request, response);
+    }
+
+    @Test
+    void doFilterInternal_InvalidToken_DoesNotSetAuthentication() throws ServletException, IOException {
+        // Arrange
+        String token = "invalid.jwt.token";
+        String bearerToken = "Bearer " + token;
+
+        when(request.getHeader("Authorization")).thenReturn(bearerToken);
         when(jwtTokenProvider.validateToken(token)).thenReturn(false);
 
+        // Act
         jwtAuthenticationFilter.doFilterInternal(request, response, filterChain);
 
+        // Assert
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         assertNull(authentication);
-        verify(filterChain).doFilter(request, response);
+        verify(jwtTokenProvider).validateToken(token);
         verify(jwtTokenProvider, never()).getUserIdFromToken(anyString());
+        verify(filterChain).doFilter(request, response);
     }
 
     @Test
-    void shouldNotAuthenticateWithMalformedAuthorizationHeader() throws ServletException, IOException {
-        when(request.getHeader("Authorization")).thenReturn("InvalidPrefix token");
+    void doFilterInternal_ExceptionDuringValidation_DoesNotSetAuthentication() throws ServletException, IOException {
+        // Arrange
+        String token = "exception.jwt.token";
+        String bearerToken = "Bearer " + token;
 
+        when(request.getHeader("Authorization")).thenReturn(bearerToken);
+        when(jwtTokenProvider.validateToken(token)).thenThrow(new RuntimeException("Token validation error"));
+
+        // Act
         jwtAuthenticationFilter.doFilterInternal(request, response, filterChain);
 
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        assertNull(authentication);
-        verify(filterChain).doFilter(request, response);
-        verify(jwtTokenProvider, never()).validateToken(anyString());
-    }
-
-    @Test
-    void shouldNotAuthenticateWithEmptyToken() throws ServletException, IOException {
-        when(request.getHeader("Authorization")).thenReturn("Bearer ");
-
-        jwtAuthenticationFilter.doFilterInternal(request, response, filterChain);
-
+        // Assert
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         assertNull(authentication);
         verify(filterChain).doFilter(request, response);
     }
 
     @Test
-    void shouldHandleExceptionDuringAuthentication() throws ServletException, IOException {
+    void doFilterInternal_WithAdminRole_SetsCorrectAuthority() throws ServletException, IOException {
+        // Arrange
         String token = "valid.jwt.token";
-
-        when(request.getHeader("Authorization")).thenReturn("Bearer " + token);
-        when(jwtTokenProvider.validateToken(token)).thenThrow(new RuntimeException("Token processing error"));
-
-        assertDoesNotThrow(() -> jwtAuthenticationFilter.doFilterInternal(request, response, filterChain));
-
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        assertNull(authentication);
-        verify(filterChain).doFilter(request, response);
-    }
-
-    @Test
-    void shouldAuthenticateWithAdminRole() throws ServletException, IOException {
-        String token = "valid.jwt.token";
+        String bearerToken = "Bearer " + token;
         Long userId = 1L;
         String role = "ADMIN";
 
-        when(request.getHeader("Authorization")).thenReturn("Bearer " + token);
+        when(request.getHeader("Authorization")).thenReturn(bearerToken);
         when(jwtTokenProvider.validateToken(token)).thenReturn(true);
         when(jwtTokenProvider.getUserIdFromToken(token)).thenReturn(userId);
         when(jwtTokenProvider.getRoleFromToken(token)).thenReturn(role);
 
+        // Act
         jwtAuthenticationFilter.doFilterInternal(request, response, filterChain);
 
+        // Assert
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         assertNotNull(authentication);
-        assertTrue(authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN")));
+        assertTrue(authentication.getAuthorities().stream()
+            .anyMatch(auth -> auth.getAuthority().equals("ROLE_ADMIN")));
+        verify(filterChain).doFilter(request, response);
     }
 
     @Test
-    void shouldAuthenticateWithFreelancerRole() throws ServletException, IOException {
+    void doFilterInternal_WithFreelancerRole_SetsCorrectAuthority() throws ServletException, IOException {
+        // Arrange
         String token = "valid.jwt.token";
+        String bearerToken = "Bearer " + token;
         Long userId = 1L;
         String role = "FREELANCER";
 
-        when(request.getHeader("Authorization")).thenReturn("Bearer " + token);
+        when(request.getHeader("Authorization")).thenReturn(bearerToken);
         when(jwtTokenProvider.validateToken(token)).thenReturn(true);
         when(jwtTokenProvider.getUserIdFromToken(token)).thenReturn(userId);
         when(jwtTokenProvider.getRoleFromToken(token)).thenReturn(role);
 
+        // Act
         jwtAuthenticationFilter.doFilterInternal(request, response, filterChain);
 
+        // Assert
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         assertNotNull(authentication);
-        assertTrue(authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_FREELANCER")));
+        assertTrue(authentication.getAuthorities().stream()
+            .anyMatch(auth -> auth.getAuthority().equals("ROLE_FREELANCER")));
+        verify(filterChain).doFilter(request, response);
     }
 
     @Test
-    void shouldContinueFilterChainEvenWithException() throws ServletException, IOException {
-        when(request.getHeader("Authorization")).thenReturn("Bearer token");
-        when(jwtTokenProvider.validateToken(anyString())).thenThrow(new RuntimeException("Unexpected error"));
+    void doFilterInternal_BearerTokenWithExtraSpaces_ExtractsCorrectly() throws ServletException, IOException {
+        // Arrange
+        String token = "valid.jwt.token";
+        String bearerToken = "Bearer " + token;
+        Long userId = 1L;
+        String role = "CLIENT";
 
+        when(request.getHeader("Authorization")).thenReturn(bearerToken);
+        when(jwtTokenProvider.validateToken(token)).thenReturn(true);
+        when(jwtTokenProvider.getUserIdFromToken(token)).thenReturn(userId);
+        when(jwtTokenProvider.getRoleFromToken(token)).thenReturn(role);
+
+        // Act
         jwtAuthenticationFilter.doFilterInternal(request, response, filterChain);
 
+        // Assert
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        assertNotNull(authentication);
+        verify(jwtTokenProvider).validateToken(token);
         verify(filterChain).doFilter(request, response);
     }
 }

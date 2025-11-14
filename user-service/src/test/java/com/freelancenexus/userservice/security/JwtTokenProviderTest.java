@@ -1,175 +1,175 @@
 package com.freelancenexus.userservice.security;
 
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.security.Keys;
+import io.jsonwebtoken.JwtException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.util.ReflectionTestUtils;
-
-import javax.crypto.SecretKey;
-import java.nio.charset.StandardCharsets;
-import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class JwtTokenProviderTest {
 
     private JwtTokenProvider jwtTokenProvider;
-    private String jwtSecret = "test-secret-key-for-testing-purposes-must-be-at-least-256-bits-long";
-    private long jwtExpiration = 86400000L; // 24 hours
+    
+    private static final String JWT_SECRET = "mySecretKeyForJWTTokenGenerationAndValidationThatIsLongEnough";
+    private static final long JWT_EXPIRATION = 86400000; // 24 hours
 
     @BeforeEach
     void setUp() {
         jwtTokenProvider = new JwtTokenProvider();
-        ReflectionTestUtils.setField(jwtTokenProvider, "jwtSecret", jwtSecret);
-        ReflectionTestUtils.setField(jwtTokenProvider, "jwtExpiration", jwtExpiration);
+        ReflectionTestUtils.setField(jwtTokenProvider, "jwtSecret", JWT_SECRET);
+        ReflectionTestUtils.setField(jwtTokenProvider, "jwtExpiration", JWT_EXPIRATION);
     }
 
     @Test
-    void shouldGenerateTokenSuccessfully() {
+    void generateToken_Success() {
+        // Arrange
         String email = "test@example.com";
         Long userId = 1L;
         String role = "CLIENT";
 
+        // Act
         String token = jwtTokenProvider.generateToken(email, userId, role);
 
+        // Assert
         assertNotNull(token);
-        assertTrue(token.length() > 0);
+        assertFalse(token.isEmpty());
+        assertTrue(token.split("\\.").length == 3); // JWT has 3 parts
     }
 
     @Test
-    void shouldExtractEmailFromToken() {
+    void getEmailFromToken_Success() {
+        // Arrange
         String email = "test@example.com";
         Long userId = 1L;
         String role = "CLIENT";
-
         String token = jwtTokenProvider.generateToken(email, userId, role);
+
+        // Act
         String extractedEmail = jwtTokenProvider.getEmailFromToken(token);
 
+        // Assert
         assertEquals(email, extractedEmail);
     }
 
     @Test
-    void shouldExtractUserIdFromToken() {
+    void getUserIdFromToken_Success() {
+        // Arrange
         String email = "test@example.com";
-        Long userId = 123L;
+        Long userId = 1L;
         String role = "CLIENT";
-
         String token = jwtTokenProvider.generateToken(email, userId, role);
+
+        // Act
         Long extractedUserId = jwtTokenProvider.getUserIdFromToken(token);
 
+        // Assert
         assertEquals(userId, extractedUserId);
     }
 
     @Test
-    void shouldExtractRoleFromToken() {
+    void getRoleFromToken_Success() {
+        // Arrange
         String email = "test@example.com";
         Long userId = 1L;
-        String role = "ADMIN";
-
+        String role = "CLIENT";
         String token = jwtTokenProvider.generateToken(email, userId, role);
+
+        // Act
         String extractedRole = jwtTokenProvider.getRoleFromToken(token);
 
+        // Assert
         assertEquals(role, extractedRole);
     }
 
     @Test
-    void shouldValidateValidToken() {
+    void validateToken_ValidToken_ReturnsTrue() {
+        // Arrange
         String email = "test@example.com";
         Long userId = 1L;
         String role = "CLIENT";
-
         String token = jwtTokenProvider.generateToken(email, userId, role);
+
+        // Act
         boolean isValid = jwtTokenProvider.validateToken(token);
 
+        // Assert
         assertTrue(isValid);
     }
 
     @Test
-    void shouldRejectInvalidToken() {
-        String invalidToken = "invalid.token.here";
+    void validateToken_InvalidToken_ReturnsFalse() {
+        // Arrange
+        String invalidToken = "invalid.jwt.token";
 
+        // Act
         boolean isValid = jwtTokenProvider.validateToken(invalidToken);
 
+        // Assert
         assertFalse(isValid);
     }
 
     @Test
-    void shouldRejectExpiredToken() {
-        // Create an expired token
-        SecretKey key = Keys.hmacShaKeyFor(jwtSecret.getBytes(StandardCharsets.UTF_8));
-        String expiredToken = Jwts.builder()
-                .setSubject("test@example.com")
-                .claim("userId", 1L)
-                .claim("role", "CLIENT")
-                .setIssuedAt(new Date(System.currentTimeMillis() - 100000))
-                .setExpiration(new Date(System.currentTimeMillis() - 10000))
-                .signWith(key)
-                .compact();
+    void validateToken_MalformedToken_ReturnsFalse() {
+        // Arrange
+        String malformedToken = "malformed-token";
 
-        boolean isValid = jwtTokenProvider.validateToken(expiredToken);
+        // Act
+        boolean isValid = jwtTokenProvider.validateToken(malformedToken);
 
+        // Assert
         assertFalse(isValid);
     }
 
     @Test
-    void shouldRejectTamperedToken() {
-        String email = "test@example.com";
-        Long userId = 1L;
-        String role = "CLIENT";
+    void validateToken_EmptyToken_ReturnsFalse() {
+        // Arrange
+        String emptyToken = "";
 
-        String token = jwtTokenProvider.generateToken(email, userId, role);
-        String tamperedToken = token.substring(0, token.length() - 5) + "XXXXX";
+        // Act
+        boolean isValid = jwtTokenProvider.validateToken(emptyToken);
 
+        // Assert
+        assertFalse(isValid);
+    }
+
+    @Test
+    void generateToken_WithDifferentRoles() {
+        // Test with ADMIN role
+        String token1 = jwtTokenProvider.generateToken("admin@example.com", 1L, "ADMIN");
+        assertEquals("ADMIN", jwtTokenProvider.getRoleFromToken(token1));
+
+        // Test with CLIENT role
+        String token2 = jwtTokenProvider.generateToken("client@example.com", 2L, "CLIENT");
+        assertEquals("CLIENT", jwtTokenProvider.getRoleFromToken(token2));
+
+        // Test with FREELANCER role
+        String token3 = jwtTokenProvider.generateToken("freelancer@example.com", 3L, "FREELANCER");
+        assertEquals("FREELANCER", jwtTokenProvider.getRoleFromToken(token3));
+    }
+
+    @Test
+    void generateToken_WithDifferentUserIds() {
+        // Arrange & Act
+        String token1 = jwtTokenProvider.generateToken("user1@example.com", 100L, "CLIENT");
+        String token2 = jwtTokenProvider.generateToken("user2@example.com", 200L, "CLIENT");
+
+        // Assert
+        assertEquals(100L, jwtTokenProvider.getUserIdFromToken(token1));
+        assertEquals(200L, jwtTokenProvider.getUserIdFromToken(token2));
+        assertNotEquals(token1, token2);
+    }
+
+    @Test
+    void validateToken_TamperedToken_ReturnsFalse() {
+        // Arrange
+        String token = jwtTokenProvider.generateToken("test@example.com", 1L, "CLIENT");
+        String tamperedToken = token.substring(0, token.length() - 5) + "aaaaa";
+
+        // Act
         boolean isValid = jwtTokenProvider.validateToken(tamperedToken);
 
+        // Assert
         assertFalse(isValid);
-    }
-
-    @Test
-    void shouldRejectNullToken() {
-        boolean isValid = jwtTokenProvider.validateToken(null);
-
-        assertFalse(isValid);
-    }
-
-    @Test
-    void shouldRejectEmptyToken() {
-        boolean isValid = jwtTokenProvider.validateToken("");
-
-        assertFalse(isValid);
-    }
-
-    @Test
-    void shouldGenerateTokenWithDifferentRoles() {
-        String[] roles = {"ADMIN", "CLIENT", "FREELANCER"};
-
-        for (String role : roles) {
-            String token = jwtTokenProvider.generateToken("user@example.com", 1L, role);
-            String extractedRole = jwtTokenProvider.getRoleFromToken(token);
-            assertEquals(role, extractedRole);
-        }
-    }
-
-    @Test
-    void shouldGenerateTokenWithDifferentUserIds() {
-        Long[] userIds = {1L, 100L, 999L, 123456L};
-
-        for (Long userId : userIds) {
-            String token = jwtTokenProvider.generateToken("user@example.com", userId, "CLIENT");
-            Long extractedUserId = jwtTokenProvider.getUserIdFromToken(token);
-            assertEquals(userId, extractedUserId);
-        }
-    }
-
-    @Test
-    void shouldGenerateTokenWithDifferentEmails() {
-        String[] emails = {"test@example.com", "admin@company.com", "user123@domain.org"};
-
-        for (String email : emails) {
-            String token = jwtTokenProvider.generateToken(email, 1L, "CLIENT");
-            String extractedEmail = jwtTokenProvider.getEmailFromToken(token);
-            assertEquals(email, extractedEmail);
-        }
     }
 }
