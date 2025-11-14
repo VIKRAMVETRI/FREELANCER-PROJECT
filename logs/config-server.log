@@ -1,0 +1,130 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.freelancenexus:config-server >------------------
+[INFO] Building Config Server 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.2.0:run (default-cli) > test-compile @ config-server >>>
+[INFO] 
+[INFO] --- jacoco:0.8.11:prepare-agent (default) @ config-server ---
+[INFO] argLine set to -javaagent:/home/vscode/.m2/repository/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar=destfile=/workspaces/FREELANCER-PROJECT/config-server/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ config-server ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 6 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ config-server ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ config-server ---
+[INFO] skip non existing resourceDirectory /workspaces/FREELANCER-PROJECT/config-server/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ config-server ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:3.2.0:run (default-cli) < test-compile @ config-server <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.2.0:run (default-cli) @ config-server ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-11-14 12:06:37 - Starting ConfigServerApplication using Java 17.0.17 with PID 2583 (/workspaces/FREELANCER-PROJECT/config-server/target/classes started by vscode in /workspaces/FREELANCER-PROJECT/config-server)
+2025-11-14 12:06:37 - The following 1 profile is active: "native"
+2025-11-14 12:06:39 - BeanFactory id=f5f112fa-35e8-3748-bcd8-690fe1f9a144
+2025-11-14 12:06:40 - Tomcat initialized with port 8888 (http)
+2025-11-14 12:06:40 - Starting service [Tomcat]
+2025-11-14 12:06:40 - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-11-14 12:06:40 - Initializing Spring embedded WebApplicationContext
+2025-11-14 12:06:40 - Root WebApplicationContext: initialization completed in 2338 ms
+2025-11-14 12:06:41 - Exposing 3 endpoint(s) beneath base path '/actuator'
+2025-11-14 12:06:41 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@13cc31ae, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5bb7a59, org.springframework.security.web.context.SecurityContextHolderFilter@14b5752f, org.springframework.security.web.header.HeaderWriterFilter@2037f12b, org.springframework.web.filter.CorsFilter@4bfa5eb9, org.springframework.security.web.csrf.CsrfFilter@49631cfb, org.springframework.security.web.authentication.logout.LogoutFilter@29090809, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@316d30ad, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@6d7b2319, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@2a2b7a35, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@12209826, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@33a47707, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4d290757, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@58186f9f, org.springframework.security.web.access.ExceptionTranslationFilter@6fc1a8f6, org.springframework.security.web.access.intercept.AuthorizationFilter@18e6b72b]
+2025-11-14 12:06:41 - Tomcat started on port 8888 (http) with context path ''
+2025-11-14 12:06:41 - Started ConfigServerApplication in 4.402 seconds (process running for 4.741)
+==============================================
+Config Server started successfully on port 8888
+==============================================
+2025-11-14 12:07:16 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-14 12:07:16 - Initializing Servlet 'dispatcherServlet'
+2025-11-14 12:07:16 - Completed initialization in 1 ms
+2025-11-14 12:07:16 - Securing GET /gateway-service/default
+2025-11-14 12:07:16 - Cache miss for REQUEST dispatch to '/gateway-service/default' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-11-14 12:07:16 - Authenticated user
+2025-11-14 12:07:16 - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=config-admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[]]
+2025-11-14 12:07:16 - Secured GET /gateway-service/default
+2025-11-14 12:07:16 - Adding property source: Config resource 'class path resource [config/gateway-service.properties]' via location 'classpath:/config/'
+2025-11-14 12:09:42 - Securing GET /freelancer-service/default
+2025-11-14 12:09:42 - Authenticated user
+2025-11-14 12:09:42 - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=config-admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[]]
+2025-11-14 12:09:42 - Secured GET /freelancer-service/default
+2025-11-14 12:09:42 - Adding property source: Config resource 'class path resource [config/freelancer-service.properties]' via location 'classpath:/config/'
+2025-11-14 12:12:12 - Securing GET /payment-service/default
+2025-11-14 12:12:12 - Authenticated user
+2025-11-14 12:12:12 - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=config-admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[]]
+2025-11-14 12:12:12 - Secured GET /payment-service/default
+2025-11-14 12:12:12 - Adding property source: Config resource 'class path resource [config/payment-service.properties]' via location 'classpath:/config/'
+2025-11-14 12:12:29 - Securing GET /notification-service/default
+2025-11-14 12:12:29 - Authenticated user
+2025-11-14 12:12:29 - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=config-admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[]]
+2025-11-14 12:12:29 - Secured GET /notification-service/default
+2025-11-14 12:12:29 - Adding property source: Config resource 'class path resource [config/notification-service.properties]' via location 'classpath:/config/'
+2025-11-14 12:13:27 - Securing GET /favicon.ico
+2025-11-14 12:13:27 - Set SecurityContextHolder to anonymous SecurityContext
+2025-11-14 12:13:27 - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@544419ab, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2025-11-14 12:13:27 - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@a826ff8
+2025-11-14 12:13:27 - Redirecting to http://localhost:8888/login
+2025-11-14 12:13:27 - Securing GET /login
+2025-11-14 12:13:28 - Securing GET /
+2025-11-14 12:13:28 - Set SecurityContextHolder to anonymous SecurityContext
+2025-11-14 12:13:28 - Saved request http://localhost:8888/?continue to session
+2025-11-14 12:13:28 - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@544419ab, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2025-11-14 12:13:28 - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@a826ff8
+2025-11-14 12:13:28 - Redirecting to http://localhost:8888/login
+2025-11-14 12:13:29 - Securing GET /login
+2025-11-14 12:13:29 - Securing GET /favicon.ico
+2025-11-14 12:13:29 - Set SecurityContextHolder to anonymous SecurityContext
+2025-11-14 12:13:29 - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@544419ab, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2025-11-14 12:13:29 - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@a826ff8
+2025-11-14 12:13:29 - Redirecting to http://localhost:8888/login
+2025-11-14 12:13:30 - Securing GET /login
+2025-11-14 12:13:47 - Securing GET /
+2025-11-14 12:13:47 - Set SecurityContextHolder to anonymous SecurityContext
+2025-11-14 12:13:47 - Saved request http://localhost:8888/?continue to session
+2025-11-14 12:13:47 - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@544419ab, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2025-11-14 12:13:47 - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@a826ff8
+2025-11-14 12:13:47 - Redirecting to http://localhost:8888/login
+2025-11-14 12:13:47 - Securing GET /login
+2025-11-14 12:13:48 - Securing GET /favicon.ico
+2025-11-14 12:13:48 - Set SecurityContextHolder to anonymous SecurityContext
+2025-11-14 12:13:48 - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@544419ab, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2025-11-14 12:13:48 - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@a826ff8
+2025-11-14 12:13:48 - Redirecting to http://localhost:8888/login
+2025-11-14 12:13:48 - Securing GET /login
+2025-11-14 12:14:39 - Securing POST /login
+2025-11-14 12:14:39 - Authenticated user
+2025-11-14 12:14:39 - Changed session id from E8DC6B53983C435246D79BC7D896D400
+2025-11-14 12:14:39 - Replaced CSRF Token
+2025-11-14 12:14:39 - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=config-admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=E8DC6B53983C435246D79BC7D896D400], Granted Authorities=[]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@489f71e1]
+2025-11-14 12:14:39 - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=config-admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=E8DC6B53983C435246D79BC7D896D400], Granted Authorities=[]]
+2025-11-14 12:14:39 - Redirecting to http://localhost:8888/?continue
+2025-11-14 12:14:40 - Securing GET /?continue
+2025-11-14 12:14:40 - Loaded matching saved request http://localhost:8888/?continue
+2025-11-14 12:14:40 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=config-admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=E8DC6B53983C435246D79BC7D896D400], Granted Authorities=[]]]
+2025-11-14 12:14:40 - Secured GET /?continue
+2025-11-14 12:14:40 - Securing GET /error?continue
+2025-11-14 12:14:40 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=config-admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=E8DC6B53983C435246D79BC7D896D400], Granted Authorities=[]]]
+2025-11-14 12:14:40 - Secured GET /error?continue
+2025-11-14 12:14:40 - Securing GET /favicon.ico
+2025-11-14 12:14:40 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=config-admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=E8DC6B53983C435246D79BC7D896D400], Granted Authorities=[]]]
+2025-11-14 12:14:40 - Secured GET /favicon.ico
+2025-11-14 12:14:40 - Securing GET /error
+2025-11-14 12:14:40 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=config-admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=E8DC6B53983C435246D79BC7D896D400], Granted Authorities=[]]]
+2025-11-14 12:14:40 - Secured GET /error

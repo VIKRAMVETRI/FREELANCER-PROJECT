@@ -14,17 +14,49 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * GeminiIntegrationService
+ *
+ * <p>Integration layer responsible for communicating with the Google Gemini API.
+ * Handles building request payloads, invoking the remote model via a configured
+ * {@link WebClient}, extracting text responses, and parsing JSON content embedded
+ * in markdown code blocks. Implements simple retry and timeout behavior and returns
+ * structured results for higher-level AI services.</p>
+ *
+ * <p>All network errors are logged and returned as error payloads to allow callers
+ * to implement graceful fallbacks.</p>
+ *
+ * @since 1.0
+ */
 @Service
 @RequiredArgsConstructor
 @Slf4j
 public class GeminiIntegrationService {
 
+    /**
+     * WebClient configured for calling the Gemini API.
+     */
     private final WebClient geminiWebClient;
+
+    /**
+     * Configuration properties (API key, model, timeouts, retries) for Gemini.
+     */
     private final GeminiConfig geminiConfig;
+
+    /**
+     * Jackson ObjectMapper used to parse JSON responses and extract structured content.
+     */
     private final ObjectMapper objectMapper;
 
     /**
-     * Call Gemini API with a prompt and return the response text
+     * Call the Gemini API with a plain text prompt and return the raw response text.
+     *
+     * <p>This method constructs the request body, posts to the Gemini endpoint, applies
+     * timeout and retry policies, and extracts the generated text from the JSON response.
+     * Network or parsing errors are logged and returned as an error string.</p>
+     *
+     * @param prompt the prompt text to send to Gemini
+     * @return the extracted response text or an error description
      */
     public String callGemini(String prompt) {
         try {
@@ -57,7 +89,14 @@ public class GeminiIntegrationService {
     }
 
     /**
-     * Call Gemini API with JSON response expected
+     * Call the Gemini API with a prompt and return a parsed JSON tree.
+     *
+     * <p>If the model returns JSON wrapped in markdown code fences (```json ... ```),
+     * this method extracts the JSON block before parsing. On parsing failure an empty
+     * JSON object node is returned.</p>
+     *
+     * @param prompt the prompt text to send to Gemini
+     * @return {@link JsonNode} parsed from the Gemini response (may be empty on error)
      */
     public JsonNode callGeminiForJson(String prompt) {
         try {
@@ -79,7 +118,13 @@ public class GeminiIntegrationService {
     }
 
     /**
-     * Build the request body for Gemini API
+     * Build the request body map required by the Gemini generateContent API.
+     *
+     * <p>Includes the prompt content and a generationConfig map (temperature, topK, topP,
+     * maxOutputTokens). Callers may adjust configuration via {@link GeminiConfig} if needed.</p>
+     *
+     * @param prompt the prompt text to include in the request
+     * @return a map representing the JSON request body to send to Gemini
      */
     private Map<String, Object> buildGeminiRequest(String prompt) {
         Map<String, Object> request = new HashMap<>();
@@ -103,7 +148,14 @@ public class GeminiIntegrationService {
     }
 
     /**
-     * Extract text content from Gemini API response
+     * Extract the textual content from the Gemini API JSON response.
+     *
+     * <p>Parses the API response, checks for an error field, and navigates the
+     * "candidates -> content -> parts" structure to return the generated text.
+     * Returns a descriptive message if no content is present or parsing fails.</p>
+     *
+     * @param jsonResponse the raw JSON string returned by the Gemini API
+     * @return extracted generated text or an error message
      */
     private String extractTextFromResponse(String jsonResponse) {
         try {

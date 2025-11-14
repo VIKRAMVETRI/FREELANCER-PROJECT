@@ -13,7 +13,7 @@ echo -e "${BLUE}================================${NC}"
 echo ""
 
 # Ports to check and kill
-PORTS=(8888 8761 8765 8081 8082 8083 8084 8085 3000)
+PORTS=(8888 8761 8765 8081 8082 8088 8084 8085 3000)
 
 # Function to kill process on port
 kill_port() {

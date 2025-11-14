@@ -50,7 +50,7 @@ check_service "Eureka Server" 8761 "http://localhost:8761/actuator/health"
 check_service "Gateway Service" 8765 "http://localhost:8765/actuator/health"
 check_service "User Service" 8081 "http://localhost:8081/actuator/health"
 check_service "Freelancer Service" 8082 "http://localhost:8082/actuator/health"
-check_service "Project Service" 8083 "http://localhost:8083/actuator/health"
+check_service "Project Service" 8083 "http://localhost:8088/actuator/health"
 check_service "Payment Service" 8084 "http://localhost:8084/actuator/health"
 check_service "Notification Service" 8085 "http://localhost:8085/actuator/health"
 

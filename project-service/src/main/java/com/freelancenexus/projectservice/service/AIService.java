@@ -17,6 +17,26 @@ import java.math.RoundingMode;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * AIService
+ *
+ * <p>Service layer for AI-powered features in the Project Service. Integrates with the Gemini AI
+ * to provide project recommendations for freelancers, proposal ranking for clients, and AI-generated
+ * project summaries. Handles prompt construction, response parsing, and graceful fallback behavior
+ * when AI operations fail.</p>
+ *
+ * <p>Key responsibilities:
+ * <ul>
+ *   <li>Generate AI-based project recommendations for freelancers</li>
+ *   <li>Rank proposals using AI analysis and scoring</li>
+ *   <li>Generate natural language project summaries</li>
+ *   <li>Parse and transform AI responses into DTOs</li>
+ *   <li>Persist AI scores and maintain data consistency</li>
+ * </ul>
+ * </p>
+ *
+ * @since 1.0
+ */
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -28,7 +48,16 @@ public class AIService {
     private final ObjectMapper objectMapper;
 
     /**
-     * Recommend projects for a freelancer based on their skills and profile
+     * Generate AI-recommended projects for a freelancer based on their skills and profile.
+     *
+     * <p>Analyzes the freelancer's skills and biography against all open projects and returns
+     * the top matches with match scores and reasons. Falls back gracefully to an empty list
+     * if AI processing fails.</p>
+     *
+     * @param freelancerId the unique identifier of the freelancer
+     * @param freelancerSkills list of skills the freelancer possesses
+     * @param freelancerBio optional biography or description of the freelancer
+     * @return a list of {@link AIRecommendationDTO} sorted by relevance
      */
     public List<AIRecommendationDTO> recommendProjectsForFreelancer(Long freelancerId, List<String> freelancerSkills, String freelancerBio) {
         try {
@@ -58,7 +87,15 @@ public class AIService {
     }
 
     /**
-     * Rank proposals for a project using AI
+     * Rank all proposals for a project using AI analysis.
+     *
+     * <p>Evaluates each proposal based on budget alignment, delivery time, cover letter quality,
+     * and professionalism. Updates proposal AI scores in the database and returns ranked results.
+     * Falls back to an empty list if AI processing fails.</p>
+     *
+     * @param projectId the unique identifier of the project
+     * @return a list of {@link RankedProposalDTO} sorted by rank (best first)
+     * @throws RuntimeException if the project is not found
      */
     public List<RankedProposalDTO> rankProposalsForProject(Long projectId) {
         try {
@@ -95,7 +132,14 @@ public class AIService {
     }
 
     /**
-     * Generate a natural language summary of a project
+     * Generate an AI-powered natural language summary of a project.
+     *
+     * <p>Creates a comprehensive summary including overview, key requirements, ideal candidate profile,
+     * complexity assessment, and suggested skills. Falls back to a placeholder summary if AI processing fails.</p>
+     *
+     * @param projectId the unique identifier of the project
+     * @return a {@link ProjectSummaryDTO} with AI-generated content
+     * @throws RuntimeException if the project is not found
      */
     public ProjectSummaryDTO generateProjectSummary(Long projectId) {
         try {
@@ -118,6 +162,14 @@ public class AIService {
 
     // ==================== Private Helper Methods ====================
 
+    /**
+     * Build a structured prompt for the Gemini AI to recommend projects for a freelancer.
+     *
+     * @param skills the freelancer's skills
+     * @param bio optional freelancer biography
+     * @param projects available open projects to consider
+     * @return formatted prompt string for the AI
+     */
     private String buildRecommendationPrompt(List<String> skills, String bio, List<Project> projects) {
         StringBuilder prompt = new StringBuilder();
         prompt.append("You are an AI assistant helping match freelancers with projects.\n\n");
@@ -151,6 +203,13 @@ public class AIService {
         return prompt.toString();
     }
 
+    /**
+     * Build a structured prompt for the Gemini AI to rank proposals for a project.
+     *
+     * @param project the project for which proposals are being ranked
+     * @param proposals the proposals to rank
+     * @return formatted prompt string for the AI
+     */
     private String buildRankingPrompt(Project project, List<Proposal> proposals) {
         StringBuilder prompt = new StringBuilder();
         prompt.append("You are an AI assistant helping rank freelancer proposals for a project.\n\n");
@@ -187,6 +246,12 @@ public class AIService {
         return prompt.toString();
     }
 
+    /**
+     * Build a structured prompt for the Gemini AI to generate a project summary.
+     *
+     * @param project the project to summarize
+     * @return formatted prompt string for the AI
+     */
     private String buildSummaryPrompt(Project project) {
         return String.format("""
             You are an AI assistant summarizing a freelance project.
@@ -227,6 +292,13 @@ public class AIService {
         );
     }
 
+    /**
+     * Parse AI response JSON into a list of project recommendations.
+     *
+     * @param response the JSON response from the AI service
+     * @param projects the available projects for enrichment
+     * @return list of {@link AIRecommendationDTO}
+     */
     private List<AIRecommendationDTO> parseRecommendations(JsonNode response, List<Project> projects) {
         List<AIRecommendationDTO> recommendations = new ArrayList<>();
         
@@ -264,6 +336,13 @@ public class AIService {
         return recommendations;
     }
 
+    /**
+     * Parse AI response JSON into ranked proposals and sort by rank.
+     *
+     * @param response the JSON response from the AI service
+     * @param proposals the proposals being ranked
+     * @return sorted list of {@link RankedProposalDTO}
+     */
     private List<RankedProposalDTO> parseRankings(JsonNode response, List<Proposal> proposals) {
         List<RankedProposalDTO> rankings = new ArrayList<>();
         
@@ -302,6 +381,13 @@ public class AIService {
         return rankings;
     }
 
+    /**
+     * Parse AI response JSON into a project summary.
+     *
+     * @param response the JSON response from the AI service
+     * @param projectId the id of the project being summarized
+     * @return {@link ProjectSummaryDTO}
+     */
     private ProjectSummaryDTO parseSummary(JsonNode response, Long projectId) {
         ProjectSummaryDTO dto = new ProjectSummaryDTO();
         dto.setProjectId(projectId);
@@ -319,6 +405,11 @@ public class AIService {
         return dto;
     }
 
+    /**
+     * Update proposal entities with AI scores from ranking results.
+     *
+     * @param rankings the ranked proposal results containing AI scores
+     */
     private void updateProposalScores(List<RankedProposalDTO> rankings) {
         for (RankedProposalDTO ranking : rankings) {
             try {
@@ -333,6 +424,12 @@ public class AIService {
         }
     }
 
+    /**
+     * Parse a skill string (JSON or comma-separated) into a list.
+     *
+     * @param skillsJson the skills string to parse
+     * @return list of skill strings
+     */
     private List<String> parseSkills(String skillsJson) {
         try {
             JsonNode node = objectMapper.readTree(skillsJson);
@@ -344,6 +441,12 @@ public class AIService {
         }
     }
 
+    /**
+     * Parse a JSON array node into a list of strings.
+     *
+     * @param arrayNode the JSON array to parse
+     * @return list of string values
+     */
     private List<String> parseJsonArray(JsonNode arrayNode) {
         List<String> result = new ArrayList<>();
         if (arrayNode != null && arrayNode.isArray()) {
@@ -352,15 +455,33 @@ public class AIService {
         return result;
     }
 
-    // Fallback methods when AI fails
+    /**
+     * Fallback method returning empty recommendations when AI processing fails.
+     *
+     * @param freelancerId the freelancer id
+     * @param skills the freelancer's skills
+     * @return empty list
+     */
     private List<AIRecommendationDTO> fallbackRecommendations(Long freelancerId, List<String> skills) {
         return Collections.emptyList();
     }
 
+    /**
+     * Fallback method returning empty rankings when AI processing fails.
+     *
+     * @param projectId the project id
+     * @return empty list
+     */
     private List<RankedProposalDTO> fallbackRanking(Long projectId) {
         return Collections.emptyList();
     }
 
+    /**
+     * Fallback method returning a placeholder summary when AI processing fails.
+     *
+     * @param projectId the project id
+     * @return {@link ProjectSummaryDTO} with minimal content
+     */
     private ProjectSummaryDTO fallbackSummary(Long projectId) {
         ProjectSummaryDTO dto = new ProjectSummaryDTO();
         dto.setProjectId(projectId);

@@ -18,15 +18,48 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * UserService
+ *
+ * <p>Core application service that encapsulates user-related business logic for the User Service.
+ * Responsibilities include user registration, authentication (login), profile retrieval and updates,
+ * administrative user management (listing and deletion) and mapping between entity and DTO representations.</p>
+ *
+ * <p>Transaction boundaries are declared on methods where data consistency is required. Authentication
+ * relies on the current SecurityContext for operations that require the authenticated user.</p>
+ *
+ * @since 1.0
+ */
 @Service
 @RequiredArgsConstructor
 @Slf4j
 public class UserService {
     
+    /**
+     * Repository for CRUD operations against User entities.
+     */
     private final UserRepository userRepository;
+    
+    /**
+     * Password encoder used to hash and verify user passwords.
+     */
     private final PasswordEncoder passwordEncoder;
+    
+    /**
+     * JWT token provider used to generate and validate authentication tokens.
+     */
     private final JwtTokenProvider jwtTokenProvider;
     
+    /**
+     * Register a new user.
+     *
+     * <p>Validates uniqueness of the provided email, hashes the password, persists the new user,
+     * and returns a {@link UserResponseDTO} representing the created user.</p>
+     *
+     * @param registrationDTO registration details provided by the client
+     * @return created user's {@link UserResponseDTO}
+     * @throws DuplicateResourceException if a user with the same email already exists
+     */
     @Transactional
     public UserResponseDTO registerUser(UserRegistrationDTO registrationDTO) {
         log.info("Registering new user with email: {}", registrationDTO.getEmail());
@@ -52,6 +85,16 @@ public class UserService {
         return mapToResponseDTO(savedUser);
     }
     
+    /**
+     * Authenticate a user and return login response containing JWT token information.
+     *
+     * <p>Verifies credentials, account active state, and generates a JWT access token and
+     * {@link LoginResponseDTO} including basic user info.</p>
+     *
+     * @param loginDTO login credentials
+     * @return {@link LoginResponseDTO} with token and user details
+     * @throws UnauthorizedException if credentials are invalid or account is inactive
+     */
     @Transactional(readOnly = true)
     public LoginResponseDTO loginUser(UserLoginDTO loginDTO) {
         log.info("Authenticating user with email: {}", loginDTO.getEmail());
@@ -88,6 +131,15 @@ public class UserService {
         return loginResponse;
     }
     
+    /**
+     * Retrieve the profile of the currently authenticated user.
+     *
+     * <p>Extracts the user id from the security context and loads the user from the database.</p>
+     *
+     * @return {@link UserResponseDTO} for the authenticated user
+     * @throws UnauthorizedException if no authenticated user is present
+     * @throws UserNotFoundException if the user cannot be found in the database
+     */
     @Transactional(readOnly = true)
     public UserResponseDTO getCurrentUserProfile() {
         Long userId = getCurrentUserId();
@@ -98,6 +150,16 @@ public class UserService {
         return mapToResponseDTO(user);
     }
     
+    /**
+     * Update the profile of the currently authenticated user.
+     *
+     * <p>Only updates fields provided in {@link UserUpdateDTO} and persists changes.</p>
+     *
+     * @param updateDTO profile fields to update
+     * @return updated {@link UserResponseDTO}
+     * @throws UnauthorizedException if no authenticated user is present
+     * @throws UserNotFoundException if the user cannot be found in the database
+     */
     @Transactional
     public UserResponseDTO updateCurrentUserProfile(UserUpdateDTO updateDTO) {
         Long userId = getCurrentUserId();
@@ -122,6 +184,13 @@ public class UserService {
         return mapToResponseDTO(updatedUser);
     }
     
+    /**
+     * Retrieve a user by their id.
+     *
+     * @param id unique identifier of the user
+     * @return {@link UserResponseDTO} for the requested user
+     * @throws UserNotFoundException if no user exists with the given id
+     */
     @Transactional(readOnly = true)
     public UserResponseDTO getUserById(Long id) {
         User user = userRepository.findById(id)
@@ -130,6 +199,13 @@ public class UserService {
         return mapToResponseDTO(user);
     }
     
+    /**
+     * Retrieve all users in the system.
+     *
+     * <p>Useful for administrative listing endpoints.</p>
+     *
+     * @return list of {@link UserResponseDTO}
+     */
     @Transactional(readOnly = true)
     public List<UserResponseDTO> getAllUsers() {
         return userRepository.findAll().stream()
@@ -137,6 +213,14 @@ public class UserService {
             .collect(Collectors.toList());
     }
     
+    /**
+     * Delete a user by id.
+     *
+     * <p>Performs a persistent deletion of the user entity. Intended for administrative use.</p>
+     *
+     * @param id id of the user to delete
+     * @throws UserNotFoundException if the user does not exist
+     */
     @Transactional
     public void deleteUser(Long id) {
         User user = userRepository.findById(id)
@@ -146,16 +230,28 @@ public class UserService {
         log.info("User deleted successfully: {}", id);
     }
     
-private Long getCurrentUserId() {
-    var auth = SecurityContextHolder.getContext().getAuthentication();
+    /**
+     * Extracts the currently authenticated user's id from the SecurityContext.
+     *
+     * @return authenticated user's id
+     * @throws UnauthorizedException if no authenticated principal is available
+     */
+    private Long getCurrentUserId() {
+        var auth = SecurityContextHolder.getContext().getAuthentication();
 
-    if (auth != null && auth.getPrincipal() instanceof Long principal) {
-        return principal;
+        if (auth != null && auth.getPrincipal() instanceof Long principal) {
+            return principal;
+        }
+
+        throw new UnauthorizedException("User not authenticated");
     }
 
-    throw new UnauthorizedException("User not authenticated");
-}
-
+    /**
+     * Map a {@link User} entity to {@link UserResponseDTO}.
+     *
+     * @param user the entity to map
+     * @return DTO representing the user (excludes sensitive data such as password)
+     */
     private UserResponseDTO mapToResponseDTO(User user) {
         UserResponseDTO dto = new UserResponseDTO();
         dto.setId(user.getId());

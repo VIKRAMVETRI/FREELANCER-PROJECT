@@ -13,6 +13,10 @@ import org.springframework.web.bind.annotation.*;
 import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * REST controller for managing freelancers.
+ * Provides endpoints for creating, retrieving, updating, and searching freelancer profiles.
+ */
 @RestController
 @RequestMapping("/api/freelancers")
 @RequiredArgsConstructor
@@ -21,7 +25,12 @@ public class FreelancerController {
     
     private final FreelancerService freelancerService;
     
-    // Only freelancers can create their profile
+    /**
+     * Creates a freelancer profile.
+     *
+     * @param freelancerDTO the freelancer profile to be created
+     * @return the created freelancer profile
+     */
     @PostMapping
     @PreAuthorize("hasRole('FREELANCER')")
     public ResponseEntity<FreelancerDTO> createFreelancer(@Valid @RequestBody FreelancerDTO freelancerDTO) {
@@ -30,7 +39,12 @@ public class FreelancerController {
         return ResponseEntity.status(HttpStatus.CREATED).body(created);
     }
     
-    // Anyone authenticated can view freelancer profiles
+    /**
+     * Retrieves a freelancer profile by its ID.
+     *
+     * @param id the ID of the freelancer
+     * @return the freelancer profile
+     */
     @GetMapping("/{id}")
     @PreAuthorize("isAuthenticated()")
     public ResponseEntity<FreelancerDTO> getFreelancerById(@PathVariable Long id) {
@@ -39,6 +53,12 @@ public class FreelancerController {
         return ResponseEntity.ok(freelancer);
     }
     
+    /**
+     * Retrieves the complete profile of a freelancer.
+     *
+     * @param id the ID of the freelancer
+     * @return the freelancer's complete profile
+     */
     @GetMapping("/{id}/profile")
     @PreAuthorize("isAuthenticated()")
     public ResponseEntity<FreelancerProfileDTO> getFreelancerProfile(@PathVariable Long id) {
@@ -47,6 +67,12 @@ public class FreelancerController {
         return ResponseEntity.ok(profile);
     }
     
+    /**
+     * Retrieves a freelancer profile by the user ID.
+     *
+     * @param userId the user ID associated with the freelancer
+     * @return the freelancer profile
+     */
     @GetMapping("/user/{userId}")
     @PreAuthorize("isAuthenticated()")
     public ResponseEntity<FreelancerDTO> getFreelancerByUserId(@PathVariable Long userId) {
@@ -55,7 +81,13 @@ public class FreelancerController {
         return ResponseEntity.ok(freelancer);
     }
     
-    // Only the freelancer themselves can update their profile
+    /**
+     * Updates a freelancer profile.
+     *
+     * @param id the ID of the freelancer
+     * @param freelancerDTO the updated freelancer profile
+     * @return the updated freelancer profile
+     */
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('FREELANCER')")
     public ResponseEntity<FreelancerDTO> updateFreelancer(
@@ -66,7 +98,16 @@ public class FreelancerController {
         return ResponseEntity.ok(updated);
     }
     
-    // Anyone authenticated can search freelancers
+    /**
+     * Searches for freelancers based on various criteria.
+     *
+     * @param minRate the minimum hourly rate
+     * @param maxRate the maximum hourly rate
+     * @param minRating the minimum rating
+     * @param availability the availability status
+     * @param skills the list of skills
+     * @return the list of freelancers matching the criteria
+     */
     @GetMapping
     @PreAuthorize("isAuthenticated()")
     public ResponseEntity<List<FreelancerDTO>> searchFreelancers(

@@ -1,0 +1,128 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< com.freelancenexus:project-service >-----------------
+[INFO] Building Project Service 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.2.0:run (default-cli) > test-compile @ project-service >>>
+[INFO] 
+[INFO] --- jacoco:0.8.11:prepare-agent (default) @ project-service ---
+[INFO] argLine set to -javaagent:/home/vscode/.m2/repository/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar=destfile=/workspaces/FREELANCER-PROJECT/project-service/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ project-service ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ project-service ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 29 source files with javac [debug release 17] to target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/RankedProposalDTO.java:[7,2] cannot find symbol
+  symbol: class Data
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/RankedProposalDTO.java:[8,2] cannot find symbol
+  symbol: class NoArgsConstructor
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/RankedProposalDTO.java:[9,2] cannot find symbol
+  symbol: class AllArgsConstructor
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/RankedProposalDTO.java:[30,13] cannot find symbol
+  symbol:   class BigDecimal
+  location: class com.freelancenexus.projectservice.dto.RankedProposalDTO
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/RankedProposalDTO.java:[40,13] cannot find symbol
+  symbol:   class BigDecimal
+  location: class com.freelancenexus.projectservice.dto.RankedProposalDTO
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/RankedProposalDTO.java:[65,13] cannot find symbol
+  symbol:   class LocalDateTime
+  location: class com.freelancenexus.projectservice.dto.RankedProposalDTO
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/ProposalSubmitDTO.java:[7,2] cannot find symbol
+  symbol: class Data
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/ProposalSubmitDTO.java:[8,2] cannot find symbol
+  symbol: class NoArgsConstructor
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/ProposalSubmitDTO.java:[9,2] cannot find symbol
+  symbol: class AllArgsConstructor
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/ProposalSubmitDTO.java:[30,13] cannot find symbol
+  symbol:   class BigDecimal
+  location: class com.freelancenexus.projectservice.dto.ProposalSubmitDTO
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/ProposalSubmitDTO.java:[15,6] cannot find symbol
+  symbol:   class NotNull
+  location: class com.freelancenexus.projectservice.dto.ProposalSubmitDTO
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/ProposalSubmitDTO.java:[21,6] cannot find symbol
+  symbol:   class NotBlank
+  location: class com.freelancenexus.projectservice.dto.ProposalSubmitDTO
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/ProposalSubmitDTO.java:[22,6] cannot find symbol
+  symbol:   class Size
+  location: class com.freelancenexus.projectservice.dto.ProposalSubmitDTO
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/ProposalSubmitDTO.java:[28,6] cannot find symbol
+  symbol:   class NotNull
+  location: class com.freelancenexus.projectservice.dto.ProposalSubmitDTO
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/ProposalSubmitDTO.java:[29,6] cannot find symbol
+  symbol:   class DecimalMin
+  location: class com.freelancenexus.projectservice.dto.ProposalSubmitDTO
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/ProposalSubmitDTO.java:[35,6] cannot find symbol
+  symbol:   class NotNull
+  location: class com.freelancenexus.projectservice.dto.ProposalSubmitDTO
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/ProposalSubmitDTO.java:[36,6] cannot find symbol
+  symbol:   class Min
+  location: class com.freelancenexus.projectservice.dto.ProposalSubmitDTO
+[INFO] 17 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.166 s
+[INFO] Finished at: 2025-11-14T12:10:05Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project project-service: Compilation failure: Compilation failure: 
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/RankedProposalDTO.java:[7,2] cannot find symbol
+[ERROR]   symbol: class Data
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/RankedProposalDTO.java:[8,2] cannot find symbol
+[ERROR]   symbol: class NoArgsConstructor
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/RankedProposalDTO.java:[9,2] cannot find symbol
+[ERROR]   symbol: class AllArgsConstructor
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/RankedProposalDTO.java:[30,13] cannot find symbol
+[ERROR]   symbol:   class BigDecimal
+[ERROR]   location: class com.freelancenexus.projectservice.dto.RankedProposalDTO
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/RankedProposalDTO.java:[40,13] cannot find symbol
+[ERROR]   symbol:   class BigDecimal
+[ERROR]   location: class com.freelancenexus.projectservice.dto.RankedProposalDTO
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/RankedProposalDTO.java:[65,13] cannot find symbol
+[ERROR]   symbol:   class LocalDateTime
+[ERROR]   location: class com.freelancenexus.projectservice.dto.RankedProposalDTO
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/ProposalSubmitDTO.java:[7,2] cannot find symbol
+[ERROR]   symbol: class Data
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/ProposalSubmitDTO.java:[8,2] cannot find symbol
+[ERROR]   symbol: class NoArgsConstructor
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/ProposalSubmitDTO.java:[9,2] cannot find symbol
+[ERROR]   symbol: class AllArgsConstructor
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/ProposalSubmitDTO.java:[30,13] cannot find symbol
+[ERROR]   symbol:   class BigDecimal
+[ERROR]   location: class com.freelancenexus.projectservice.dto.ProposalSubmitDTO
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/ProposalSubmitDTO.java:[15,6] cannot find symbol
+[ERROR]   symbol:   class NotNull
+[ERROR]   location: class com.freelancenexus.projectservice.dto.ProposalSubmitDTO
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/ProposalSubmitDTO.java:[21,6] cannot find symbol
+[ERROR]   symbol:   class NotBlank
+[ERROR]   location: class com.freelancenexus.projectservice.dto.ProposalSubmitDTO
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/ProposalSubmitDTO.java:[22,6] cannot find symbol
+[ERROR]   symbol:   class Size
+[ERROR]   location: class com.freelancenexus.projectservice.dto.ProposalSubmitDTO
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/ProposalSubmitDTO.java:[28,6] cannot find symbol
+[ERROR]   symbol:   class NotNull
+[ERROR]   location: class com.freelancenexus.projectservice.dto.ProposalSubmitDTO
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/ProposalSubmitDTO.java:[29,6] cannot find symbol
+[ERROR]   symbol:   class DecimalMin
+[ERROR]   location: class com.freelancenexus.projectservice.dto.ProposalSubmitDTO
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/ProposalSubmitDTO.java:[35,6] cannot find symbol
+[ERROR]   symbol:   class NotNull
+[ERROR]   location: class com.freelancenexus.projectservice.dto.ProposalSubmitDTO
+[ERROR] /workspaces/FREELANCER-PROJECT/project-service/src/main/java/com/freelancenexus/projectservice/dto/ProposalSubmitDTO.java:[36,6] cannot find symbol
+[ERROR]   symbol:   class Min
+[ERROR]   location: class com.freelancenexus.projectservice.dto.ProposalSubmitDTO
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

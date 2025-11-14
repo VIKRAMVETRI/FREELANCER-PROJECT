@@ -11,6 +11,10 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+/**
+ * REST controller for managing freelancer ratings.
+ * Provides endpoints for adding and retrieving ratings.
+ */
 @RestController
 @RequestMapping("/api/freelancers")
 @RequiredArgsConstructor
@@ -18,7 +22,14 @@ import java.util.List;
 public class RatingController {
 
     private final RatingService ratingService;
-    
+
+    /**
+     * Adds a rating for a freelancer.
+     *
+     * @param id the ID of the freelancer
+     * @param ratingDTO the rating to be added
+     * @return the created rating
+     */
     // Only clients can add ratings (after project completion)
     @PostMapping("/{id}/ratings")
     @PreAuthorize("hasRole('CLIENT')")
@@ -29,7 +40,13 @@ public class RatingController {
         RatingDTO created = ratingService.addRating(id, ratingDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(created);
     }
-    
+
+    /**
+     * Retrieves all ratings for a freelancer.
+     *
+     * @param id the ID of the freelancer
+     * @return the list of ratings
+     */
     // Anyone authenticated can view ratings
     @GetMapping("/{id}/ratings")
     @PreAuthorize("isAuthenticated()")

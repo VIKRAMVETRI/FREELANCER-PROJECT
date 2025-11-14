@@ -20,7 +20,7 @@ declare -A SERVICES=(
     ["eureka-server"]=8761
     ["gateway-service"]=8765
     ["user-service"]=8081
-    ["project-service"]=8083
+    ["project-service"]=8088
     ["freelancer-service"]=8082
     ["payment-service"]=8084
     ["notification-service"]=8085
@@ -170,7 +170,7 @@ sleep 3
 start_service "freelancer-service" 8082
 sleep 3
 
-start_service "project-service" 8083
+start_service "project-service" 8088
 sleep 3
 
 start_service "payment-service" 8084
@@ -193,7 +193,7 @@ echo -e "  Eureka Dashboard:    http://localhost:8761"
 echo -e "  API Gateway:         http://localhost:8765"
 echo -e "  User Service:        http://localhost:8081"
 echo -e "  Freelancer Service:  http://localhost:8082"
-echo -e "  Project Service:     http://localhost:8083"
+echo -e "  Project Service:     http://localhost:8088"
 echo -e "  Payment Service:     http://localhost:8084"
 echo -e "  Notification Service: http://localhost:8085"
 echo -e "  Frontend:            http://localhost:3000"

@@ -11,6 +11,10 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+/**
+ * REST controller for managing freelancer portfolios.
+ * Provides endpoints for adding, retrieving, updating, and deleting portfolio items.
+ */
 @RestController
 @RequestMapping("/api/freelancers")
 @RequiredArgsConstructor
@@ -18,8 +22,14 @@ import java.util.List;
 public class PortfolioController {
 
     private final PortfolioService portfolioService;
-    
-    // Only freelancers can add portfolio items
+
+    /**
+     * Adds a portfolio item for a freelancer.
+     *
+     * @param id the ID of the freelancer
+     * @param portfolioDTO the portfolio item to be added
+     * @return the created portfolio item
+     */
     @PostMapping("/{id}/portfolio")
     @PreAuthorize("hasRole('FREELANCER')")
     public ResponseEntity<PortfolioDTO> addPortfolio(
@@ -29,8 +39,13 @@ public class PortfolioController {
         PortfolioDTO created = portfolioService.addPortfolio(id, portfolioDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(created);
     }
-    
-    // Anyone authenticated can view portfolios
+
+    /**
+     * Retrieves all portfolio items for a freelancer.
+     *
+     * @param id the ID of the freelancer
+     * @return the list of portfolio items
+     */
     @GetMapping("/{id}/portfolio")
     @PreAuthorize("isAuthenticated()")
     public ResponseEntity<List<PortfolioDTO>> getFreelancerPortfolios(@PathVariable Long id) {
@@ -38,7 +53,13 @@ public class PortfolioController {
         List<PortfolioDTO> portfolios = portfolioService.getFreelancerPortfolios(id);
         return ResponseEntity.ok(portfolios);
     }
-    
+
+    /**
+     * Retrieves a portfolio item by its ID.
+     *
+     * @param portfolioId the ID of the portfolio item
+     * @return the portfolio item
+     */
     @GetMapping("/portfolio/{portfolioId}")
     @PreAuthorize("isAuthenticated()")
     public ResponseEntity<PortfolioDTO> getPortfolioById(@PathVariable Long portfolioId) {
@@ -46,8 +67,14 @@ public class PortfolioController {
         PortfolioDTO portfolio = portfolioService.getPortfolioById(portfolioId);
         return ResponseEntity.ok(portfolio);
     }
-    
-    // Only freelancers can update their portfolio
+
+    /**
+     * Updates a portfolio item.
+     *
+     * @param portfolioId the ID of the portfolio item to be updated
+     * @param portfolioDTO the updated portfolio item
+     * @return the updated portfolio item
+     */
     @PutMapping("/portfolio/{portfolioId}")
     @PreAuthorize("hasRole('FREELANCER')")
     public ResponseEntity<PortfolioDTO> updatePortfolio(
@@ -57,8 +84,13 @@ public class PortfolioController {
         PortfolioDTO updated = portfolioService.updatePortfolio(portfolioId, portfolioDTO);
         return ResponseEntity.ok(updated);
     }
-    
-    // Only freelancers can delete their portfolio
+
+    /**
+     * Deletes a portfolio item.
+     *
+     * @param portfolioId the ID of the portfolio item to be deleted
+     * @return a response entity with no content
+     */
     @DeleteMapping("/portfolio/{portfolioId}")
     @PreAuthorize("hasRole('FREELANCER')")
     public ResponseEntity<Void> deletePortfolio(@PathVariable Long portfolioId) {

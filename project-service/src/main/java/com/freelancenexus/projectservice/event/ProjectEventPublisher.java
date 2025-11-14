@@ -9,17 +9,43 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * ProjectEventPublisher
+ *
+ * <p>Component responsible for publishing project and proposal-related events to RabbitMQ.
+ * Events are sent to a centralized message broker for consumption by other microservices
+ * and event handlers. Includes graceful error handling and logging for each event type.</p>
+ *
+ * <p>Event types include project creation, status changes, assignment, and proposal lifecycle events.</p>
+ *
+ * @since 1.0
+ */
 @Component
 @RequiredArgsConstructor
 @Slf4j
 public class ProjectEventPublisher {
     
+    /**
+     * RabbitTemplate for sending messages to RabbitMQ.
+     * Injected via constructor (Lombok {@code @RequiredArgsConstructor}).
+     */
     private final RabbitTemplate rabbitTemplate;
     
+    /**
+     * RabbitMQ exchange name where all project service events are published.
+     */
     private static final String EXCHANGE = "freelance-nexus-exchange";
     
     /**
-     * Publish project created event
+     * Publish a PROJECT_CREATED event when a new project is created.
+     *
+     * <p>Event data includes project id, client id, title, category, and timestamp.
+     * Routed with key: {@code project.created}</p>
+     *
+     * @param projectId the id of the created project
+     * @param clientId the id of the client who created the project
+     * @param title the project title
+     * @param category the project category
      */
     public void publishProjectCreatedEvent(Long projectId, Long clientId, String title, String category) {
         try {
@@ -43,7 +69,15 @@ public class ProjectEventPublisher {
     }
     
     /**
-     * Publish proposal submitted event
+     * Publish a PROPOSAL_SUBMITTED event when a freelancer submits a proposal.
+     *
+     * <p>Event data includes proposal id, project id, freelancer id, project title, and timestamp.
+     * Routed with key: {@code proposal.submitted}</p>
+     *
+     * @param proposalId the id of the submitted proposal
+     * @param projectId the id of the project
+     * @param freelancerId the id of the freelancer submitting the proposal
+     * @param projectTitle the title of the project
      */
     public void publishProposalSubmittedEvent(Long proposalId, Long projectId, Long freelancerId, String projectTitle) {
         try {
@@ -68,7 +102,14 @@ public class ProjectEventPublisher {
     }
     
     /**
-     * Publish proposal accepted event
+     * Publish a PROPOSAL_ACCEPTED event when a client accepts a proposal.
+     *
+     * <p>Event data includes proposal id, project id, freelancer id, and timestamp.
+     * Routed with key: {@code proposal.accepted}</p>
+     *
+     * @param proposalId the id of the accepted proposal
+     * @param projectId the id of the project
+     * @param freelancerId the id of the freelancer whose proposal was accepted
      */
     public void publishProposalAcceptedEvent(Long proposalId, Long projectId, Long freelancerId) {
         try {
@@ -92,7 +133,14 @@ public class ProjectEventPublisher {
     }
     
     /**
-     * Publish proposal rejected event
+     * Publish a PROPOSAL_REJECTED event when a client rejects a proposal.
+     *
+     * <p>Event data includes proposal id, project id, freelancer id, and timestamp.
+     * Routed with key: {@code proposal.rejected}</p>
+     *
+     * @param proposalId the id of the rejected proposal
+     * @param projectId the id of the project
+     * @param freelancerId the id of the freelancer whose proposal was rejected
      */
     public void publishProposalRejectedEvent(Long proposalId, Long projectId, Long freelancerId) {
         try {
@@ -116,7 +164,14 @@ public class ProjectEventPublisher {
     }
     
     /**
-     * Publish project status changed event
+     * Publish a PROJECT_STATUS_CHANGED event when a project's status is modified.
+     *
+     * <p>Event data includes project id, old status, new status, and timestamp.
+     * Routed with key: {@code project.status.changed}</p>
+     *
+     * @param projectId the id of the project
+     * @param oldStatus the previous project status
+     * @param newStatus the new project status
      */
     public void publishProjectStatusChangedEvent(Long projectId, String oldStatus, String newStatus) {
         try {
@@ -140,7 +195,14 @@ public class ProjectEventPublisher {
     }
     
     /**
-     * Publish project assigned event
+     * Publish a PROJECT_ASSIGNED event when a freelancer is assigned to a project.
+     *
+     * <p>Event data includes project id, freelancer id, client id, and timestamp.
+     * Routed with key: {@code project.assigned}</p>
+     *
+     * @param projectId the id of the project
+     * @param freelancerId the id of the assigned freelancer
+     * @param clientId the id of the project's client
      */
     public void publishProjectAssignedEvent(Long projectId, Long freelancerId, Long clientId) {
         try {
