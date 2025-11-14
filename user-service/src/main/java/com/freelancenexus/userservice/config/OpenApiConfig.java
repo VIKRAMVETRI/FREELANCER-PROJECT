@@ -15,7 +15,6 @@ import org.springframework.context.annotation.Configuration;
 import java.util.List;
 
 @Configuration
-@Operation(security = @SecurityRequirement(name = "Bearer Authentication"))
 public class OpenApiConfig {
 
     @Value("${server.port:8081}")

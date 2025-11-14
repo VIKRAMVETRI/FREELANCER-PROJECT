@@ -36,10 +36,18 @@ public class SecurityConfig {
         http
             .csrf(AbstractHttpConfigurer::disable)
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/actuator/**").permitAll()
-                .requestMatchers("/api/freelancers/*/profile").permitAll()
-                .requestMatchers("/api/freelancers/*/ratings").permitAll()
-                .requestMatchers("/api/freelancers/*/portfolio").permitAll()
+                .requestMatchers(
+                                "/actuator/**",
+                                "/swagger-ui/**",
+                                "/swagger-ui.html",
+                                "/v3/api-docs/**",
+                                "/api-docs/**",
+                                "/swagger-resources/**",
+                                "/webjars/**",
+                                "/api/freelancers/*/profile",
+                                "/api/freelancers/*/ratings",
+                                "/api/freelancers/*/portfolio"
+                        ).permitAll()
                 .anyRequest().authenticated()
             )
             .sessionManagement(session -> session
