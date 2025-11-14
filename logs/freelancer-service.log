@@ -6,24 +6,6 @@
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO] 
 [INFO] >>> spring-boot:3.2.0:run (default-cli) > test-compile @ freelancer-service >>>
-Downloading from central: https://repo.maven.apache.org/maven2/org/flywaydb/flyway-core/10.18.2/flyway-core-10.18.2.pom
-Progress (1): 2.1 kBProgress (1): 4.5 kBProgress (1): 5.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/flywaydb/flyway-core/10.18.2/flyway-core-10.18.2.pom (5.6 kB at 11 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/flywaydb/flyway-parent/10.18.2/flyway-parent-10.18.2.pom
-Progress (1): 980 BProgress (1): 3.3 kBProgress (1): 4.5 kBProgress (1): 6.6 kBProgress (1): 14 kB Progress (1): 18 kBProgress (1): 24 kBProgress (1): 28 kBProgress (1): 31 kBProgress (1): 35 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/flywaydb/flyway-parent/10.18.2/flyway-parent-10.18.2.pom (35 kB at 985 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-toml/2.15.3/jackson-dataformat-toml-2.15.3.pom
-Progress (1): 996 BProgress (1): 2.3 kBProgress (1): 3.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-toml/2.15.3/jackson-dataformat-toml-2.15.3.pom (3.5 kB at 129 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/flywaydb/flyway-database-postgresql/10.18.2/flyway-database-postgresql-10.18.2.pom
-Progress (1): 1.5 kBProgress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/flywaydb/flyway-database-postgresql/10.18.2/flyway-database-postgresql-10.18.2.pom (2.7 kB at 35 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/flywaydb/flyway-core/9.22.3/flyway-core-9.22.3.pom
-Progress (1): 818 BProgress (1): 2.8 kBProgress (1): 6.1 kBProgress (1): 8.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/flywaydb/flyway-core/9.22.3/flyway-core-9.22.3.pom (8.8 kB at 205 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/flywaydb/flyway-parent/9.22.3/flyway-parent-9.22.3.pom
-Progress (1): 725 BProgress (1): 2.1 kBProgress (1): 3.8 kBProgress (1): 5.8 kBProgress (1): 11 kB Progress (1): 17 kBProgress (1): 23 kBProgress (1): 27 kBProgress (1): 30 kBProgress (1): 35 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/flywaydb/flyway-parent/9.22.3/flyway-parent-9.22.3.pom (35 kB at 758 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/flywaydb/flyway-core/10.18.2/flyway-core-10.18.2.jar
-Progress (1): 0.9/655 kBProgress (1): 2.3/655 kBProgress (1): 3.7/655 kBProgress (1): 5.0/655 kBProgress (1): 6.4/655 kBProgress (1): 7.8/655 kBProgress (1): 9.1/655 kBProgress (1): 11/655 kB Progress (1): 12/655 kBProgress (1): 13/655 kBProgress (1): 15/655 kBProgress (1): 16/655 kBProgress (1): 17/655 kBProgress (1): 19/655 kBProgress (1): 20/655 kBProgress (1): 21/655 kBProgress (1): 26/655 kBProgress (1): 30/655 kBProgress (1): 34/655 kBProgress (1): 38/655 kBProgress (1): 43/655 kBProgress (1): 47/655 kBProgress (1): 51/655 kBProgress (1): 55/655 kBProgress (1): 57/655 kBProgress (1): 62/655 kBProgress (1): 66/655 kBProgress (1): 70/655 kBProgress (1): 74/655 kBProgress (1): 78/655 kBProgress (1): 83/655 kBProgress (1): 87/655 kBProgress (1): 91/655 kBProgress (1): 95/655 kBProgress (1): 100/655 kBProgress (1): 104/655 kBProgress (1): 108/655 kBProgress (1): 112/655 kBProgress (1): 117/655 kBProgress (1): 121/655 kBProgress (1): 125/655 kBProgress (1): 129/655 kBProgress (1): 133/655 kBProgress (1): 138/655 kBProgress (1): 142/655 kBProgress (1): 146/655 kBProgress (1): 150/655 kBProgress (1): 155/655 kBProgress (1): 159/655 kBProgress (1): 163/655 kBProgress (1): 167/655 kBProgress (1): 172/655 kBProgress (1): 176/655 kBProgress (1): 180/655 kBProgress (1): 184/655 kBProgress (1): 188/655 kBProgress (1): 205/655 kBProgress (1): 221/655 kBProgress (1): 238/655 kBProgress (1): 254/655 kBProgress (1): 270/655 kBProgress (1): 287/655 kBProgress (1): 303/655 kBProgress (1): 319/655 kBProgress (1): 336/655 kBProgress (1): 352/655 kBProgress (1): 369/655 kBProgress (1): 385/655 kBProgress (1): 401/655 kBProgress (1): 418/655 kBProgress (1): 434/655 kBProgress (1): 451/655 kBProgress (1): 467/655 kBProgress (1): 483/655 kBProgress (1): 500/655 kBProgress (1): 516/655 kBProgress (1): 532/655 kBProgress (1): 549/655 kBProgress (1): 565/655 kBProgress (1): 582/655 kBProgress (1): 598/655 kBProgress (1): 614/655 kBProgress (1): 631/655 kBProgress (1): 647/655 kBProgress (1): 655 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/flywaydb/flyway-core/10.18.2/flyway-core-10.18.2.jar (655 kB at 3.4 MB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-toml/2.15.3/jackson-dataformat-toml-2.15.3.jar
-Downloading from central: https://repo.maven.apache.org/maven2/org/flywaydb/flyway-database-postgresql/10.18.2/flyway-database-postgresql-10.18.2.jar
-Progress (1): 8.2/56 kBProgress (1): 25/56 kB Progress (1): 41/56 kBProgress (1): 56 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-toml/2.15.3/jackson-dataformat-toml-2.15.3.jar (56 kB at 1.4 MB/s)
-Progress (1): 0.9/47 kBProgress (1): 2.3/47 kBProgress (1): 3.7/47 kBProgress (1): 5.0/47 kBProgress (1): 6.4/47 kBProgress (1): 7.8/47 kBProgress (1): 8.2/47 kBProgress (1): 9.6/47 kBProgress (1): 11/47 kB Progress (1): 12/47 kBProgress (1): 14/47 kBProgress (1): 15/47 kBProgress (1): 16/47 kBProgress (1): 18/47 kBProgress (1): 19/47 kBProgress (1): 21/47 kBProgress (1): 22/47 kBProgress (1): 23/47 kBProgress (1): 25/47 kBProgress (1): 26/47 kBProgress (1): 27/47 kBProgress (1): 29/47 kBProgress (1): 30/47 kBProgress (1): 31/47 kBProgress (1): 33/47 kBProgress (1): 34/47 kBProgress (1): 36/47 kBProgress (1): 37/47 kBProgress (1): 38/47 kBProgress (1): 40/47 kBProgress (1): 41/47 kBProgress (1): 42/47 kBProgress (1): 44/47 kBProgress (1): 45/47 kBProgress (1): 47/47 kBProgress (1): 47 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/flywaydb/flyway-database-postgresql/10.18.2/flyway-database-postgresql-10.18.2.jar (47 kB at 558 kB/s)
 [INFO] 
 [INFO] --- jacoco:0.8.11:prepare-agent (default) @ freelancer-service ---
 [INFO] argLine set to -javaagent:/home/vscode/.m2/repository/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar=destfile=/workspaces/FREELANCER-PROJECT/freelancer-service/target/jacoco.exec
@@ -35,8 +17,8 @@ Progress (1): 0.9/47 kBProgress (1): 2.3/47 kBProgress (1): 3.7/47 kBProgress
 [INFO] --- compiler:3.11.0:compile (default-compile) @ freelancer-service ---
 [INFO] Changes detected - recompiling the module! :source
 [INFO] Compiling 28 source files with javac [debug release 17] to target/classes
-[WARNING] /workspaces/FREELANCER-PROJECT/freelancer-service/src/main/java/com/freelancenexus/freelancer/security/JwtTokenProvider.java:[18,1] Field 'log' already exists.
 [WARNING] /workspaces/FREELANCER-PROJECT/freelancer-service/src/main/java/com/freelancenexus/freelancer/security/JwtAuthenticationFilter.java:[22,1] Field 'log' already exists.
+[WARNING] /workspaces/FREELANCER-PROJECT/freelancer-service/src/main/java/com/freelancenexus/freelancer/security/JwtTokenProvider.java:[18,1] Field 'log' already exists.
 [INFO] 
 [INFO] --- resources:3.3.1:testResources (default-testResources) @ freelancer-service ---
 [INFO] skip non existing resourceDirectory /workspaces/FREELANCER-PROJECT/freelancer-service/src/test/resources
@@ -58,160 +40,82 @@ Progress (1): 0.9/47 kBProgress (1): 2.3/47 kBProgress (1): 3.7/47 kBProgress
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.0)
 
-2025-11-14T14:35:07.765Z  INFO 6030 --- [freelancer-service] [           main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2025-11-14T14:35:08.032Z  INFO 6030 --- [freelancer-service] [           main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=freelancer-service, profiles=[default], label=null, version=null, state=null
-2025-11-14T14:35:08.034Z  INFO 6030 --- [freelancer-service] [           main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-classpath:/config/freelancer-service.properties'}]
-2025-11-14 14:35:08 [main] INFO  c.f.f.FreelancerServiceApplication - No active profile set, falling back to 1 default profile: "default"
-2025-11-14 14:35:09 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-11-14 14:35:09 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 121 ms. Found 4 JPA repository interfaces.
-2025-11-14 14:35:09 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=2a232975-0443-3259-be44-d1a9d1007f65
-2025-11-14 14:35:09 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$LoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$LoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2025-11-14 14:35:09 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration' of type [org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-11-14 14:35:09 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration' of type [org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-11-14 14:35:09 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration' of type [org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-11-14 14:35:09 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-11-14 14:35:09 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'loadBalancerClientsDefaultsMappingsProvider' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration$$Lambda$688/0x00007084a44fea30] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-11-14 14:35:09 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'defaultsBindHandlerAdvisor' of type [org.springframework.cloud.commons.config.DefaultsBindHandlerAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-11-14 14:35:09 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration' of type [org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-11-14 14:35:09 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'stringOrNumberMigrationVersionConverter' of type [org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration$StringOrNumberToMigrationVersionConverter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-11-14 14:35:09 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.cloud.loadbalancer-org.springframework.cloud.client.loadbalancer.LoadBalancerClientsProperties' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerClientsProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-11-14 14:35:09 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'default.org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration.LoadBalancerClientSpecification' of type [org.springframework.cloud.loadbalancer.annotation.LoadBalancerClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-11-14 14:35:09 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'default.org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration.LoadBalancerClientSpecification' of type [org.springframework.cloud.loadbalancer.annotation.LoadBalancerClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-11-14 14:35:09 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'default.org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration.LoadBalancerClientSpecification' of type [org.springframework.cloud.loadbalancer.annotation.LoadBalancerClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-11-14 14:35:09 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'loadBalancerClientFactory' of type [org.springframework.cloud.loadbalancer.support.LoadBalancerClientFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-11-14 14:35:09 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'blockingLoadBalancerClient' of type [org.springframework.cloud.loadbalancer.blocking.client.BlockingLoadBalancerClient] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-11-14 14:35:09 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'loadBalancerServiceInstanceCookieTransformer' of type [org.springframework.cloud.loadbalancer.core.LoadBalancerServiceInstanceCookieTransformer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-11-14 14:35:09 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'xForwarderHeadersTransformer' of type [org.springframework.cloud.loadbalancer.blocking.XForwardedHeadersTransformer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-11-14 14:35:09 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-11-14 14:35:09 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'loadBalancerRequestFactory' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerRequestFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-11-14 14:35:09 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'loadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-11-14 14:35:10 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
-2025-11-14 14:35:10 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-11-14 14:35:10 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
-2025-11-14 14:35:10 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-11-14 14:35:10 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2306 ms
-2025-11-14 14:35:10 [main] DEBUG c.f.f.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
-2025-11-14 14:35:10 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-11-14 14:35:11 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@19e8fe55
-2025-11-14 14:35:11 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-11-14 14:35:11 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/freelance_nexus_freelancers (PostgreSQL 15.15)
-2025-11-14 14:35:11 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "public"."flyway_schema_history" does not exist yet
-2025-11-14 14:35:11 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 0 migrations (execution time 00:00.012s)
-2025-11-14 14:35:11 [main] WARN  o.f.core.internal.command.DbValidate - No migrations found. Are your locations set up correctly?
-2025-11-14 14:35:11 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "public"."flyway_schema_history" ...
-2025-11-14 14:35:11 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": << Empty Schema >>
-2025-11-14 14:35:11 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
-2025-11-14 14:35:11 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-11-14 14:35:11 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
-2025-11-14 14:35:11 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-11-14 14:35:11 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-11-14 14:35:11 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-11-14 14:35:12 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-Hibernate: 
-    create table freelancers (
-        id bigserial not null,
-        availability varchar(50),
-        average_rating numeric(3,2),
-        bio TEXT,
-        completed_projects integer,
-        created_at timestamp(6) not null,
-        hourly_rate numeric(10,2),
-        title varchar(255) not null,
-        total_earnings numeric(12,2),
-        updated_at timestamp(6),
-        user_id bigint not null,
-        primary key (id)
-    )
-Hibernate: 
-    create table portfolios (
-        id bigserial not null,
-        completion_date date,
-        created_at timestamp(6) not null,
-        description TEXT,
-        image_url varchar(500),
-        project_url varchar(500),
-        technologies_used TEXT,
-        title varchar(255) not null,
-        freelancer_id bigint not null,
-        primary key (id)
-    )
-Hibernate: 
-    create table ratings (
-        id bigserial not null,
-        client_id bigint not null,
-        created_at timestamp(6) not null,
-        project_id bigint,
-        rating integer not null,
-        review TEXT,
-        freelancer_id bigint not null,
-        primary key (id)
-    )
-Hibernate: 
-    create table skills (
-        id bigserial not null,
-        proficiency_level varchar(50) check (proficiency_level in ('BEGINNER','INTERMEDIATE','EXPERT')),
-        skill_name varchar(100) not null,
-        years_experience integer,
-        freelancer_id bigint not null,
-        primary key (id)
-    )
-Hibernate: 
-    alter table if exists freelancers 
-       drop constraint if exists UK_s48iw5cpv09jbkep5hn0uca22
-2025-11-14 14:35:12 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
-2025-11-14 14:35:12 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_s48iw5cpv09jbkep5hn0uca22" of relation "freelancers" does not exist, skipping
-Hibernate: 
-    alter table if exists freelancers 
-       add constraint UK_s48iw5cpv09jbkep5hn0uca22 unique (user_id)
-Hibernate: 
-    alter table if exists portfolios 
-       add constraint FKrwkkyo5u3kletxj4chwsl6o50 
-       foreign key (freelancer_id) 
-       references freelancers
-Hibernate: 
-    alter table if exists ratings 
-       add constraint FKb229muid11xj9sgslpi4x9sns 
-       foreign key (freelancer_id) 
-       references freelancers
-Hibernate: 
-    alter table if exists skills 
-       add constraint FKggby0fxu63ehr9c6cy5tm7fmy 
-       foreign key (freelancer_id) 
-       references freelancers
-2025-11-14 14:35:12 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-11-14 14:35:13 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-11-14 14:35:14 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+2025-11-14T15:08:09.983Z  INFO 24943 --- [freelancer-service] [           main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2025-11-14T15:08:10.190Z  INFO 24943 --- [freelancer-service] [           main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=freelancer-service, profiles=[default], label=null, version=null, state=null
+2025-11-14T15:08:10.191Z  INFO 24943 --- [freelancer-service] [           main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-classpath:/config/freelancer-service.properties'}]
+2025-11-14 15:08:10 [main] INFO  c.f.f.FreelancerServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-14 15:08:11 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-14 15:08:11 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 104 ms. Found 4 JPA repository interfaces.
+2025-11-14 15:08:11 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=2a232975-0443-3259-be44-d1a9d1007f65
+2025-11-14 15:08:11 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$LoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$LoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-11-14 15:08:11 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration' of type [org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-14 15:08:11 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration' of type [org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-14 15:08:11 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration' of type [org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-14 15:08:11 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-14 15:08:11 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'loadBalancerClientsDefaultsMappingsProvider' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration$$Lambda$688/0x00007f2c0050ea30] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-14 15:08:11 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'defaultsBindHandlerAdvisor' of type [org.springframework.cloud.commons.config.DefaultsBindHandlerAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-14 15:08:11 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration' of type [org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-14 15:08:11 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'stringOrNumberMigrationVersionConverter' of type [org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration$StringOrNumberToMigrationVersionConverter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-14 15:08:11 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.cloud.loadbalancer-org.springframework.cloud.client.loadbalancer.LoadBalancerClientsProperties' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerClientsProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-14 15:08:11 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'default.org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration.LoadBalancerClientSpecification' of type [org.springframework.cloud.loadbalancer.annotation.LoadBalancerClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-14 15:08:11 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'default.org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration.LoadBalancerClientSpecification' of type [org.springframework.cloud.loadbalancer.annotation.LoadBalancerClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-14 15:08:11 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'default.org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration.LoadBalancerClientSpecification' of type [org.springframework.cloud.loadbalancer.annotation.LoadBalancerClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-14 15:08:11 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'loadBalancerClientFactory' of type [org.springframework.cloud.loadbalancer.support.LoadBalancerClientFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-14 15:08:11 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'blockingLoadBalancerClient' of type [org.springframework.cloud.loadbalancer.blocking.client.BlockingLoadBalancerClient] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-14 15:08:11 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'loadBalancerServiceInstanceCookieTransformer' of type [org.springframework.cloud.loadbalancer.core.LoadBalancerServiceInstanceCookieTransformer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-14 15:08:11 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'xForwarderHeadersTransformer' of type [org.springframework.cloud.loadbalancer.blocking.XForwardedHeadersTransformer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-14 15:08:11 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-14 15:08:11 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'loadBalancerRequestFactory' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerRequestFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-14 15:08:11 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'loadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-14 15:08:12 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2025-11-14 15:08:12 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-14 15:08:12 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-11-14 15:08:12 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-14 15:08:12 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1925 ms
+2025-11-14 15:08:12 [main] DEBUG c.f.f.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-11-14 15:08:12 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-11-14 15:08:12 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@d677be9
+2025-11-14 15:08:12 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-11-14 15:08:12 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/freelance_nexus_freelancers (PostgreSQL 15.15)
+2025-11-14 15:08:12 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 0 migrations (execution time 00:00.017s)
+2025-11-14 15:08:12 [main] WARN  o.f.core.internal.command.DbValidate - No migrations found. Are your locations set up correctly?
+2025-11-14 15:08:12 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": << Empty Schema >>
+2025-11-14 15:08:12 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-11-14 15:08:12 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-14 15:08:13 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-11-14 15:08:13 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-11-14 15:08:13 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-14 15:08:13 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-14 15:08:14 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-14 15:08:14 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-14 15:08:14 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-11-14 15:08:15 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
 
-Using generated security password: e2d1d0e3-face-46f8-8ea2-be17324fdb06
+Using generated security password: e9f7be36-b698-43c4-b0b7-edf1f1ac891b
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2025-11-14 14:35:14 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
-2025-11-14 14:35:14 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7e9079cf, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@29e10870, org.springframework.security.web.context.SecurityContextHolderFilter@11675922, org.springframework.security.web.header.HeaderWriterFilter@6d0937e, org.springframework.web.filter.CorsFilter@36ad4b58, org.springframework.security.web.authentication.logout.LogoutFilter@28ab0789, com.freelancenexus.freelancer.security.JwtAuthenticationFilter@5e7cd0df, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1f600254, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@652e4bb6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@77966cc3, org.springframework.security.web.session.SessionManagementFilter@3e7de165, org.springframework.security.web.access.ExceptionTranslationFilter@66fd7b2, org.springframework.security.web.access.intercept.AuthorizationFilter@6d68cbf3]
-2025-11-14 14:35:15 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
-2025-11-14 14:35:15 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
-2025-11-14 14:35:15 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
-2025-11-14 14:35:15 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-11-14 14:35:15 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
-2025-11-14 14:35:15 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2025-11-14 14:35:15 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2025-11-14 14:35:15 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
-2025-11-14 14:35:15 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2025-11-14 14:35:15 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
-2025-11-14 14:35:15 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2025-11-14 14:35:15 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
-2025-11-14 14:35:15 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
-2025-11-14 14:35:15 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
-2025-11-14 14:35:15 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1763130915974 with initial instances count: 1
-2025-11-14 14:35:15 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application FREELANCER-SERVICE with eureka with status UP
-2025-11-14 14:35:15 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1763130915983, current=UP, previous=STARTING]
-2025-11-14 14:35:15 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_FREELANCER-SERVICE/freelancer-service:8082: registering service...
-2025-11-14 14:35:16 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path ''
-2025-11-14 14:35:16 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8082
-2025-11-14 14:35:16 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_FREELANCER-SERVICE/freelancer-service:8082 - registration status: 204
-2025-11-14 14:35:16 [main] INFO  c.f.f.FreelancerServiceApplication - Started FreelancerServiceApplication in 9.721 seconds (process running for 10.118)
-2025-11-14 14:40:15 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-11-14 14:45:15 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-11-14 14:50:15 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-11-14 14:55:15 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-11-14 15:00:15 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-11-14 15:08:15 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
+2025-11-14 15:08:16 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3d2bb013, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@167eab4, org.springframework.security.web.context.SecurityContextHolderFilter@73d8f219, org.springframework.security.web.header.HeaderWriterFilter@3dd916d9, org.springframework.web.filter.CorsFilter@2a621df3, org.springframework.security.web.authentication.logout.LogoutFilter@37495d56, com.freelancenexus.freelancer.security.JwtAuthenticationFilter@248b2b61, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7c89133, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@704a0f9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7fab8e9a, org.springframework.security.web.session.SessionManagementFilter@92adb3b, org.springframework.security.web.access.ExceptionTranslationFilter@7e2f1454, org.springframework.security.web.access.intercept.AuthorizationFilter@6644b7b9]
+2025-11-14 15:08:16 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2025-11-14 15:08:16 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2025-11-14 15:08:16 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2025-11-14 15:08:16 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-11-14 15:08:16 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2025-11-14 15:08:16 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2025-11-14 15:08:16 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2025-11-14 15:08:16 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2025-11-14 15:08:16 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2025-11-14 15:08:16 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2025-11-14 15:08:16 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2025-11-14 15:08:17 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2025-11-14 15:08:17 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2025-11-14 15:08:17 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-11-14 15:08:17 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1763132897144 with initial instances count: 1
+2025-11-14 15:08:17 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application FREELANCER-SERVICE with eureka with status UP
+2025-11-14 15:08:17 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1763132897160, current=UP, previous=STARTING]
+2025-11-14 15:08:17 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_FREELANCER-SERVICE/freelancer-service:8082: registering service...
+2025-11-14 15:08:17 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path ''
+2025-11-14 15:08:17 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8082
+2025-11-14 15:08:17 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_FREELANCER-SERVICE/freelancer-service:8082 - registration status: 204
+2025-11-14 15:08:17 [main] INFO  c.f.f.FreelancerServiceApplication - Started FreelancerServiceApplication in 8.239 seconds (process running for 8.782)

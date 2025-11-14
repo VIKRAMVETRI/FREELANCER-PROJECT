@@ -2,12 +2,12 @@ import api from './api';
 
 const userService = {
   getUserProfile: async (userId) => {
-    const response = await api.get(`/users/${userId}`);
+    const response = await api.get(`/api/users/${userId}`);
     return response.data;
   },
 
   updateUserProfile: async (userId, userData) => {
-    const response = await api.put(`api/users/${userId}`, userData);
+    const response = await api.put(`/api/users/profile`, userData);
     return response.data;
   },
 
