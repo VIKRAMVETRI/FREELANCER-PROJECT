@@ -1,0 +1,26 @@
+{
+    "sqltools.connections": [
+        {
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "freelance-users",
+            "database": "freelance_nexus_users",
+            "username": "postgres",
+            "password": "123456"
+        },
+        {
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "freelance-freelancer",
+            "database": "freelance_nexus_freelancers",
+            "username": "postgres",
+            "password": "123456"
+        }
+    ]
+}
