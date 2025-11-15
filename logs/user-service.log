@@ -21,121 +21,552 @@
 [INFO] Copying 1 resource from src/test/resources to target/test-classes
 [INFO] 
 [INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ user-service ---
-[INFO] Changes detected - recompiling the module! :source
-[INFO] Compiling 27 source files with javac [debug release 17] to target/test-classes
-[INFO] Some messages have been simplified; recompile with -Xdiags:verbose to get full output
-[INFO] -------------------------------------------------------------
-[ERROR] COMPILATION ERROR : 
-[INFO] -------------------------------------------------------------
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/AuthenticationExceptionTest.java:[23,45] constructor AuthenticationException in class com.freelancenexus.userservice.exception.AuthenticationException cannot be applied to given types;
-  required: java.lang.String
-  found:    java.lang.String,java.lang.Throwable
-  reason: actual and formal argument lists differ in length
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/ExceptionClassesTest.java:[29,43] constructor UserNotFoundException in class com.freelancenexus.userservice.exception.UserNotFoundException cannot be applied to given types;
-  required: java.lang.String
-  found:    java.lang.String,java.lang.Throwable
-  reason: actual and formal argument lists differ in length
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/ExceptionClassesTest.java:[56,48] constructor DuplicateResourceException in class com.freelancenexus.userservice.exception.DuplicateResourceException cannot be applied to given types;
-  required: java.lang.String
-  found:    java.lang.String,java.lang.Throwable
-  reason: actual and formal argument lists differ in length
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/ExceptionClassesTest.java:[83,43] constructor UnauthorizedException in class com.freelancenexus.userservice.exception.UnauthorizedException cannot be applied to given types;
-  required: java.lang.String
-  found:    java.lang.String,java.lang.Throwable
-  reason: actual and formal argument lists differ in length
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/ExceptionClassesTest.java:[110,45] constructor AuthenticationException in class com.freelancenexus.userservice.exception.AuthenticationException cannot be applied to given types;
-  required: java.lang.String
-  found:    java.lang.String,java.lang.Throwable
-  reason: actual and formal argument lists differ in length
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/GlobalExceptionHandlerTest.java:[45,106] incompatible types: org.springframework.web.context.request.WebRequest cannot be converted to jakarta.servlet.http.HttpServletRequest
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/GlobalExceptionHandlerTest.java:[64,111] incompatible types: org.springframework.web.context.request.WebRequest cannot be converted to jakarta.servlet.http.HttpServletRequest
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/GlobalExceptionHandlerTest.java:[82,106] incompatible types: org.springframework.web.context.request.WebRequest cannot be converted to jakarta.servlet.http.HttpServletRequest
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/GlobalExceptionHandlerTest.java:[100,108] incompatible types: org.springframework.web.context.request.WebRequest cannot be converted to jakarta.servlet.http.HttpServletRequest
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/GlobalExceptionHandlerTest.java:[124,104] incompatible types: org.springframework.web.context.request.WebRequest cannot be converted to jakarta.servlet.http.HttpServletRequest
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/GlobalExceptionHandlerTest.java:[148,104] incompatible types: org.springframework.web.context.request.WebRequest cannot be converted to jakarta.servlet.http.HttpServletRequest
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/GlobalExceptionHandlerTest.java:[162,66] cannot find symbol
-  symbol:   method handleGlobalException(java.lang.Exception,org.springframework.web.context.request.WebRequest)
-  location: variable exceptionHandler of type com.freelancenexus.userservice.exception.GlobalExceptionHandler
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/GlobalExceptionHandlerTest.java:[180,66] cannot find symbol
-  symbol:   method handleGlobalException(java.lang.RuntimeException,org.springframework.web.context.request.WebRequest)
-  location: variable exceptionHandler of type com.freelancenexus.userservice.exception.GlobalExceptionHandler
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/GlobalExceptionHandlerTest.java:[194,66] cannot find symbol
-  symbol:   method handleGlobalException(java.lang.NullPointerException,org.springframework.web.context.request.WebRequest)
-  location: variable exceptionHandler of type com.freelancenexus.userservice.exception.GlobalExceptionHandler
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/GlobalExceptionHandlerTest.java:[208,106] incompatible types: org.springframework.web.context.request.WebRequest cannot be converted to jakarta.servlet.http.HttpServletRequest
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/UnauthorizedExceptionTest.java:[23,43] constructor UnauthorizedException in class com.freelancenexus.userservice.exception.UnauthorizedException cannot be applied to given types;
-  required: java.lang.String
-  found:    java.lang.String,java.lang.Throwable
-  reason: actual and formal argument lists differ in length
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/DuplicateResourceExceptionTest.java:[23,48] constructor DuplicateResourceException in class com.freelancenexus.userservice.exception.DuplicateResourceException cannot be applied to given types;
-  required: java.lang.String
-  found:    java.lang.String,java.lang.Throwable
-  reason: actual and formal argument lists differ in length
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/UserNotFoundExceptionTest.java:[23,43] constructor UserNotFoundException in class com.freelancenexus.userservice.exception.UserNotFoundException cannot be applied to given types;
-  required: java.lang.String
-  found:    java.lang.String,java.lang.Throwable
-  reason: actual and formal argument lists differ in length
-[INFO] 18 errors 
-[INFO] -------------------------------------------------------------
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  7.177 s
-[INFO] Finished at: 2025-11-14T15:06:01Z
-[INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:testCompile (default-testCompile) on project user-service: Compilation failure: Compilation failure: 
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/AuthenticationExceptionTest.java:[23,45] constructor AuthenticationException in class com.freelancenexus.userservice.exception.AuthenticationException cannot be applied to given types;
-[ERROR]   required: java.lang.String
-[ERROR]   found:    java.lang.String,java.lang.Throwable
-[ERROR]   reason: actual and formal argument lists differ in length
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/ExceptionClassesTest.java:[29,43] constructor UserNotFoundException in class com.freelancenexus.userservice.exception.UserNotFoundException cannot be applied to given types;
-[ERROR]   required: java.lang.String
-[ERROR]   found:    java.lang.String,java.lang.Throwable
-[ERROR]   reason: actual and formal argument lists differ in length
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/ExceptionClassesTest.java:[56,48] constructor DuplicateResourceException in class com.freelancenexus.userservice.exception.DuplicateResourceException cannot be applied to given types;
-[ERROR]   required: java.lang.String
-[ERROR]   found:    java.lang.String,java.lang.Throwable
-[ERROR]   reason: actual and formal argument lists differ in length
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/ExceptionClassesTest.java:[83,43] constructor UnauthorizedException in class com.freelancenexus.userservice.exception.UnauthorizedException cannot be applied to given types;
-[ERROR]   required: java.lang.String
-[ERROR]   found:    java.lang.String,java.lang.Throwable
-[ERROR]   reason: actual and formal argument lists differ in length
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/ExceptionClassesTest.java:[110,45] constructor AuthenticationException in class com.freelancenexus.userservice.exception.AuthenticationException cannot be applied to given types;
-[ERROR]   required: java.lang.String
-[ERROR]   found:    java.lang.String,java.lang.Throwable
-[ERROR]   reason: actual and formal argument lists differ in length
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/GlobalExceptionHandlerTest.java:[45,106] incompatible types: org.springframework.web.context.request.WebRequest cannot be converted to jakarta.servlet.http.HttpServletRequest
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/GlobalExceptionHandlerTest.java:[64,111] incompatible types: org.springframework.web.context.request.WebRequest cannot be converted to jakarta.servlet.http.HttpServletRequest
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/GlobalExceptionHandlerTest.java:[82,106] incompatible types: org.springframework.web.context.request.WebRequest cannot be converted to jakarta.servlet.http.HttpServletRequest
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/GlobalExceptionHandlerTest.java:[100,108] incompatible types: org.springframework.web.context.request.WebRequest cannot be converted to jakarta.servlet.http.HttpServletRequest
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/GlobalExceptionHandlerTest.java:[124,104] incompatible types: org.springframework.web.context.request.WebRequest cannot be converted to jakarta.servlet.http.HttpServletRequest
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/GlobalExceptionHandlerTest.java:[148,104] incompatible types: org.springframework.web.context.request.WebRequest cannot be converted to jakarta.servlet.http.HttpServletRequest
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/GlobalExceptionHandlerTest.java:[162,66] cannot find symbol
-[ERROR]   symbol:   method handleGlobalException(java.lang.Exception,org.springframework.web.context.request.WebRequest)
-[ERROR]   location: variable exceptionHandler of type com.freelancenexus.userservice.exception.GlobalExceptionHandler
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/GlobalExceptionHandlerTest.java:[180,66] cannot find symbol
-[ERROR]   symbol:   method handleGlobalException(java.lang.RuntimeException,org.springframework.web.context.request.WebRequest)
-[ERROR]   location: variable exceptionHandler of type com.freelancenexus.userservice.exception.GlobalExceptionHandler
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/GlobalExceptionHandlerTest.java:[194,66] cannot find symbol
-[ERROR]   symbol:   method handleGlobalException(java.lang.NullPointerException,org.springframework.web.context.request.WebRequest)
-[ERROR]   location: variable exceptionHandler of type com.freelancenexus.userservice.exception.GlobalExceptionHandler
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/GlobalExceptionHandlerTest.java:[208,106] incompatible types: org.springframework.web.context.request.WebRequest cannot be converted to jakarta.servlet.http.HttpServletRequest
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/UnauthorizedExceptionTest.java:[23,43] constructor UnauthorizedException in class com.freelancenexus.userservice.exception.UnauthorizedException cannot be applied to given types;
-[ERROR]   required: java.lang.String
-[ERROR]   found:    java.lang.String,java.lang.Throwable
-[ERROR]   reason: actual and formal argument lists differ in length
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/DuplicateResourceExceptionTest.java:[23,48] constructor DuplicateResourceException in class com.freelancenexus.userservice.exception.DuplicateResourceException cannot be applied to given types;
-[ERROR]   required: java.lang.String
-[ERROR]   found:    java.lang.String,java.lang.Throwable
-[ERROR]   reason: actual and formal argument lists differ in length
-[ERROR] /workspaces/FREELANCER-PROJECT/user-service/src/test/java/com/freelancenexus/userservice/exception/UserNotFoundExceptionTest.java:[23,43] constructor UserNotFoundException in class com.freelancenexus.userservice.exception.UserNotFoundException cannot be applied to given types;
-[ERROR]   required: java.lang.String
-[ERROR]   found:    java.lang.String,java.lang.Throwable
-[ERROR]   reason: actual and formal argument lists differ in length
-[ERROR] -> [Help 1]
-[ERROR] 
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< spring-boot:3.2.0:run (default-cli) < test-compile @ user-service <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.2.0:run (default-cli) @ user-service ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-11-15T06:48:23.766Z  INFO 22422 --- [user-service] [           main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2025-11-15T06:48:24.064Z  INFO 22422 --- [user-service] [           main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[default], label=null, version=null, state=null
+2025-11-15T06:48:24.065Z  INFO 22422 --- [user-service] [           main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-classpath:/config/user-service.properties'}]
+2025-11-15 06:48:24 [main] INFO  c.f.u.UserServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-15 06:48:24 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-15 06:48:24 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 102 ms. Found 1 JPA repository interface.
+2025-11-15 06:48:25 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=43bbc69a-d4c1-3bec-a7b5-9a0eed56a770
+2025-11-15 06:48:25 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$LoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$LoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-11-15 06:48:25 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration' of type [org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-15 06:48:25 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration' of type [org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-15 06:48:25 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration' of type [org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-15 06:48:25 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-15 06:48:25 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'loadBalancerClientsDefaultsMappingsProvider' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration$$Lambda$700/0x000072de9c50f300] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-15 06:48:25 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'defaultsBindHandlerAdvisor' of type [org.springframework.cloud.commons.config.DefaultsBindHandlerAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-15 06:48:25 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.cloud.loadbalancer-org.springframework.cloud.client.loadbalancer.LoadBalancerClientsProperties' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerClientsProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-15 06:48:25 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'default.org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration.LoadBalancerClientSpecification' of type [org.springframework.cloud.loadbalancer.annotation.LoadBalancerClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-15 06:48:25 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'default.org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration.LoadBalancerClientSpecification' of type [org.springframework.cloud.loadbalancer.annotation.LoadBalancerClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-15 06:48:25 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'default.org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration.LoadBalancerClientSpecification' of type [org.springframework.cloud.loadbalancer.annotation.LoadBalancerClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-15 06:48:25 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'loadBalancerClientFactory' of type [org.springframework.cloud.loadbalancer.support.LoadBalancerClientFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-15 06:48:25 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'blockingLoadBalancerClient' of type [org.springframework.cloud.loadbalancer.blocking.client.BlockingLoadBalancerClient] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-15 06:48:25 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'loadBalancerServiceInstanceCookieTransformer' of type [org.springframework.cloud.loadbalancer.core.LoadBalancerServiceInstanceCookieTransformer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-15 06:48:25 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'xForwarderHeadersTransformer' of type [org.springframework.cloud.loadbalancer.blocking.XForwardedHeadersTransformer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-15 06:48:25 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-15 06:48:25 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'loadBalancerRequestFactory' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerRequestFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-15 06:48:25 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'loadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-11-15 06:48:25 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-11-15 06:48:25 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-15 06:48:25 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-11-15 06:48:25 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-15 06:48:25 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1885 ms
+2025-11-15 06:48:26 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-15 06:48:26 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-11-15 06:48:26 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-11-15 06:48:26 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-15 06:48:26 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-11-15 06:48:26 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@76208b80
+2025-11-15 06:48:26 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-11-15 06:48:26 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-15 06:48:27 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-15 06:48:27 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-15 06:48:28 [main] DEBUG o.s.s.c.a.a.c.AuthenticationConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2025-11-15 06:48:28 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
+2025-11-15 06:48:28 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2e6dc94c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6c39ba30, org.springframework.security.web.context.SecurityContextHolderFilter@2c332922, org.springframework.security.web.header.HeaderWriterFilter@47511582, org.springframework.security.web.authentication.logout.LogoutFilter@2df05bd1, com.freelancenexus.userservice.security.JwtAuthenticationFilter@6282f1eb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@53e6c017, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6eed5b68, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@f2df380, org.springframework.security.web.session.SessionManagementFilter@3c0640fa, org.springframework.security.web.access.ExceptionTranslationFilter@17eb35fa, org.springframework.security.web.access.intercept.AuthorizationFilter@64934acd]
+2025-11-15 06:48:29 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2025-11-15 06:48:29 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2025-11-15 06:48:29 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2025-11-15 06:48:29 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-11-15 06:48:29 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2025-11-15 06:48:29 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2025-11-15 06:48:29 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2025-11-15 06:48:29 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2025-11-15 06:48:29 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2025-11-15 06:48:29 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2025-11-15 06:48:29 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2025-11-15 06:48:30 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2025-11-15 06:48:30 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2025-11-15 06:48:30 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-11-15 06:48:30 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1763189310340 with initial instances count: 1
+2025-11-15 06:48:30 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application USER-SERVICE with eureka with status UP
+2025-11-15 06:48:30 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1763189310350, current=UP, previous=STARTING]
+2025-11-15 06:48:30 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_USER-SERVICE/user-service:8081: registering service...
+2025-11-15 06:48:30 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
+2025-11-15 06:48:30 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8081
+2025-11-15 06:48:30 [main] INFO  c.f.u.UserServiceApplication - Started UserServiceApplication in 7.674 seconds (process running for 8.137)
+2025-11-15 06:48:30 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_USER-SERVICE/user-service:8081 - registration status: 204
+2025-11-15 06:53:29 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-11-15 06:53:35 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-15 06:53:35 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-11-15 06:53:35 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-11-15 06:53:35 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-11-15 06:53:35 [http-nio-8081-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-11-15 06:53:35 [http-nio-8081-exec-1] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/favicon.ico' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-11-15 06:53:35 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-11-15 06:53:35 [http-nio-8081-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-11-15 06:53:36 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui.html
+2025-11-15 06:53:36 [http-nio-8081-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-11-15 06:53:36 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui.html
+2025-11-15 06:53:36 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/index.html
+2025-11-15 06:53:36 [http-nio-8081-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-11-15 06:53:36 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/index.html
+2025-11-15 06:53:37 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui.css
+2025-11-15 06:53:37 [http-nio-8081-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-11-15 06:53:37 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui.css
+2025-11-15 06:53:37 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-initializer.js
+2025-11-15 06:53:37 [http-nio-8081-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-11-15 06:53:37 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-initializer.js
+2025-11-15 06:53:37 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-11-15 06:53:37 [http-nio-8081-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-11-15 06:53:37 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-11-15 06:53:37 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui-bundle.js
+2025-11-15 06:53:37 [http-nio-8081-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-11-15 06:53:37 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui-bundle.js
+2025-11-15 06:53:37 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/index.css
+2025-11-15 06:53:37 [http-nio-8081-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-11-15 06:53:37 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/index.css
+2025-11-15 06:53:38 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/favicon-32x32.png
+2025-11-15 06:53:38 [http-nio-8081-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-11-15 06:53:38 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/favicon-32x32.png
+2025-11-15 06:53:38 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api-docs/swagger-config
+2025-11-15 06:53:38 [http-nio-8081-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-11-15 06:53:38 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api-docs/swagger-config
+2025-11-15 06:53:39 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api-docs
+2025-11-15 06:53:39 [http-nio-8081-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-11-15 06:53:39 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api-docs
+2025-11-15 06:53:39 [http-nio-8081-exec-1] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 246 ms
+2025-11-15 06:58:29 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-11-15 07:03:29 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-11-15 07:04:19 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/users/login
+2025-11-15 07:04:19 [http-nio-8081-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-11-15 07:04:19 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/users/login
+2025-11-15 07:04:19 [http-nio-8081-exec-9] INFO  c.f.u.controller.UserController - Received login request for email: vetrivel@gmail.com
+2025-11-15 07:04:19 [http-nio-8081-exec-9] INFO  c.f.userservice.service.UserService - Authenticating user with email: vetrivel@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.profile_image_url,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-11-15 07:04:20 [http-nio-8081-exec-9] ERROR c.f.u.e.GlobalExceptionHandler - Unauthorized access: Invalid email or password
+2025-11-15 07:04:52 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/users/login
+2025-11-15 07:04:52 [http-nio-8081-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-11-15 07:04:52 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/users/login
+2025-11-15 07:04:52 [http-nio-8081-exec-10] INFO  c.f.u.controller.UserController - Received login request for email: vetrivel@gmail.com
+2025-11-15 07:04:52 [http-nio-8081-exec-10] INFO  c.f.userservice.service.UserService - Authenticating user with email: vetrivel@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.profile_image_url,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-11-15 07:04:52 [http-nio-8081-exec-10] ERROR c.f.u.e.GlobalExceptionHandler - Unauthorized access: Invalid email or password
+2025-11-15 07:05:47 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/users/login
+2025-11-15 07:05:47 [http-nio-8081-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-11-15 07:05:47 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/users/login
+2025-11-15 07:05:47 [http-nio-8081-exec-2] INFO  c.f.u.controller.UserController - Received login request for email: vetrivel@gmail.com
+2025-11-15 07:05:47 [http-nio-8081-exec-2] INFO  c.f.userservice.service.UserService - Authenticating user with email: vetrivel@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.profile_image_url,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-11-15 07:05:47 [http-nio-8081-exec-2] ERROR c.f.u.e.GlobalExceptionHandler - Unauthorized access: Invalid email or password
+2025-11-15 07:06:11 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/users/login
+2025-11-15 07:06:11 [http-nio-8081-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-11-15 07:06:11 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/users/login
+2025-11-15 07:06:11 [http-nio-8081-exec-3] INFO  c.f.u.controller.UserController - Received login request for email: admin@gmail.com
+2025-11-15 07:06:11 [http-nio-8081-exec-3] INFO  c.f.userservice.service.UserService - Authenticating user with email: admin@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.profile_image_url,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-11-15 07:06:11 [http-nio-8081-exec-3] ERROR c.f.u.e.GlobalExceptionHandler - Unauthorized access: Invalid email or password
+2025-11-15 07:07:01 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/users/register
+2025-11-15 07:07:01 [http-nio-8081-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-11-15 07:07:01 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/users/register
+2025-11-15 07:07:01 [http-nio-8081-exec-4] INFO  c.f.u.controller.UserController - Received registration request for email: vetrivel@gmail.com
+2025-11-15 07:07:01 [http-nio-8081-exec-4] INFO  c.f.userservice.service.UserService - Registering new user with email: vetrivel@gmail.com
+Hibernate: 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    insert 
+    into
+        users
+        (created_at, email, full_name, is_active, password, phone, profile_image_url, role, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-11-15 07:07:01 [http-nio-8081-exec-4] INFO  c.f.userservice.service.UserService - User registered successfully with ID: 22
+2025-11-15 07:07:20 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/users/login
+2025-11-15 07:07:20 [http-nio-8081-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-11-15 07:07:20 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/users/login
+2025-11-15 07:07:20 [http-nio-8081-exec-5] INFO  c.f.u.controller.UserController - Received login request for email: vetrivel@gmail.com
+2025-11-15 07:07:20 [http-nio-8081-exec-5] INFO  c.f.userservice.service.UserService - Authenticating user with email: vetrivel@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.profile_image_url,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-11-15 07:07:20 [http-nio-8081-exec-5] INFO  c.f.userservice.service.UserService - User authenticated successfully: vetrivel@gmail.com
+2025-11-15 07:08:02 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/users/profile
+2025-11-15 07:08:02 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/users/profile
+2025-11-15 07:08:02 [http-nio-8081-exec-8] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.freelancenexus.userservice.controller.UserController.getCurrentUserProfile(); target is of class [com.freelancenexus.userservice.controller.UserController]
+2025-11-15 07:08:02 [http-nio-8081-exec-8] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.freelancenexus.userservice.controller.UserController.getCurrentUserProfile(); target is of class [com.freelancenexus.userservice.controller.UserController]
+2025-11-15 07:08:02 [http-nio-8081-exec-8] INFO  c.f.u.controller.UserController - Received request to get current user profile
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.profile_image_url,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-11-15 07:08:22 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing PUT /api/users/profile
+2025-11-15 07:08:22 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured PUT /api/users/profile
+2025-11-15 07:08:22 [http-nio-8081-exec-7] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.freelancenexus.userservice.controller.UserController.updateCurrentUserProfile(com.freelancenexus.userservice.dto.UserUpdateDTO); target is of class [com.freelancenexus.userservice.controller.UserController]
+2025-11-15 07:08:22 [http-nio-8081-exec-7] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.freelancenexus.userservice.controller.UserController.updateCurrentUserProfile(com.freelancenexus.userservice.dto.UserUpdateDTO); target is of class [com.freelancenexus.userservice.controller.UserController]
+2025-11-15 07:08:22 [http-nio-8081-exec-7] INFO  c.f.u.controller.UserController - Received request to update current user profile
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.profile_image_url,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-11-15 07:08:22 [http-nio-8081-exec-7] INFO  c.f.userservice.service.UserService - User profile updated successfully: 22
+Hibernate: 
+    update
+        users 
+    set
+        email=?,
+        full_name=?,
+        is_active=?,
+        password=?,
+        phone=?,
+        profile_image_url=?,
+        role=?,
+        updated_at=? 
+    where
+        id=?
+2025-11-15 07:08:29 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-11-15 07:08:40 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/users
+2025-11-15 07:08:40 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/users
+2025-11-15 07:08:40 [http-nio-8081-exec-6] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.freelancenexus.userservice.controller.UserController.getAllUsers(); target is of class [com.freelancenexus.userservice.controller.UserController]
+2025-11-15 07:08:40 [http-nio-8081-exec-6] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.freelancenexus.userservice.controller.UserController.getAllUsers(); target is of class [com.freelancenexus.userservice.controller.UserController]
+2025-11-15 07:08:40 [http-nio-8081-exec-6] INFO  c.f.u.controller.UserController - Received request to get all users
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.profile_image_url,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        users u1_0
+2025-11-15 07:09:36 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/users/14
+2025-11-15 07:09:36 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/users/14
+2025-11-15 07:09:36 [http-nio-8081-exec-9] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.freelancenexus.userservice.controller.UserController.getUserById(java.lang.Long); target is of class [com.freelancenexus.userservice.controller.UserController]
+2025-11-15 07:09:36 [http-nio-8081-exec-9] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.freelancenexus.userservice.controller.UserController.getUserById(java.lang.Long); target is of class [com.freelancenexus.userservice.controller.UserController]
+2025-11-15 07:09:36 [http-nio-8081-exec-9] INFO  c.f.u.controller.UserController - Received request to get user by ID: 14
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.profile_image_url,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-11-15 07:10:05 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/users/20
+2025-11-15 07:10:05 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/users/20
+2025-11-15 07:10:05 [http-nio-8081-exec-10] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.freelancenexus.userservice.controller.UserController.getUserById(java.lang.Long); target is of class [com.freelancenexus.userservice.controller.UserController]
+2025-11-15 07:10:05 [http-nio-8081-exec-10] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.freelancenexus.userservice.controller.UserController.getUserById(java.lang.Long); target is of class [com.freelancenexus.userservice.controller.UserController]
+2025-11-15 07:10:05 [http-nio-8081-exec-10] INFO  c.f.u.controller.UserController - Received request to get user by ID: 20
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.profile_image_url,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-11-15 07:10:27 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing DELETE /api/users/16
+2025-11-15 07:10:27 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured DELETE /api/users/16
+2025-11-15 07:10:27 [http-nio-8081-exec-1] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.freelancenexus.userservice.controller.UserController.deleteUser(java.lang.Long); target is of class [com.freelancenexus.userservice.controller.UserController]
+2025-11-15 07:10:27 [http-nio-8081-exec-1] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.freelancenexus.userservice.controller.UserController.deleteUser(java.lang.Long); target is of class [com.freelancenexus.userservice.controller.UserController]
+2025-11-15 07:10:27 [http-nio-8081-exec-1] INFO  c.f.u.controller.UserController - Received request to delete user with ID: 16
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.profile_image_url,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-11-15 07:10:27 [http-nio-8081-exec-1] INFO  c.f.userservice.service.UserService - User deleted successfully: 16
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+2025-11-15 07:10:39 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/users
+2025-11-15 07:10:39 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/users
+2025-11-15 07:10:39 [http-nio-8081-exec-2] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.freelancenexus.userservice.controller.UserController.getAllUsers(); target is of class [com.freelancenexus.userservice.controller.UserController]
+2025-11-15 07:10:39 [http-nio-8081-exec-2] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.freelancenexus.userservice.controller.UserController.getAllUsers(); target is of class [com.freelancenexus.userservice.controller.UserController]
+2025-11-15 07:10:39 [http-nio-8081-exec-2] INFO  c.f.u.controller.UserController - Received request to get all users
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.profile_image_url,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        users u1_0
+2025-11-15 07:11:18 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing DELETE /api/users/16
+2025-11-15 07:11:18 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured DELETE /api/users/16
+2025-11-15 07:11:18 [http-nio-8081-exec-3] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.freelancenexus.userservice.controller.UserController.deleteUser(java.lang.Long); target is of class [com.freelancenexus.userservice.controller.UserController]
+2025-11-15 07:11:18 [http-nio-8081-exec-3] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.freelancenexus.userservice.controller.UserController.deleteUser(java.lang.Long); target is of class [com.freelancenexus.userservice.controller.UserController]
+2025-11-15 07:11:18 [http-nio-8081-exec-3] INFO  c.f.u.controller.UserController - Received request to delete user with ID: 16
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.profile_image_url,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-11-15 07:11:18 [http-nio-8081-exec-3] ERROR c.f.u.e.GlobalExceptionHandler - User not found: User not found with id: 16
+2025-11-15 07:11:31 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing DELETE /api/users/14
+2025-11-15 07:11:31 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured DELETE /api/users/14
+2025-11-15 07:11:31 [http-nio-8081-exec-4] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.freelancenexus.userservice.controller.UserController.deleteUser(java.lang.Long); target is of class [com.freelancenexus.userservice.controller.UserController]
+2025-11-15 07:11:31 [http-nio-8081-exec-4] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.freelancenexus.userservice.controller.UserController.deleteUser(java.lang.Long); target is of class [com.freelancenexus.userservice.controller.UserController]
+2025-11-15 07:11:31 [http-nio-8081-exec-4] INFO  c.f.u.controller.UserController - Received request to delete user with ID: 14
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.profile_image_url,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-11-15 07:11:31 [http-nio-8081-exec-4] INFO  c.f.userservice.service.UserService - User deleted successfully: 14
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+2025-11-15 07:13:22 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/users/profile
+2025-11-15 07:13:22 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/users/profile
+2025-11-15 07:13:22 [http-nio-8081-exec-8] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.freelancenexus.userservice.controller.UserController.getCurrentUserProfile(); target is of class [com.freelancenexus.userservice.controller.UserController]
+2025-11-15 07:13:22 [http-nio-8081-exec-8] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.freelancenexus.userservice.controller.UserController.getCurrentUserProfile(); target is of class [com.freelancenexus.userservice.controller.UserController]
+2025-11-15 07:13:22 [http-nio-8081-exec-8] INFO  c.f.u.controller.UserController - Received request to get current user profile
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.profile_image_url,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-11-15 07:13:29 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-11-15 07:13:42 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing PUT /api/users/profile
+2025-11-15 07:13:42 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured PUT /api/users/profile
+2025-11-15 07:13:42 [http-nio-8081-exec-7] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.freelancenexus.userservice.controller.UserController.updateCurrentUserProfile(com.freelancenexus.userservice.dto.UserUpdateDTO); target is of class [com.freelancenexus.userservice.controller.UserController]
+2025-11-15 07:13:42 [http-nio-8081-exec-7] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.freelancenexus.userservice.controller.UserController.updateCurrentUserProfile(com.freelancenexus.userservice.dto.UserUpdateDTO); target is of class [com.freelancenexus.userservice.controller.UserController]
+2025-11-15 07:13:42 [http-nio-8081-exec-7] INFO  c.f.u.controller.UserController - Received request to update current user profile
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.profile_image_url,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-11-15 07:13:42 [http-nio-8081-exec-7] INFO  c.f.userservice.service.UserService - User profile updated successfully: 22
+Hibernate: 
+    update
+        users 
+    set
+        email=?,
+        full_name=?,
+        is_active=?,
+        password=?,
+        phone=?,
+        profile_image_url=?,
+        role=?,
+        updated_at=? 
+    where
+        id=?
+2025-11-15 07:13:52 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/users
+2025-11-15 07:13:52 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/users
+2025-11-15 07:13:52 [http-nio-8081-exec-6] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.freelancenexus.userservice.controller.UserController.getAllUsers(); target is of class [com.freelancenexus.userservice.controller.UserController]
+2025-11-15 07:13:52 [http-nio-8081-exec-6] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.freelancenexus.userservice.controller.UserController.getAllUsers(); target is of class [com.freelancenexus.userservice.controller.UserController]
+2025-11-15 07:13:52 [http-nio-8081-exec-6] INFO  c.f.u.controller.UserController - Received request to get all users
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.profile_image_url,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        users u1_0
+2025-11-15 07:18:29 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration

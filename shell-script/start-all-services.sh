@@ -90,8 +90,12 @@ start_service() {
     
     cd "$PROJECT_ROOT/$service"
     
+    # Build before starting
+    echo -e "${YELLOW}   Cleaning & building...${NC}"
+    mvn clean install -DskipTests
+    
     # Start the service in background
-    echo -e "${YELLOW}   Building and starting...${NC}"
+    echo -e "${YELLOW}   Starting service...${NC}"
     nohup mvn spring-boot:run > "$log_file" 2>&1 &
     local pid=$!
     
@@ -104,6 +108,7 @@ start_service() {
     # Wait for service to be ready
     wait_for_service "$service" "$port"
 }
+
 
 # Function to start frontend
 start_frontend() {

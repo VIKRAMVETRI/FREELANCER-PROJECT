@@ -15,6 +15,17 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Service class for managing freelancer portfolios.
+ * Provides operations to add, retrieve, update, and delete portfolios.
+ *
+ * <p>This class uses {@link PortfolioRepository} and {@link FreelancerRepository}
+ * to interact with the database and perform CRUD operations on {@link Portfolio} entities.</p>
+ *
+ * @author YourName
+ * @version 1.0
+ */
+
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -22,7 +33,16 @@ public class PortfolioService {
     
     private final PortfolioRepository portfolioRepository;
     private final FreelancerRepository freelancerRepository;
-    
+
+    /**
+     * Adds a new portfolio for a given freelancer.
+     *
+     * @param freelancerId the ID of the freelancer to associate the portfolio with
+     * @param portfolioDTO the portfolio details to be added
+     * @return the saved portfolio as a {@link PortfolioDTO}
+     * @throws ResourceNotFoundException if the freelancer does not exist
+     */
+
     @Transactional
     public PortfolioDTO addPortfolio(Long freelancerId, PortfolioDTO portfolioDTO) {
         log.info("Adding portfolio for freelancer ID: {}", freelancerId);
@@ -38,7 +58,15 @@ public class PortfolioService {
         
         return mapToDTO(saved);
     }
-    
+
+    /**
+     * Retrieves all portfolios associated with a given freelancer.
+     *
+     * @param freelancerId the ID of the freelancer
+     * @return a list of {@link PortfolioDTO} objects
+     * @throws ResourceNotFoundException if the freelancer does not exist
+     */
+
     @Transactional(readOnly = true)
     public List<PortfolioDTO> getFreelancerPortfolios(Long freelancerId) {
         log.info("Fetching portfolios for freelancer ID: {}", freelancerId);
@@ -53,7 +81,15 @@ public class PortfolioService {
             .map(this::mapToDTO)
             .collect(Collectors.toList());
     }
-    
+
+    /**
+     * Retrieves a portfolio by its ID.
+     *
+     * @param portfolioId the ID of the portfolio
+     * @return the portfolio as a {@link PortfolioDTO}
+     * @throws ResourceNotFoundException if the portfolio does not exist
+     */
+
     @Transactional(readOnly = true)
     public PortfolioDTO getPortfolioById(Long portfolioId) {
         log.info("Fetching portfolio by ID: {}", portfolioId);
@@ -63,7 +99,16 @@ public class PortfolioService {
         
         return mapToDTO(portfolio);
     }
-    
+
+    /**
+     * Updates an existing portfolio with new details.
+     *
+     * @param portfolioId the ID of the portfolio to update
+     * @param portfolioDTO the updated portfolio details
+     * @return the updated portfolio as a {@link PortfolioDTO}
+     * @throws ResourceNotFoundException if the portfolio does not exist
+     */
+
     @Transactional
     public PortfolioDTO updatePortfolio(Long portfolioId, PortfolioDTO portfolioDTO) {
         log.info("Updating portfolio with ID: {}", portfolioId);
@@ -95,7 +140,14 @@ public class PortfolioService {
         
         return mapToDTO(updated);
     }
-    
+
+    /**
+     * Deletes a portfolio by its ID.
+     *
+     * @param portfolioId the ID of the portfolio to delete
+     * @throws ResourceNotFoundException if the portfolio does not exist
+     */
+
     @Transactional
     public void deletePortfolio(Long portfolioId) {
         log.info("Deleting portfolio with ID: {}", portfolioId);
@@ -107,7 +159,14 @@ public class PortfolioService {
         portfolioRepository.deleteById(portfolioId);
         log.info("Portfolio deleted successfully: {}", portfolioId);
     }
-    
+
+    /**
+     * Converts a {@link Portfolio} entity to a {@link PortfolioDTO}.
+     *
+     * @param portfolio the portfolio entity
+     * @return the corresponding {@link PortfolioDTO}
+     */
+
     private PortfolioDTO mapToDTO(Portfolio portfolio) {
         PortfolioDTO dto = new PortfolioDTO();
         dto.setId(portfolio.getId());
@@ -120,7 +179,14 @@ public class PortfolioService {
         dto.setCreatedAt(portfolio.getCreatedAt());
         return dto;
     }
-    
+
+    /**
+     * Converts a {@link PortfolioDTO} to a {@link Portfolio} entity.
+     *
+     * @param dto the portfolio DTO
+     * @return the corresponding {@link Portfolio} entity
+     */
+
     private Portfolio mapToEntity(PortfolioDTO dto) {
         Portfolio portfolio = new Portfolio();
         portfolio.setTitle(dto.getTitle());

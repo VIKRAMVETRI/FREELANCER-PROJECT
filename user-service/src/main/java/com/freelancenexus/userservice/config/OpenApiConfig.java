@@ -12,10 +12,17 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
 public class OpenApiConfig {
+
+    @Value("${codespace.name:localhost}")
+    private String codespaceName;
+
+    @Value("${codespace.domain:local}")
+    private String codespaceDomain;
 
     @Value("${server.port:8081}")
     private String serverPort;
@@ -35,6 +42,30 @@ public class OpenApiConfig {
         SecurityRequirement securityRequirement = new SecurityRequirement()
                 .addList("Bearer Authentication");
 
+        // Build server URLs dynamically
+        List<Server> servers = new ArrayList<>();
+
+        // Check if we're in Codespaces
+        if (!"localhost".equals(codespaceName) && !"local".equals(codespaceDomain)) {
+            // Codespaces URLs
+            servers.add(new Server()
+                    .url("https://" + codespaceName + "-" + serverPort + "." + codespaceDomain)
+                    .description("User Service - Direct Access (Codespaces)"));
+            
+            servers.add(new Server()
+                    .url("https://" + codespaceName + "-8765." + codespaceDomain)
+                    .description("User Service - Via Gateway (Codespaces)"));
+        }
+
+        // Local URLs (always available)
+        servers.add(new Server()
+                .url("http://localhost:" + serverPort)
+                .description("User Service - Direct Access (Local)"));
+        
+        servers.add(new Server()
+                .url("http://localhost:8765")
+                .description("User Service - Via Gateway (Local)"));
+
         return new OpenAPI()
                 .info(new Info()
                         .title("User Service API")
@@ -46,23 +77,7 @@ public class OpenApiConfig {
                         .license(new License()
                                 .name("Apache 2.0")
                                 .url("https://www.apache.org/licenses/LICENSE-2.0.html")))
-                .servers(List.of(
-                        // Direct service access (Codespaces)
-                        new Server()
-                                .url("https://${CODESPACE_NAME}-8081.${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}")
-                                .description("User Service - Direct Access (Codespaces)"),
-                        // Gateway access (Codespaces)
-                        new Server()
-                                .url("https://${CODESPACE_NAME}-8765.${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}/api/users")
-                                .description("User Service - Via Gateway (Codespaces)"),
-                        // Local development
-                        new Server()
-                                .url("http://localhost:8081")
-                                .description("User Service - Direct Access (Local)"),
-                        new Server()
-                                .url("http://localhost:8765/api/users")
-                                .description("User Service - Via Gateway (Local)")
-                ))
+                .servers(servers)
                 .components(new Components()
                         .addSecuritySchemes("Bearer Authentication", securityScheme))
                 .addSecurityItem(securityRequirement);
